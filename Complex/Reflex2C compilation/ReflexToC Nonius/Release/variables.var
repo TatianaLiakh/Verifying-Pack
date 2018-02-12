@@ -1,0 +1,35 @@
+LOG Ê_ÎÒÊĞ_ÇÀÒÂÎĞ_ÂÀÊ /*name*/, 0 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÎÒÊĞ_ÇÀÒÂÎĞ_ÂÀÊ /*name*/, 0 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÇÀÊĞ_ÇÀÒÂÎĞ_ÂÀÊ /*name*/, 1 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÇÀÊĞ_ÇÀÒÂÎĞ_ÂÀÊ /*name*/, 1 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÑÀÏÓÍ /*name*/, 2 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÑÀÏÓÍ /*name*/, 2 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÓÑÒĞ_ÏËÀÂ_ÏÓÑÊÀ /*name*/, 3 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÓÑÒĞ_ÏËÀÂ_ÏÓÑÊÀ /*name*/, 3 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÈÒ_ÓÏÏ_ÂÀÊ_ÍÀÑÎÑÀ /*name*/, 4 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÏÈÒ_ÓÏÏ_ÂÀÊ_ÍÀÑÎÑÀ /*name*/, 4 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÈÒ_ÂÅÍÒÈËßÒÎĞÀ /*name*/, 5 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÏÈÒ_ÂÅÍÒÈËßÒÎĞÀ /*name*/, 5 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÈÒ_ĞÅÃ_Ò /*name*/, 6 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÏÈÒ_ĞÅÃ_Ò /*name*/, 6 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÈÒ_ĞÅÃ_ÓĞ /*name*/, 7 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÏÈÒ_ĞÅÃ_ÓĞ /*name*/, 7 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÓĞ_ÂÎÄÛ_MIN /*name*/, 8 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÓĞ_ÂÎÄÛ_MIN /*name*/, 8 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÓĞ_ÂÎÄÛ_MAX /*name*/, 9 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÓĞ_ÂÎÄÛ_MAX /*name*/, 9 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÈÒ_ÍÀÑÎÑ_ÎÕË /*name*/, 10 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ÏÈÒ_ÍÀÑÎÑ_ÎÕË /*name*/, 10 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ØÊÀÔ_ÂÑ_380 /*name*/, 11 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_ØÊÀÔ_ÂÑ_380 /*name*/, 11 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÓÒÎ1 /*name*/, 12 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_P_ÂáàêåÊîìïğåññîğà /*name*/, 12 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÓÒÎ2 /*name*/, 13 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_P_Âïàòğóáêå /*name*/, 13 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÓÒÎ3 /*name*/, 14 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_T_Âğóáàøêå /*name*/, 14 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÓÒÎ4 /*name*/, 15 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_T_Âáàêå /*name*/, 15 /*owner input port*/, 2 /*start bit*/  
+ LOG Ê_ÏÓÒÎ5 /*name*/, 16 /*owner input port*/, 1 /*start bit*/  
+ LOG Ä_P_ÂòğóáåÑèäåğ /*name*/, 16 /*owner input port*/, 2 /*start bit*/  
+ 

@@ -1,0 +1,630 @@
+﻿Построение начато 19.05.2014 22:18:10.
+     1>Проект "C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\SandBox\SandBox.vcxproj" в узле 2 (целевые объекты rebuild).
+     1>InitializeBuildStatus:
+         Создание "Debug\bsvt.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt bsvt0001.c bsvtinp.c bsvtmain.c bsvtoutp.c bsvtusr1.c bsvt_id.c dll_interface.c msg_queue.c r_io.c r_lib.c
+         r_lib.c
+         r_io.c
+         msg_queue.c
+         dll_interface.c
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(11): warning C4103: c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(43): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(64): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234): см. объявление "fopen"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(80): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(90): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(100): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(110): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(120): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(66): warning C4101: f: неиспользованная локальная переменная
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(63): warning C4101: par: неиспользованная локальная переменная
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(62): warning C4101: c: неиспользованная локальная переменная
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(143): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(155): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234): см. объявление "fopen"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c(262): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+         bsvt_id.c
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234): см. объявление "fopen"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(10): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(15): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(20): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(30): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(35): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(40): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(45): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(50): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(55): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(60): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(65): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(70): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(75): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(80): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(85): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(90): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(95): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(100): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(105): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(110): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(115): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(120): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(125): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(130): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(135): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(140): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(145): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(150): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(155): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(160): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(165): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(170): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(175): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(180): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(185): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(190): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(193): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(195): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(200): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(205): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(210): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(215): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(220): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(225): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(230): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(235): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(240): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(245): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(250): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(255): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(260): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(265): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(270): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(275): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(280): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(285): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(290): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(295): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(300): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(305): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(310): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(315): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(320): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(325): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(330): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(335): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(340): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(345): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(350): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(355): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(360): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(365): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(370): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(375): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(380): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(385): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(390): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(395): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(400): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(405): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(410): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(415): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(420): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(425): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(430): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(435): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(440): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(445): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(450): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(455): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(460): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(465): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(470): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(475): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(480): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(485): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(490): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(495): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(500): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(505): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(510): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(515): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(520): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(525): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(530): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(535): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(540): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(545): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(550): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(555): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(560): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(565): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(570): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(575): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(580): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(585): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(590): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(595): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(600): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(605): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(610): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(615): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(620): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(625): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(630): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(635): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(640): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(645): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(650): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(655): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(660): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(665): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(670): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(675): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(680): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(685): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(690): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(695): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(700): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(705): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(710): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(715): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(720): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(725): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(730): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(735): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(740): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(745): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(750): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(755): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(760): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(765): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(770): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(775): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(780): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(785): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(790): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(795): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(800): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(805): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(810): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(815): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(820): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(825): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(830): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(835): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(840): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(845): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(850): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(855): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(860): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(865): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(870): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(875): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(880): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(885): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(890): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(895): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(900): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(905): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(910): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(915): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(920): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(925): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(930): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(935): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(940): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(945): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(950): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(955): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(960): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(965): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt_id.c(970): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371): см. объявление "sprintf"
+         bsvtusr1.c
+         bsvtoutp.c
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(8): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(8): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(10): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(13): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(13): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(15): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(18): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(18): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(20): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(23): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(23): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(25): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(28): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(28): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(30): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(33): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(33): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(35): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(38): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(38): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(40): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(43): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(43): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtoutp.c(45): error C2109: для индекса требуется массив или указатель
+         bsvtmain.c
+         bsvtinp.c
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(77): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(78): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(79): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(79): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(80): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(81): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(82): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(82): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(83): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(84): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(85): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(85): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(86): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(87): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(88): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(88): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(89): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(90): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(91): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(91): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(92): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(93): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(94): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(94): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(95): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(96): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(97): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(97): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(98): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(99): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(100): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvtinp.c(100): error C2109: для индекса требуется массив или указатель
+         bsvt0001.c
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(25): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(26): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(27): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(28): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(29): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(30): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(31): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(32): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(33): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(53): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(54): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(55): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(56): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(57): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(58): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(59): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(60): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(61): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(84): warning C4244: =: преобразование "double" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(85): warning C4244: =: преобразование "double" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(86): warning C4244: =: преобразование "double" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(87): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(97): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(98): warning C4305: =: усечение из "double" к "float"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(705): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(706): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(707): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(708): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(709): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(787): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(792): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(797): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(802): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(807): warning C4244: =: преобразование "float" в "long", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(808): warning C4244: =: преобразование "long" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(813): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(818): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(824): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(827): error C2196: значение варианта выбора "146" уже используется
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(829): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(834): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(839): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(844): warning C4244: =: преобразование "float" в "char", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(849): warning C4244: =: преобразование "long" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(855): warning C4244: =: преобразование "long" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1016): error C2065: P19V15: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1035): error C2065: P20V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1040): error C2065: P20V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1041): error C2065: P20V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1047): error C2065: P20V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1047): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1070): error C2065: P21V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1075): error C2065: P21V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1076): error C2065: P21V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1082): error C2065: P21V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1082): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1105): error C2065: P22V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1110): error C2065: P22V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1111): error C2065: P22V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1117): error C2065: P22V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1117): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1140): error C2065: P23V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1145): error C2065: P23V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1146): error C2065: P23V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1152): error C2065: P23V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1152): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1175): error C2065: P24V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1180): error C2065: P24V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1181): error C2065: P24V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1187): error C2065: P24V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1187): warning C4244: функция: преобразование "int" в "float", возможна потеря данных
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1210): error C2065: P25V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1215): error C2065: P25V2: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1217): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1217): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1222): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1240): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1240): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1245): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1278): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1282): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1282): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1286): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1289): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1289): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1356): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1361): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1366): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1366): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1405): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1410): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1415): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1415): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1458): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1463): warning C4047: =: "char [2]" отличается по уровням косвенного обращения от "int"
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1463): error C2106: =: левый операнд должен быть левосторонним значением
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1542): error C2065: P32V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1542): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1545): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1559): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1559): error C2065: P32V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1580): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1594): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1594): error C2065: P33V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1784): error C2065: P38V6: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1784): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1787): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1802): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1802): error C2065: P38V6: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1821): error C2065: P39V6: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1821): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1824): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1839): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1839): error C2065: P39V6: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1907): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1910): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1924): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1943): error C2065: P43V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1943): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1946): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1960): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(1960): error C2065: P43V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2071): error C2065: P47V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2071): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2074): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2088): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2088): error C2065: P47V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2107): error C2065: P48V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2107): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2110): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2124): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2124): error C2065: P48V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2236): error C2065: P52V5: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2236): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2239): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2253): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2253): error C2065: P52V5: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2272): error C2065: P53V4: необъявленный идентификатор
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2272): error C2109: для индекса требуется массив или указатель
+     1>c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\bsvt0001.c(2272): fatal error C1003: число ошибок превышает 100; остановка компиляции
+         Создание кода...
+     1>Построение проекта "C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\SandBox\SandBox.vcxproj" завершено (целевые объекты rebuild) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:00.75

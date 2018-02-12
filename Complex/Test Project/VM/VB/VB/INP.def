@@ -1,0 +1,12 @@
+LIBRARY VB
+
+EXPORTS
+LLD @1
+set_states_array @2
+set_input_ports_array @3
+set_output_ports_array @4
+set_input_msg_from_CA @5
+set_input_msg_from_SC @6
+set_output_msg @7
+set_output_msg_to_SC @8
+main @9

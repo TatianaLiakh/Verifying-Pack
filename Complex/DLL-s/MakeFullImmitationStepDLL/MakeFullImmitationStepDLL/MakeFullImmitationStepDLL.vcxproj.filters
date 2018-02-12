@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="LabVIEW lib">
+      <UniqueIdentifier>{5575da4e-e781-465c-9279-c0a97484a5c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LabVIEWData.h">
+      <Filter>LabVIEW lib</Filter>
+    </ClInclude>
+    <ClInclude Include="MakeFullImmitationStep.h" />
+    <ClInclude Include="LV_lib.h">
+      <Filter>LabVIEW lib</Filter>
+    </ClInclude>
+    <ClInclude Include="internal_errors.h">
+      <Filter>LabVIEW lib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MakeFullImmitationStep.cpp" />
+    <ClCompile Include="LV_lib.cpp">
+      <Filter>LabVIEW lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

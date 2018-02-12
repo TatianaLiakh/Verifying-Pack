@@ -1,0 +1,3 @@
+INPUT INT ÖåëîåÇíà÷åíèå /*name*/ 0 /*owner input port*/ 1 /*start bit*/
+INPUT LOG Ê_ĞÓÊÈ_ÏÎÄ_ÑÓØÈËÊÎÉ /*name*/ 0 /*owner_input_port*/ 6 /*start_bit*/  
+OUTPUT LOG Ó_ÂÊË_ÑÓØÈËÊÓ /*name*/ 0 /*owner_output_port*/ 1 /*start_bit*/  

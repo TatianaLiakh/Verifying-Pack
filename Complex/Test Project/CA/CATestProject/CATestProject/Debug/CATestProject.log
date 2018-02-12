@@ -1,0 +1,32 @@
+﻿  usr1.cpp
+  r_lib.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  r_io.cpp
+  msg_queue.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  dll_interface.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(23): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(35): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(42): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(49): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(40): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(45): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(55): warning C4018: <: несоответствие типов со знаком и без знака
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(70): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(76): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(92): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(128): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\dll_interface.cpp(159): warning C4244: =: преобразование "INT32U" в "uint16_t", возможна потеря данных
+  custom.cpp
+  CAoutp.cpp
+  CAmain.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\caext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\camain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  CAinp.cpp
+  CA0001.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\caext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\ca0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  Создание кода...
+     Создается библиотека D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CATestProject.lib и объект D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CATestProject.exp
+  CATestProject.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CATestProject.dll
+  CATestProject.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CATestProject.pdb (Partial PDB)

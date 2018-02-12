@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\msg_queue">
+      <UniqueIdentifier>{291a5f42-6c05-421d-81b3-68caed19057a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\lib">
+      <UniqueIdentifier>{eb5a6e5a-f290-4fcb-b403-754b9276759e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Reflex">
+      <UniqueIdentifier>{6787d8b3-aa77-4670-bf84-91ba5173d897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\dll_interface">
+      <UniqueIdentifier>{3021b229-9a3c-4f85-b52f-8642df2b8d2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\msg_queue">
+      <UniqueIdentifier>{71cb78f5-2a69-4c38-a05d-f2f1a46c0764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Reflex">
+      <UniqueIdentifier>{ebffbd29-7580-43fd-8d25-f0952a155de2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\lib">
+      <UniqueIdentifier>{0430ba7e-66bb-46e3-a0fa-98a047e1fd16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\LabVIEW Data">
+      <UniqueIdentifier>{fc842f82-ce72-4635-b744-92db8122d909}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\msg_queue.h">
+      <Filter>Заголовочные файлы\msg_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\queue_const.h">
+      <Filter>Заголовочные файлы\msg_queue</Filter>
+    </ClInclude>
+    <ClInclude Include="src\R_LIB.H">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r_main.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtcnst.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtgvar.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtio.h">
+      <Filter>Заголовочные файлы\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtproc.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtusr1.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtusr2.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bsvtxvar.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\custom.h">
+      <Filter>Заголовочные файлы\dll_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dll_interface.h">
+      <Filter>Заголовочные файлы\dll_interface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\R_CNST.H">
+      <Filter>Заголовочные файлы\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r_io.h">
+      <Filter>Заголовочные файлы\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\proc.h">
+      <Filter>Заголовочные файлы\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LabVIEWData.h">
+      <Filter>Заголовочные файлы\LabVIEW Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\dll_interface.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="src\msg_queue.cpp">
+      <Filter>Файлы исходного кода\msg_queue</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bsvt0001.cpp">
+      <Filter>Файлы исходного кода\Reflex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bsvtinp.cpp">
+      <Filter>Файлы исходного кода\Reflex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bsvtmain.cpp">
+      <Filter>Файлы исходного кода\Reflex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bsvtoutp.cpp">
+      <Filter>Файлы исходного кода\Reflex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bsvtusr1.cpp">
+      <Filter>Файлы исходного кода\Reflex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r_io.cpp">
+      <Filter>Файлы исходного кода\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r_lib.cpp">
+      <Filter>Файлы исходного кода\lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\bsvtext.h">
+      <Filter>Заголовочные файлы\Reflex</Filter>
+    </None>
+  </ItemGroup>
+</Project>

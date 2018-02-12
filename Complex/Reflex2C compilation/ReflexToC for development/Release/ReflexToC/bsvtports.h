@@ -1,0 +1,28 @@
+/* INPUT PORTS */ 
+	#define K_LOG_VKHOD_OTKR_ZATVOR_VAK 0 /*й_кнц_бунд_нрйп_гюрбнп_бюй*/ 
+ 	#define K_LOG_VKHOD_ZAKR_ZATVOR_VAK 1 /*й_кнц_бунд_гюйп_гюрбнп_бюй*/ 
+ 	#define K_LOG_VKHOD_SAPUN 2 /*й_кнц_бунд_яюосм*/ 
+ 	#define K_LOG_VKHOD_USTR_PLAV_PUSKA 3 /*й_кнц_бунд_сярп_окюб_осяйю*/ 
+ 	#define K_LOG_VKHOD_PIT_UPP_VAK_NASOSA 4 /*й_кнц_бунд_охр_соо_бюй_мюяняю*/ 
+ 	#define K_LOG_VKHOD_PIT_VYENTILYATORA 5 /*й_кнц_бунд_охр_бемрхкърнпю*/ 
+ 	#define K_LOG_VKHOD_PIT_RYEG_T 6 /*й_кнц_бунд_охр_пец_р*/ 
+ 	#define K_LOG_VKHOD_PIT_RYEG_UR 7 /*й_кнц_бунд_охр_пец_сп*/ 
+ 	#define K_LOG_VKHOD_UR_VODY_MIN 8 /*й_кнц_бунд_сп_бндш_MIN*/ 
+ 	#define K_LOG_VKHOD_UR_VODY_MAX 9 /*й_кнц_бунд_сп_бндш_MAX*/ 
+ 	#define K_LOG_VKHOD_PIT_NASOS_OKHL 10 /*й_кнц_бунд_охр_мюяня_нук*/ 
+ 	#define K_LOG_VKHOD_SHKAF_VS_380 11 /*й_кнц_бунд_ьйют_бя_380*/ 
+ 	#define K_LOG_VKHOD_P_VbakyeKompryessora 12 /*й_кнц_бунд_P_бАЮЙЕйНЛОПЕЯЯНПЮ*/ 
+ 	#define K_LOG_VKHOD_P_Vpatrubkye 13 /*й_кнц_бунд_P_бОЮРПСАЙЕ*/ 
+ 	#define K_LOG_VKHOD_T_Vrubashkye 14 /*й_кнц_бунд_T_бПСАЮЬЙЕ*/ 
+ 	#define K_LOG_VKHOD_T_Vbakye 15 /*й_кнц_бунд_T_бАЮЙЕ*/ 
+ 	#define K_LOG_VKHOD_P_VtrubyeSidyer 16 /*й_кнц_бунд_P_бРПСАЕяХДЕП*/ 
+ 
+/* OUTPUT PORTS */ 
+	#define U_LOG_VYKHOD_PIT_VYENTILYATORA 0 /*с_кнц_бшунд_охр_бемрхкърнпю*/ 
+	#define U_LOG_VYKHOD_PIT_RYEG_T 1 /*с_кнц_бшунд_охр_пец_р*/ 
+	#define U_LOG_VYKHOD_PIT_NAS_OKHL 2 /*с_кнц_бшунд_охр_мюя_нук*/ 
+	#define U_LOG_VYKHOD_PIT_UPP_VAK_NASOSA 3 /*с_кнц_бшунд_охр_соо_бюй_мюяняю*/ 
+	#define U_LOG_VYKHOD_ZATVOR_VAK 4 /*с_кнц_бшунд_гюрбнп_бюй*/ 
+	#define U_LOG_VYKHOD_SAPUN 5 /*с_кнц_бшунд_яюосм*/ 
+	#define U_LOG_VYKHOD_USTR_PLAV_PUSKA 6 /*с_кнц_бшунд_сярп_окюб_осяйю*/ 
+	#define U_LOG_VYKHOD_PIT_RYEG_UR 7 /*с_кнц_бшунд_охр_пец_сп*/ 

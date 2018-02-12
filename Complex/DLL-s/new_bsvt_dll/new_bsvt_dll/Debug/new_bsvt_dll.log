@@ -1,0 +1,17 @@
+﻿  dll_interface.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\dll_interface.h
+  Примечание: включение файла:   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\stdint.h
+  Примечание: включение файла:    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Примечание: включение файла:     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h
+  Примечание: включение файла:      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ConcurrencySal.h
+  Примечание: включение файла:     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vadefs.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\dll_interface.cpp(1): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\r_io.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\R_CNST.H
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\bsvtxvar.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\R_LIB.H
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\bsvtproc.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_dll\new_bsvt_dll\src\dll_interface.cpp(5): fatal error C1083: Не удается открыть файл включение: r_main.h: No such file or directory
+  custom.cpp
+c1xx : fatal error C1083: Не удается открыть файл источник: custom.cpp: No such file or directory
+  Создание кода...

@@ -1,0 +1,17 @@
+﻿Построение начато 04.10.2013 18:07:43.
+     1>Проект "C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\VS Projects\Компиляторы Reflex to C\R2C_initial\R2C_initial\R2C_initial.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\R2C_initial.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+       Link:
+         Для всех выходных данных обновления не требуется.
+         R2C_initial.vcxproj -> C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\VS Projects\Компиляторы Reflex to C\R2C_initial\Debug\R2C_initial.exe
+       FinalizeBuildStatus:
+         Файл "Debug\R2C_initial.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\R2C_initial.lastbuildstate".
+     1>Построение проекта "C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\VS Projects\Компиляторы Reflex to C\R2C_initial\R2C_initial\R2C_initial.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.09

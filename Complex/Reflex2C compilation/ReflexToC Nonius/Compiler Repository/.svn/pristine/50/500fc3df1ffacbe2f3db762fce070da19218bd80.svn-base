@@ -1,0 +1,810 @@
+#include "const.h"
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include "typedef.h"
+#include "prototyp.h"
+#include "glob_ext.h"
+
+char REWUNIT_Flag = ZERO;
+
+/*----------------------------------------------------------------------------*/
+void hello (INT16S argc, char **argv){
+	INT32S  i;                       /* 32-х разрядная! */
+	char    *bstringptr;
+	char    *bendptr;                /* byte pointers */
+
+	/* void enfilname(), openfil(); */
+	/* char * Strr_chr(char *,INT16S); */
+
+	Flag_LIS = OFF;                  /* флаг листинга */
+	Flag_MAP = OFF;                  /* флаг файла привязки перемен */
+	CFileMAXLen = 200000L;           /* Ограничение на длину С-файла */
+	strcpy(InputFileName, "");       /* обнуляем имя входного файла */
+	strcpy(BaseOutputFileName, "");  /* обнуляем шаблон имен выходных файлов */
+
+	if (argc == 1) {    /* NO PARAMETERS */
+		printf("      ==================================================================\n");
+		printf("      =                                                                =\n");
+		printf("      =    Reflex V1.0, IA&E, Novosibirsk, Russia. Copyleft (c) 2002   =\n");
+		printf("      =    written by Vladimir E. Zyubin, mailto:zyubin@iae.nsk.su     =\n");
+		printf("      =    Syntax is: reflex [option] filename                         =\n");
+		printf("      =    Options:                                                    =\n");
+		printf("      =        -Cl=xxx (C-file length in bytes), e.g. -Cl=10000        =\n");
+		printf("      =        -L      (Create listing file)                           =\n");
+		printf("      =        -M      (Create map file)                               =\n");
+		printf("      =        -Oxxx   (Output, filename), e.g. -Oexam                 =\n");
+// NEW 
+
+		printf("      =        -P      (Create .cpp files)                             =\n");
+		printf("      =        -G      (Create output folder)                          =\n");
+		printf("      =        -T      (Test-mode generation)                          =\n");
+
+//END NEW
+
+		printf("      =        (-x- = turn switch x off)                               =\n");
+		printf("      =    Default options: -Cl=200000 -L- -M-                         =\n");
+		printf("      =                                                                =\n");
+		printf("      ==================================================================\n");
+		/*          printf("\n-@xxx   Command string file     -Cxxx 'C' limits\n");
+		*          printf("\n-Cl=xxx C-file length           -Cxxx 'C' limits");
+		*          printf("\n-gN     Stop after N warnings   -Ixxx Include files path");
+		*          printf("\n-iN     Identifiers length      -jN   Stop after N errors");
+		*          printf("\n-D      Syntax definition file  -L    Create a listing file");
+		*          printf("\n-M      Create a map file       -Oxxx Output, filename");
+		*          printf("\n-oxxx   Output, directory       -w    Turn on warnings");
+		*/
+		exit(ZERO);
+	} else {                           /* обработка командной строки */
+		for (i = 1; (i < (argc-1)) && (argv[i][0] == '-'); i++){   /* обработать блок опций командной строки */
+			switch (argv[i][1]) {    /* обработка опции */
+			case 'C':           /* касается ограничений С-транслятора */
+				switch (argv[i][2]) {    /* разбор опций ограничения */
+				case 'l':           /* длина выходного файла */
+					if (argv[i][3] == '=') {
+						bstringptr = &argv[i][4]; /* адрес начала числа */
+						CFileMAXLen = strtoul(bstringptr, &bendptr, 0);
+#ifdef TEST_MODE
+						printf("\n%%RCSL-64-MSG, Ограничение на длину С-файла %ld байтов", CFileMAXLen);
+#endif
+						if (CFileMAXLen <= 5000) {  /* фатальная ошибка */
+							printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ \n или ограничение на длину меньше 5К - %s", argv[i]);
+							exit(ZERO);
+						}
+					} else {       /* фатальная ошибка */
+						printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+						exit(ZERO);
+					}
+					break;
+				default:
+					printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+					exit(ZERO);
+				}
+				break;
+			case 'L': /* необходимо создать листинг */
+				switch (argv[i][2]){
+				case ZERO:
+					Flag_LIS = ON;      /* флаг листинга ON */
+#ifdef TEST_MODE
+					printf("\n%%RCSL-64-MSG, флаг листинга ВКЛЮЧЕН");
+#endif
+					break;
+				case '-':
+					Flag_LIS = OFF;     /* флаг листинга OFF */
+					break;
+				default:
+					printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+					exit(ZERO);
+				}
+				break;
+			case 'M': /* необходимо создать файл привязки */
+				switch (argv[i][2]){
+				case ZERO:
+					Flag_MAP = ON;      /* флаг файла привязки ON */
+#ifdef TEST_MODE
+					printf("\n%%RCSL-64-MSG, флаг файла-привязки ВКЛЮЧЕН");
+#endif
+					break;
+				case '-':
+					Flag_MAP = OFF;     /* флаг файла привязки OFF */
+					break;
+				default:
+					printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+					exit(ZERO);
+				}
+				break;
+			case 'O': /* выходной файл имеет другое имя */
+				bstringptr = &argv[i][2]; /* адрес начала имени */
+				strcpy(BaseOutputFileName, bstringptr); /* copy filename */
+				break;
+
+			case 'T': /* необходимо создать файл теста */
+				switch (argv[i][2]){
+				case ZERO:
+					Flag_TEST = ON;      /* флаг теста ON */
+#ifdef TEST_MODE
+					printf("\n%%RCSL-64-MSG, флаг теста ВКЛЮЧЕН");
+#endif
+					break;
+				case '-':
+					Flag_TEST = OFF;     /* флаг теста OFF */
+					break;
+				default:
+					printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+					exit(ZERO);
+				}
+				break;
+			case 'P': /* необходимо создать файлы в формате .cpp */
+				switch (argv[i][2]){
+				case ZERO:
+					Flag_CPP = ON;      /* флаг теста ON */
+#ifdef TEST_MODE
+					printf("\n%%RCSL-64-MSG, флаг теста ВКЛЮЧЕН");
+#endif
+					break;
+				case '-':
+					Flag_CPP = OFF;     /* флаг теста OFF */
+					break;
+				default:
+					printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+					exit(ZERO);
+				}
+				break;
+				
+			case 'G': /* необходимо создать файлы в формате .cpp */
+				switch (argv[i][2]){
+				case ZERO:
+					Flag_PROC_DESCR = ON;      /* флаг теста ON */
+#ifdef TEST_MODE
+					printf("\n%%RCSL-64-MSG, флаг генерации описания портов ВКЛЮЧЕН");
+#endif
+					break;
+				case '-':
+					Flag_PROC_DESCR = OFF;     /* флаг теста OFF */
+					break;
+				default:
+					printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+					exit(ZERO);
+				}
+				break;
+			default:
+				printf("\n%%RCSL-64-FATERR, В командной строке обнаружен неизвестный ключ - %s", argv[i]);
+				exit(ZERO);
+			} /* end of switch */
+		} /* конец for, конец командной строки */
+
+		if (i != (argc-1) || !isalpha(argv[i][0])) { /* пропущено имя файла или другая неразбериха */
+			printf("\n%%RCSL-64-FATERR, В командной строке обнаружена ошибка - %s", argv[i]);
+			exit(ZERO);
+		}
+		strcpy(InputFileName, argv[i]);
+		if (strchr(InputFileName, '.') == ZERO) {  /* если не указано расширение - добавляем */
+			strcat(InputFileName, ".rcs");
+		}
+		if (!strcmp(BaseOutputFileName,"")) {   /* если не было проинициализировано */
+			strcpy(BaseOutputFileName, InputFileName);
+		}
+		if (strchr(BaseOutputFileName, '.') != ZERO) {    /* "file.ext" -> "file" */
+			i = ((INT32S)strchr(BaseOutputFileName, (INT16S)'.') - (INT32S)BaseOutputFileName);
+			BaseOutputFileName[i] = ZERO;
+		}
+		if (strlen(BaseOutputFileName) > 255) {   /* если длина имени больше 4-х */
+			printf("\n%%RCSL-64-FATERR, Длина имени выходного файла не должна превышать 255 символа - %s", BaseOutputFileName);
+			exit(ZERO);
+		}
+	} /* конец обработки командной строки */
+#ifdef TEST_MODE
+	printf("\n%%RCSL-64-TESTING, введено имя выходного файла - %s, входного - %s", BaseOutputFileName,InputFileName);
+#endif
+
+};
+
+/*----------------------------------------------------------------------------*/
+
+void fskptr (FILE *fptr)
+{
+	if(fseek(fptr, (INT32S)0, 0) < 0)
+	{
+		perror("fseek");
+		exit(ZERO );
+	};
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+/*********************************************
+* Процедура взятия лексемы
+*
+**********************************************/
+int select_unit (void)
+{
+	int select_unit2(void);
+
+#ifdef TEST_MODE_SELECT
+	printf("= SU");
+#endif
+
+
+	strcpy(prev_unit, unit);      /* делаем копию текущей лексемы */
+	strcpy(prev_spaces, spaces);  /* делаем копию пред-разделителя текущей лексемы */
+
+	if (REWUNIT_Flag)
+		REWUNIT_Flag = ZERO;
+	else
+		spaces[0] = 0;                /* обнуляем spaces для правильной работы select_unit2*/
+
+	Flag_Comment = ZERO;
+	Flag_CString = ZERO;
+	do {  /* пока комментарии и С-строки */
+		if(!select_unit2()) return(FALSE); /* отматываем их */
+
+		if ((Flag_PASS) && (Flag_CString)) {       /* если С-строка и кодогенерация */
+			if (!Gen_Var(unit, DESTINATION)) {    /* если вх.переменная или константа */
+				if (!Gen_Var(unit, SOURCE)) {    /* или  выходная */
+					if (!Gen_Port(unit)) {      /* если Порт */
+						if(!isascii(unit[0]))  /* если по-русски - ошибка */
+							error_msg(63, line_count, unit, NONE);
+					}
+				}
+			}                        /* если что-то другое (знак, число и пр.) */
+			if (Flag_CASE) {         /* копирование в тело состояния ? */
+				fputs(spaces, fptr_C); /* копируем символы форматирования */
+				fputs(unit, fptr_C);      /* и собственно лексему */
+			} else {                       /* предупреждение - комментарий проигнорирован */
+				if (!Flag_Comment)        /* если не внутри комментария */
+					warning_msg(3, line_count, unit);
+			}
+		}
+	} while (Flag_Comment || Flag_CString);   /* пока комментарии и С-строки */
+
+#ifdef TEST_MODE_SELECT
+	printf("u = %s,",unit);
+#endif
+
+#ifdef TEST_MODE_SELECT
+	if (strlen(buffer1) > BUFFER_LENGTH-3) printf("\n FATAL ERROR OF buffer1 - BL is %d, buffer is\n%s\n",strlen(buffer1),buffer1);
+	if (strlen(unit) > BUFFER_LENGTH-3) printf("\n FATAL ERROR OF unit - UL is %d, unit is\n%s\n",strlen(unit), unit);
+	if (strlen(spaces) > BUFFER_LENGTH-3) printf("\n FATAL ERROR OF spaces - BL is %d, buffer is\n%s\n",strlen(spaces),spaces);
+#endif
+
+	return(TRUE);
+};
+
+/************************************************
+*          --- int Work_U_Spaces ---
+* формируем массив разделителей
+* (чтобы сформировать красивый с-файл),
+* отматываем указатель до начала лексемы
+* если разделитель слишком длинный - предупреждение
+* если кончился файл - возвращаем 0
+* иначе - возвращаем !0
+************************************************/
+
+int Work_Up_Spaces (void) {
+	int i, space_warning_flag, j, k;
+	char local_spaces[BUFFER_LENGTH];
+#ifdef TEST_MODE_SELECT
+	printf("= (W_U_S)");
+#endif
+
+	space_warning_flag = ZERO;
+	i = 0;
+	for (;;) {
+		for (;  isspace(buffer1[str_count]) && isascii(buffer1[str_count]); i++, str_count++) {
+			local_spaces[i] = buffer1[str_count];
+			if (i == (BUFFER_LENGTH - 2)) {   /* переполнение буфера разделителей ? */
+				i--;                          /* упреждаем переполнение */
+				if (!space_warning_flag) {    /* выдаем предупреждение */
+					space_warning_flag = !ZERO;
+					warning_msg(2, line_count, "\0");
+				}
+			}
+
+		}
+		if (buffer1[str_count] == ZERO) {
+			Flag_CString = ZERO;                    /* сбросим флаг С-строки */
+			if (!newstring()) return(FALSE);
+		} else {
+			local_spaces[i] = ZERO;              /* конец строки, терминатор */
+#ifdef TEST_MODE_SELECT
+			printf(" %s", local_spaces);
+#endif
+			j = 0; k = 0;
+			if (Flag_Comment || (local_spaces[0] == '\0')) return (TRUE);  /* игнорируем мусор из комментариев и пустые строки */
+			j = strlen(spaces); k = strlen(local_spaces);
+			if (spaces[0] != '\0') {
+				if ((spaces[j - 1] == '\n') && (local_spaces[k - 1] == '\n')) {
+					/* printf("\nskip the LF in Local_spaces, strlen is %d", strlen(local_spaces)); */
+					return(TRUE);
+				}
+			}
+
+			if (j + k > BUFFER_LENGTH) return(TRUE); /* игнорируем, если рез.длина больше буфера */
+			strcat(spaces, local_spaces);
+			return(TRUE);
+		}
+	}
+};
+
+/********************************************
+* Select unit routine after test special sign // and */
+/* work up buffer1 only and write unit */
+int select_unit2 (void)
+{
+#ifdef TEST_MODE_SELECT
+	printf(" (s_u2) ");
+#endif
+
+	if (!Work_Up_Spaces()) return(FALSE);
+
+	if (isalpha(buffer1[str_count])  || /* если буква (англ|русск) или _ */
+		!isascii(buffer1[str_count]) ||
+		(buffer1[str_count] == '_')) {
+			return (Get_Identifier());      /* взять идентификатор */
+	} else {                                          /* иначе */
+		if (isdigit(buffer1[str_count]) ||           /* если цифра */
+			((buffer1[str_count] == '.') &&          /* или начало плав.числа */
+			isdigit(buffer1[str_count + 1]))) {
+				return(Get_Number());      /* взять число */
+		} else {                                     /* иначе */
+			if (buffer1[str_count] == '#') {        /* прагма ? */
+				Get_Pragma();
+				if(compare (unit, rezword[RW_CSTRING])) {
+					Flag_CString = !ZERO;
+					return(select_unit2());  /* и формируем следующую unit */
+				}
+				return(TRUE);
+			} else {
+				if ((buffer1[str_count] == '*') && /* закрытие комментария ? */
+					(buffer1[str_count + 1] == '/')) {
+						if (!Flag_Comment) /* если не режим комментариев и снова встретилось закрытие комментариев - ошибка */
+							error_msg(77, line_count, "\0", NONE);
+						Flag_Comment = ZERO; str_count += 2;  /* отмечаем флагом */
+
+						return(select_unit2());       /* и формируем следующую unit */
+				} else {
+					if ((buffer1[str_count] == '/') && /* открытие комментария ? */
+						(buffer1[str_count + 1] == '*')) {
+							Flag_Comment = !ZERO; str_count+=2;  /* and skip them */
+							return(select_unit2());       /* и формируем следующую unit */
+					} else {
+						return(Get_xFix());
+					}
+				}
+			}
+		}
+	}
+};
+
+/**************************************
+* взять Х-фикс в unit
+***************************************/
+int Get_xFix (void)
+{
+	int i;
+#ifdef TEST_MODE_SELECT
+	printf("\n= Get_xFix");
+#endif
+
+	/* ===== тройной "пофикс" - "<<=" и ">>=" */
+	if (((buffer1[str_count]     == '>') &&
+		(buffer1[str_count + 1] == '>') &&
+		(buffer1[str_count + 2] == '=')) ||
+		((buffer1[str_count]     == '<') &&
+		(buffer1[str_count + 1] == '<') &&
+		(buffer1[str_count + 2] == '='))) {
+			for (i = 0; i < 3; i++, str_count++)
+				unit[i] = buffer1[str_count];
+			unit[i] = ZERO;
+			return(TRUE);
+	}
+
+	/* ===== двойной "пофикс" -  */
+	if (((buffer1[str_count] == '<') && (buffer1[str_count+1]=='=')) || /* <= */
+		((buffer1[str_count] == '>') && (buffer1[str_count+1]=='=')) || /* >= */
+		((buffer1[str_count] == '=') && (buffer1[str_count+1]=='=')) || /* == */
+		((buffer1[str_count] == '!') && (buffer1[str_count+1]=='=')) || /* != */
+		((buffer1[str_count] == '&') && (buffer1[str_count+1]=='=')) || /* &= */
+		((buffer1[str_count] == '^') && (buffer1[str_count+1]=='=')) || /* ^= */
+		((buffer1[str_count] == '|') && (buffer1[str_count+1]=='=')) || /* |= */
+		((buffer1[str_count] == '*') && (buffer1[str_count+1]=='=')) || /* *= */
+		((buffer1[str_count] == '/') && (buffer1[str_count+1]=='=')) || /* /= */
+		((buffer1[str_count] == '%') && (buffer1[str_count+1]=='=')) || /* %= */
+		((buffer1[str_count] == '+') && (buffer1[str_count+1]=='=')) || /* += */
+		((buffer1[str_count] == '-') && (buffer1[str_count+1]=='=')) || /* -= */
+		((buffer1[str_count] == '&') && (buffer1[str_count+1]=='&')) || /* && */
+		((buffer1[str_count] == '|') && (buffer1[str_count+1]=='|')) || /* || */
+		((buffer1[str_count] == '<') && (buffer1[str_count+1]=='<')) || /* << */
+		((buffer1[str_count] == '>') && (buffer1[str_count+1]=='>')) || /* >> */
+		((buffer1[str_count] == '+') && (buffer1[str_count+1]=='+')) || /* ++ */
+		((buffer1[str_count] == '-') && (buffer1[str_count+1]=='-'))) { /* -- */
+			for (i = 0; i < 2; i++, str_count++)
+				unit[i] = buffer1[str_count];
+			unit[i] = ZERO;
+			return(TRUE);
+	}
+
+	/* ===== одинарный "пофикс" -  */
+	unit[0] = buffer1[str_count];
+	str_count++;
+	unit[1] = ZERO;
+	return(TRUE);
+};
+
+/**************************************
+* взять прагму в unit
+***************************************/
+int Get_Pragma (void)
+{
+	int i;
+#ifdef TEST_MODE_SELECT
+	printf("\n= Get_Pragma");
+#endif
+
+	unit[0] = buffer1[str_count]; str_count++;   /* пишем знак прагмы */
+	for (i = 1; (buffer1[str_count] == '_') ||   /* пока или подчерк */
+		isalnum(buffer1[str_count]) ||   /* или цифра|англ. буква */
+		!isascii(buffer1[str_count]);    /* или русская буква */
+	i++, str_count++) {
+		unit[i] = buffer1[str_count];           /* формируем unit */
+	}
+	unit[i] = ZERO; /* терминатор */
+	return(TRUE);   /* возврат */
+}
+/**************************************
+* взять идентификатор в unit
+***************************************/
+int Get_Identifier (void)
+{
+	int i;
+
+#ifdef TEST_MODE_SELECT
+	printf("\n= Get_Identifier");
+#endif
+	for (i = 0; (buffer1[str_count] == '_') ||   /* пока подчерк */
+		isalnum(buffer1[str_count]) ||   /* или цифра|англ. буква */
+		!isascii(buffer1[str_count]);    /* или русская буква */
+	i++, str_count++) {
+		unit[i] = buffer1[str_count];           /* формируем unit */
+	}
+	unit[i] = ZERO; /* терминатор */
+	return(TRUE);   /* возврат */
+}
+
+/**************************************
+* взять число в unit (плавающее, целое, шестнадцатеричное)
+* вход - либо по первой цифре, либо по . и цифре (.0,.1 и т.д.)
+***************************************/
+int Get_Number (void)
+{
+	int i;
+#ifdef TEST_MODE_SELECT
+	printf("\n= Get_Number");
+#endif
+
+	i = 0;
+
+	if (isdigit(buffer1[str_count])) { /* число */
+		for (; isdigit(buffer1[str_count]); i++, str_count++) {
+			unit[i] = buffer1[str_count];           /* формируем unit */
+		}                                            /* конец цифр */
+		switch (buffer1[str_count]) {                /* что дальше */
+		case '.': /* плавающая арифметика */
+			unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+			for (; isdigit(buffer1[str_count]); i++, str_count++) {
+				unit[i] = buffer1[str_count];           /* формируем unit */
+			}
+			if ((buffer1[str_count] != 'e') ||
+				(buffer1[str_count] != 'E')) { /* степень ? */
+					unit[i] = ZERO; /* терминатор */
+					return(TRUE);   /* возврат */
+			} /* если степень - проваливаемся дальше */
+		case 'e': /* степень */
+		case 'E':
+			unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+			if ((buffer1[str_count] == '+') || (buffer1[str_count] == '-')) {
+				unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+			}
+			for (; isdigit(buffer1[str_count]); i++, str_count++) {
+				unit[i] = buffer1[str_count];           /* формируем unit */
+			}
+			break;
+		case 'x': /* шестнадцатеричное */
+		case 'X':
+			unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+			for (; isxdigit(buffer1[str_count]); i++, str_count++) {
+				unit[i] = buffer1[str_count];           /* формируем unit */
+			}
+			if ((buffer1[str_count] == 'l') || (buffer1[str_count] == 'L')) {
+				unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+			}
+			break;
+		case 'l': /* длинное */
+		case 'L':
+			unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+			break;
+		default: /* конец числа */
+			break;
+		}
+	} else { /* плавающее, начиная с точки .х */
+		unit[i] = buffer1[str_count]; i++; str_count++;  /* формируем unit */
+		for (; isdigit(buffer1[str_count]); i++, str_count++) {
+			unit[i] = buffer1[str_count];           /* формируем unit */
+		}
+		if ((buffer1[str_count] != 'e') ||
+			(buffer1[str_count] != 'E')) {       /* степень ? нет - выход */
+				unit[i] = ZERO; return(TRUE);      /* вот такой выход */
+		}
+		unit[i] = buffer1[str_count]; i++; str_count++;  /* пишем Е (степень) */
+		if ((buffer1[str_count] == '+') || (buffer1[str_count] == '-')) {
+			unit[i] = buffer1[str_count]; i++; str_count++;  /* пишем знак */
+		}
+		for (; isdigit(buffer1[str_count]); i++, str_count++) {
+			unit[i] = buffer1[str_count];           /* формируем значение степени */
+		}
+	}
+	unit[i] = ZERO; /* терминатор */
+	return(TRUE);   /* возврат */
+}
+
+/**************************************
+* очистка unit (массива с лексемой)
+***************************************/
+void cl_unit (void)
+{
+	unit[0]=ZERO;
+};
+
+/**************************************
+* очистка spaces (массива с пред-разделителем лексемы)
+***************************************/
+void cl_spaces (void)
+{
+	unit[0]=ZERO;
+};
+
+/*----------------------------------------------------------------------------*/
+/* Read new string */
+INT16S newstring (void) {
+	/*printf("\nNEW string");*/
+	str_count = 0;
+	line_count++;
+	if (fgets(buffer1, BUFFER_LENGTH, fptr_RCS) == ZERO) {
+		if (Flag_Unexpect==TRUE) error_msg(13, line_count, "\0",NONE);
+		return(FALSE);
+	} else {
+		if (Flag_LIS)
+			fprintf(fptr_LIS, "%5d          %s", line_count, buffer1);
+		return(TRUE);
+	}
+};
+
+/*----------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+/* Return position on old unit */
+INT16S rewunit (void)
+{
+	INT16S i;
+	REWUNIT_Flag = !ZERO;
+
+	i = strlen(unit);
+	if (str_count >= i) {
+		str_count = str_count - i;
+		strcpy(unit, prev_unit);
+	} else { /* ошибка возникает, когда два раза пытаемся rewunit вызвать */
+		error_msg(29, line_count, "\0", NONE);
+		printf("\nINTERNAL INFO: SN is %d.\nU is %s.\nPU is %s.\nB is %s.\nSC is %d.\nI is %d.", line_count, unit, prev_unit, buffer1, str_count, i);
+		exit(ZERO);
+	}
+	return(!ZERO);
+};
+
+
+/************************************************
+*
+************************************************/
+
+char * Strr_chr(char *str,INT16S ch){
+	INT16S i;
+	INT32S j;
+	for (i=0; ((INT8U)str[i] != (INT8U)ch); i++) {
+		if (str[i] == ZERO) return((char *)ZERO);
+	}
+	j = (INT32S)str + (INT32S)i;
+	return((char *)j);
+}
+/************************************************
+*            --- Open_File_W ---
+*
+************************************************/
+INT16S Open_File_W(FILE **fptr, char *filname){
+	fptr[0] = fopen(filname, "w+");
+	if (fptr[0] == 0) {
+		printf("\n%%RCSL-64-FATERW, не могу открыть файл \"%s\" - ", filname);
+		perror("fopen");
+		exit(ZERO);
+	};
+	if (fseek(fptr[0], (INT32S)0, 0) < 0) {
+		printf("\n%%RCSL-64-FATERW, не могу открыть файл \"%s\" - ", filname);
+		perror("fseek");
+		exit(ZERO);
+	};
+	return(!ZERO);
+}
+/************************************************
+*            --- Open_File_R ---
+*
+************************************************/
+INT16S Open_File_R(FILE **fptr, char *filname){
+	fptr[0] = fopen(filname, "r");
+	if (fptr[0] == 0) {
+		printf("\n%%RCSL-64-FATERR, не могу открыть файл \"%s\" - ", filname);
+		perror("fopen");
+		exit(ZERO);
+	};
+	if (fseek(fptr[0], (INT32S)0, 0) < 0) {
+		printf("\n%%RCSL-64-FATERR, не могу открыть файл \"%s\" - ", filname);
+		perror("fseek");
+		exit(ZERO);
+	};
+	return(!ZERO);
+}
+
+#ifdef GEN_ID
+/************************************************
+* Генерация идентификатора в латинице из идентификатора в кириллице
+*
+************************************************/
+
+void Cyr2Lat (char *id)
+{
+	char str[2*BUFFER_LENGTH];
+	int i, j;
+
+	for (i = 0, str[0] = ZERO; id[i] != ZERO; i++) {
+
+		switch (id[i]) {
+		case 'А':
+			strcat(str,"A"); break;
+		case 'Б':
+			strcat(str,"B"); break;
+		case 'В':
+			strcat(str,"V"); break;
+		case 'Г':
+			strcat(str,"G"); break;
+		case 'Д':
+			strcat(str,"D"); break;
+		case 'Е':
+			strcat(str,"YE"); break;
+		case 'Ё':
+			strcat(str,"YO"); break;
+		case 'Ж':
+			strcat(str,"ZH"); break;
+		case 'З':
+			strcat(str,"Z"); break;
+		case 'И':
+			strcat(str,"I"); break;
+		case 'Й':
+			strcat(str,"J"); break;
+		case 'К':
+			strcat(str,"K"); break;
+		case 'Л':
+			strcat(str,"L"); break;
+		case 'М':
+			strcat(str,"M"); break;
+		case 'Н':
+			strcat(str,"N"); break;
+		case 'О':
+			strcat(str,"O"); break;
+		case 'П':
+			strcat(str,"P"); break;
+		case 'Р':
+			strcat(str,"R"); break;
+		case 'С':
+			strcat(str,"S"); break;
+		case 'Т':
+			strcat(str,"T"); break;
+		case 'У':
+			strcat(str,"U"); break;
+		case 'Ф':
+			strcat(str,"F"); break;
+		case 'Х':
+			strcat(str,"KH"); break;
+		case 'Ц':
+			strcat(str,"TS"); break;
+		case 'Ч':
+			strcat(str,"CH"); break;
+		case 'Ш':
+			strcat(str,"SH"); break;
+		case 'Щ':
+			strcat(str,"SCH"); break;
+		case 'Ь':
+			strcat(str,"_"); break;
+		case 'Ы':
+			strcat(str,"Y"); break;
+		case 'Ъ':
+			strcat(str,"_"); break;
+		case 'Э':
+			strcat(str,"E"); break;
+		case 'Ю':
+			strcat(str,"YU"); break;
+		case 'Я':
+			strcat(str,"YA"); break;
+		case 'а':
+			strcat(str,"a"); break;
+		case 'б':
+			strcat(str,"b"); break;
+		case 'в':
+			strcat(str,"v"); break;
+		case 'г':
+			strcat(str,"g"); break;
+		case 'д':
+			strcat(str,"d"); break;
+		case 'е':
+			strcat(str,"ye"); break;
+		case 'ё':
+			strcat(str,"yo"); break;
+		case 'ж':
+			strcat(str,"zh"); break;
+		case 'з':
+			strcat(str,"z"); break;
+		case 'и':
+			strcat(str,"i"); break;
+		case 'й':
+			strcat(str,"j"); break;
+		case 'к':
+			strcat(str,"k"); break;
+		case 'л':
+			strcat(str,"l"); break;
+		case 'м':
+			strcat(str,"m"); break;
+		case 'н':
+			strcat(str,"n"); break;
+		case 'о':
+			strcat(str,"o"); break;
+		case 'п':
+			strcat(str,"p"); break;
+		case 'р':
+			strcat(str,"r"); break;
+		case 'с':
+			strcat(str,"s"); break;
+		case 'т':
+			strcat(str,"t"); break;
+		case 'у':
+			strcat(str,"u"); break;
+		case 'ф':
+			strcat(str,"f"); break;
+		case 'х':
+			strcat(str,"kh"); break;
+		case 'ц':
+			strcat(str,"ts"); break;
+		case 'ч':
+			strcat(str,"ch"); break;
+		case 'ш':
+			strcat(str,"sh"); break;
+		case 'щ':
+			strcat(str,"sch"); break;
+		case 'ь':
+			strcat(str,"_"); break;
+		case 'ы':
+			strcat(str,"y"); break;
+		case 'ъ':
+			strcat(str,"_"); break;
+		case 'э':
+			strcat(str,"e"); break;
+		case 'ю':
+			strcat(str,"yu"); break;
+		case 'я':
+			strcat(str,"ya"); break;
+		default:
+			j = strlen(str);
+			str[j] = id[i]; str[j+1] = ZERO; break;
+
+		}
+	}
+	/*    printf("\n id is %s, str is %s",id, str); */
+	strncpy(id, str, BUFFER_LENGTH-1);
+}
+#endif

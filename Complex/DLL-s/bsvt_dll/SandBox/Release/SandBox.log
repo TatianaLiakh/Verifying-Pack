@@ -1,0 +1,55 @@
+﻿  bsvt0001.c
+bsvt0001.c(128): warning C4305: =: усечение из "double" к "float"
+bsvt0001.c(129): warning C4305: =: усечение из "double" к "float"
+bsvt0001.c(135): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+bsvt0001.c(136): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+bsvt0001.c(141): warning C4305: =: усечение из "double" к "float"
+bsvt0001.c(142): warning C4305: =: усечение из "double" к "float"
+bsvt0001.c(1525): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1530): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1535): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1540): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1545): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1550): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1556): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1561): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1566): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1571): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+bsvt0001.c(1576): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  bsvtinp.c
+  bsvtmain.c
+  bsvtoutp.c
+  bsvtusr1.c
+  dll_interface.c
+dll_interface.c(11): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+dll_interface.c(43): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+dll_interface.c(64): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note:  см. объявление "fopen"
+dll_interface.c(80): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+dll_interface.c(90): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+dll_interface.c(100): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+dll_interface.c(110): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+dll_interface.c(120): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+dll_interface.c(66): warning C4101: f: неиспользованная локальная переменная
+dll_interface.c(63): warning C4101: par: неиспользованная локальная переменная
+dll_interface.c(62): warning C4101: c: неиспользованная локальная переменная
+dll_interface.c(143): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+dll_interface.c(160): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note:  см. объявление "fopen"
+dll_interface.c(267): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note:  см. объявление "sprintf"
+  msg_queue.c
+  r_io.c
+  r_lib.c
+     Создается библиотека D:\Liakh Tanya\Dissertation\Complex\DLL-s\bsvt_dll\Release\bsvt.lib и объект D:\Liakh Tanya\Dissertation\Complex\DLL-s\bsvt_dll\Release\bsvt.exp
+  Создание кода
+  Создание кода завершено
+  All 141 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  SandBox.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\bsvt_dll\Release\bsvt.dll
+  SandBox.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\bsvt_dll\Release\bsvt.pdb (Full PDB)

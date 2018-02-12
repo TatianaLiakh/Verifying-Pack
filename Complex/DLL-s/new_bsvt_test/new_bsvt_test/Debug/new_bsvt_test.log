@@ -1,0 +1,131 @@
+﻿  r_lib.cpp
+  Примечание: включение файла:  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h
+  Примечание: включение файла:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt.h
+  Примечание: включение файла:    C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Примечание: включение файла:     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h
+  Примечание: включение файла:      C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ConcurrencySal.h
+  Примечание: включение файла:     C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vadefs.h
+  Примечание: включение файла:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_wstdio.h
+  Примечание: включение файла:    C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt_stdio_config.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_cnst.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_lib.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  r_io.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_io.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\R_CNST.H
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+  msg_queue.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\msg_queue.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  dll_interface.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\LabVIEWData.h
+  Примечание: включение файла:    C:\Program Files (x86)\National Instruments\LabVIEW 2010\cintools\extcode.h
+  Примечание: включение файла:     c:\program files (x86)\national instruments\labview 2010\cintools\platdefines.h
+  Примечание: включение файла:     c:\program files (x86)\national instruments\labview 2010\cintools\fundtypes.h
+  Примечание: включение файла:      c:\program files (x86)\national instruments\labview 2010\cintools\lv_prolog.h
+  Примечание: включение файла:      c:\program files (x86)\national instruments\labview 2010\cintools\lv_epilog.h
+  Примечание: включение файла:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stddef.h
+  Примечание: включение файла:       C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\corecrt.h
+  Примечание: включение файла:        C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime.h
+  Примечание: включение файла:         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\sal.h
+  Примечание: включение файла:          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\ConcurrencySal.h
+  Примечание: включение файла:         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vadefs.h
+  Примечание: включение файла:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h
+  Примечание: включение файла:      C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\float.h
+  Примечание: включение файла:     c:\program files (x86)\national instruments\labview 2010\cintools\lv_prolog.h
+  Примечание: включение файла:     c:\program files (x86)\national instruments\labview 2010\cintools\lv_epilog.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\labviewdata.h(23): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\labviewdata.h(35): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\labviewdata.h(42): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\labviewdata.h(49): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_io.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\R_CNST.H
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\R_LIB.H
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_main.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\msg_queue.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\queue_const.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(40): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(45): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(55): warning C4018: <: несоответствие типов со знаком и без знака
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(70): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(76): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(92): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(128): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\dll_interface.cpp(159): warning C4244: =: преобразование "INT32U" в "uint16_t", возможна потеря данных
+  bsvtusr1.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtusr1.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\queue_const.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\msg_queue.h
+  bsvtoutp.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_cnst.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_io.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtcnst.h
+  bsvtmain.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtext.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtusr1.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_cnst.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_io.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:     d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:     d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_lib.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtcnst.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtusr2.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtgvar.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtio.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_main.h
+  bsvtinp.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_cnst.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_io.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtcnst.h
+  bsvt0001.cpp
+  Примечание: включение файла:  d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtext.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtusr1.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_cnst.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_io.h
+  Примечание: включение файла:    d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\proc.h
+  Примечание: включение файла:     d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtproc.h
+  Примечание: включение файла:     d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtxvar.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\r_lib.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtcnst.h
+  Примечание: включение файла:   d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvtusr2.h
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(128): warning C4305: =: усечение из "double" к "float"
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(129): warning C4305: =: усечение из "double" к "float"
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(135): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(136): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(141): warning C4305: =: усечение из "double" к "float"
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(142): warning C4305: =: усечение из "double" к "float"
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1525): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1530): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1535): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1540): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1545): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1550): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1556): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1561): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1566): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1571): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\liakh tanya\dissertation\complex\dll-s\new_bsvt_test\new_bsvt_test\src\bsvt0001.cpp(1576): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  Создание кода...
+     Создается библиотека D:\Liakh Tanya\Dissertation\Complex\DLL-s\new_bsvt_test\Debug\new_bsvt_test.lib и объект D:\Liakh Tanya\Dissertation\Complex\DLL-s\new_bsvt_test\Debug\new_bsvt_test.exp
+  new_bsvt_test.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\new_bsvt_test\Debug\new_bsvt_test.dll
+  new_bsvt_test.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\new_bsvt_test\Debug\new_bsvt_test.pdb (Partial PDB)

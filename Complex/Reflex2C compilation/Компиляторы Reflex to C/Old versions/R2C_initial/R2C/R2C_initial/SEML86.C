@@ -1,0 +1,1673 @@
+#include "const.h"
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include "typedef.h"
+#include "prototyp.h"
+#include "glob_ext.h"
+
+char  Head_Process[BUFFER_LENGTH];
+
+/*------------ semantical analizator ------------------------------*/
+
+int sem_anal_of_pr_cntr_86 (void) {
+    sem_anal();                        /* Call Analizator */
+    return(error_count);
+};
+
+/*------------ semantical analizator ---------------------------------------*/
+
+void sem_anal(void) {
+    line_count = 0;
+    str_count  = 0;
+    buffer1[0] = 0;
+    Flag_CASE  = ZERO;   /* for select_unit ( write to Var(0) or to State(1)) */
+    Sem_Program();
+};
+
+
+/*--------------- PROGRAM -------------------------*/
+
+INT16S Sem_Program (void)
+{
+    char string[BUFFER_LENGTH];
+    char str[BUFFER_LENGTH];
+
+    select_unit();       /* for PROGRAM */
+    select_unit();       /* For Program NAME */
+    select_unit();       /* For { simbol */
+
+    strcpy(string, BaseOutputFileName);     /* создадим файл NAMEcnst.h*/
+    strcat(string, "cnst.h");
+    Open_File_W(&fptr_C, string);
+#ifdef GEN_ID
+    strcpy(string, BaseOutputFileName);     /* создадим файл NAME_id.h*/
+    strcat(string, "_id.h");
+    Open_File_W(&fptr_ID, string);
+    strcpy(string, BaseOutputFileName);     /* создадим файл NAME_id.c */
+    strcat(string, "_id.c");
+    Open_File_W(&fptr_IDC, string);
+    strcpy(string, BaseOutputFileName);     /* создадим файл NAME_id.h*/
+    strcat(string, "_id.h");
+    Open_File_W(&fptr_ID, string);
+    fputs("#include \"", fptr_IDC);
+    fputs(string, fptr_IDC);
+    fputs("\"\n", fptr_IDC);
+    fputs("main () {\n\tint i;\n", fptr_IDC);
+
+#endif
+
+    Sem_Tact();                   /* Обработка величины такта */
+    Sem_Constant();               /* Обработка констант и генерация NAMEcnst.h */
+
+    fclose(fptr_C);               /* закроем файл NAMEcnst.h*/
+#ifdef GEN_ID
+    fclose(fptr_ID);              /* закроем файл NAME_id.h*/
+    fputs("}\n", fptr_IDC);
+    fclose(fptr_IDC);             /* закроем файл NAME_id.c*/
+#endif
+
+    Sem_Function();               /* обработка функций */
+
+    Sem_Port();                   /* Port Discribe */
+    File_Number = 0;
+    File_Number++;
+    strcpy(string, BaseOutputFileName);     /* создадим файл NAMEproc.h*/
+    sprintf(str,"%04d.c", File_Number);
+    strcat(string, str);
+    Open_File_W(&fptr_C, string);
+    GenHeadersInProc();
+    Sem_Process();                /* Process */
+
+    select_unit();                /* For } simbol */
+
+    fclose(fptr_C);            /* закроем файл NAMEproc.h*/
+
+#ifdef TEST_MODE_SEM
+    printf("\n=== GEN_MAIN.C");
+#endif
+    GenMain();               /* создание NAMEmain.c и NAMEproc.h (main и описание функций - образов процессов) */
+#ifdef TEST_MODE_SEM
+    printf("\n=== GEN_VARDESCRIPTION");
+#endif
+    GenVarDescription();     /* создание NAMEgvar.h и NAMExvar.h (пользовательские переменные) */
+#ifdef TEST_MODE_SEM
+    printf("\n=== GEN_INPUT_OUTPUT");
+#endif
+    GenInputOutput();        /* создание NAMEinp.c NAMEoutp.c */
+#ifdef TEST_MODE_SEM
+    printf("\n=== GEN_SYM_FILE");
+#endif
+    GenSYMFile();            /* Generation Of Port Discribe In File *.SIM */
+#ifdef TEST_MODE_SEM
+    printf("\n=== GEN_DEBUG_FILE");
+#endif
+#ifdef GEN_ID
+    GenDebugFile();          /* файл с описанием процессов и состояний */
+#endif
+#ifdef TEST_MODE_SEM
+    printf("\n=== RETURN!!!");
+#endif
+
+    return(!ZERO);
+};
+
+/***************************************
+* Обрабатываем описание такта
+* В результате в файле констант появляется
+* строка #define Tact_Value nn
+* nn - число
+*****************************************/
+
+int Sem_Tact (void)
+{
+    select_unit();
+    if (compare(unit, rezword[RW_TACT])) {  /* TACT */
+         select_unit();                     /* TACT Value */
+         GenTact(unit);
+         select_unit();                     /* For ; simbol */
+    } else {
+         rewunit();          /* if TACT not exist */
+         strcpy(unit, "10"); /* Default 12 ms */
+         GenTact(unit);
+    }
+    return(!ZERO);
+};
+
+/************************************************
+ *             --- Constant ---
+ * Обработка описаний констант и перечислений
+ * ВОЗВРАТ: 0 - Конец файла
+ *         !0 - Обработано, Возможно Ошибка.
+ *
+ ************************************************/
+int Sem_Constant (void)
+{
+    int enum_number; /* для наименования нумераций */
+#ifdef TEST_MODE_SEM
+	printf("\n= Sem_Constant");
+#endif
+    enum_number = 0; /* для наименования нумераций */
+
+    for (;;) {
+         select_unit();
+         switch (compare_RW(unit)) {
+              case RW_CONST:  /* "CONST" */
+                   GenSpaces();          /* формируем удобочитаемый текст */
+#ifdef GEN_ID
+                   GenSpaces_ID();
+#endif
+                   select_unit();        /* имя */
+                   GenDefConstant(unit); /* #define Cxx */
+                   select_unit();
+                   Sem_Constant_Expression_Body(); /* выбирает заключающую ; */
+                   continue;
+              case RW_ENUM:  /* "ПЕРЕЧИСЛЕНИЕ" */
+                   GenSpaces();          /* формируем удобочитаемый текст */
+#ifdef GEN_ID
+                   GenSpaces_ID();
+#endif
+                   select_unit();   /* { */
+                   Sem_Constant_Enum_Body(enum_number++);
+                   GenSpaces();          /* формируем удобочитаемый текст */
+#ifdef GEN_ID
+                   GenSpaces_ID();
+#endif
+                   select_unit();   /* } */
+                   GenUnit(unit);
+#ifdef GEN_ID
+                   GenUnit_ID(unit);
+#endif
+                   select_unit();   /* ; */
+                   GenUnit(unit);
+#ifdef GEN_ID
+                   GenUnit_ID(unit);
+#endif
+                   continue;
+              default:
+                   rewunit();
+                   return(!ZERO);
+         } /* end of switch */
+    } /* end of for */
+};
+
+/********************************************
+ * обработка описания тела ПЕРЕЧИСЛЕНИЯ
+ *  ВХОД - по умолчанию
+ *  unit V
+ *   {     имя константы  ------------------->
+ *                       -> = выражение ->
+ *       <----------------- , <------------
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_Constant_Enum_Body (int log_name)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_Constant_Enum");
+#endif
+    GenBeginEnum(log_name);
+
+    for (;;) {
+         select_unit();  /* name */
+         GenDgt(unit);
+#ifdef GEN_ID
+         GenDgtWithCyrName_ID(unit);
+         GenDgtWithCyrName_IDC(unit);
+#endif
+         select_unit();
+         switch (compare_RW(unit)) {
+              case RW_EQU:  /* "=" */ /* присваивание значения константе */
+                   GenUnit(unit);
+#ifdef GEN_ID
+                   GenUnit_ID(unit);
+#endif
+                   select_unit();
+                   Sem_Constant_Expression_Body();  /* разбор выражения */
+                   if (!compare(unit, ",")) {
+                        rewunit();
+                        return;
+                   }
+                   GenUnit(unit);
+#ifdef GEN_ID
+                   GenUnit_ID(unit);
+#endif
+                   continue;
+              case RW_COMMA:  /* "," */ /* новая константа в перечислении */
+                   GenUnit(unit);
+#ifdef GEN_ID
+                   GenUnit_ID(unit);
+#endif
+                   continue;
+              default:       /* что-то непонятное... конец перечисления ? */
+                   rewunit();
+                   return;
+         } /* end of switch */
+    } /* end of for */
+};
+
+
+/********************************************
+ * обработка описания выражения для константы
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_Constant_Expression_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Constant_Expression_Body");
+#endif
+    for (;;) {          /* ВНИМАНИЕ! по входу в unit уже что-то загружено */
+         for (;;) {     /* обработка префикса */
+              switch (Sem_Constant_Prefix_Body()) {
+                   default:                 /* это был декларатор (префикс) */
+                        select_unit();  /* заряжаем unit */
+                        continue;           /* и снова обработка префикса */
+                   case NONSTATEMENT:       /* это не префикс (а терм) */
+                        break;
+              }
+              break;                        /* выход из цикла обработки префиксов */
+         }
+
+         Sem_Constant_Term_Body();        /* Обработка терма - всегда один */
+         select_unit();  /* заряжаем unit */
+         switch (Sem_Constant_Infix_Body()) {       /* Обработка инфикса */
+              default:                 /* все в порядке */
+                   select_unit();  /* заряжаем unit */
+                   break;
+              case NONSTATEMENT:       /* это не инфикс */
+                   return;
+         }
+    }    /* end of for */
+};
+
+/********************************************
+ *  обработка Constant_инфикса
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки, это инфикс)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position (?)
+ *          NONSTATEMENT  - это не инфикс (конец выражения)
+ ************************************************/
+int Sem_Constant_Infix_Body (void) {
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Constant_Infix_Body");
+#endif
+    switch (compare_RW(unit)) {
+         case RW_PLUS:              /* "+",   */
+         case RW_MINUS:             /* "-",   */
+         case RW_MUL:               /* "*",   */
+         case RW_DIV:               /* "/",   */
+         case RW_REMINDER:          /* "%",   */
+         case RW_SHFT_LFT:          /* "<<",  */
+         case RW_SHFT_RGHT:         /* ">>",  */
+         case RW_BW_AND:            /* "&",   */
+         case RW_BW_XOR:            /* "^",   */
+         case RW_BW_OR:             /* "|",   */
+         case RW_AND:               /* "&&",  */
+         case RW_OR:                /* "||",  */
+              GenUnit(unit);
+#ifdef GEN_ID
+              GenUnit_ID(unit);
+#endif
+
+              return(!ZERO);
+         default:
+              return(NONSTATEMENT);
+    }
+};
+
+/********************************************
+ *  обработка Constant_терма
+ *  ВХОД - по умолчанию
+ *  unit          V
+ *  константа | ( выражение )
+ *
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки, это терм)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ *          NONSTATEMENT  - это не терм (?)
+ ************************************************/
+void Sem_Constant_Term_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Constant_Term_Body");
+#endif
+    if (compare(unit, rezword[RW_OPEN_PARENTESIS])) { /* ( выражение ) ? */
+         GenUnit(unit);
+#ifdef GEN_ID
+              GenUnit_ID(unit);
+#endif
+         select_unit();            /* заряжаем unit */
+         Sem_Constant_Expression_Body();   /* разбор выражения */
+         GenUnit(unit);   /* на выходе д.б. ) */
+#ifdef GEN_ID
+              GenUnit_ID(unit);
+#endif
+    } else {
+         GenDgt(unit);  /* иначе - имя константы */
+#ifdef GEN_ID
+         GenDgt_ID(unit);
+#endif
+    }
+
+
+#ifdef TEST_MODE_SEM
+    printf("\nTEST: END OF CONST-TERM!!! ");
+#endif
+    return;
+};
+
+/********************************************
+ *  обработка Constant_префикса
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки, это префикс)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position (?)
+ *          NONSTATEMENT  - это не префикс
+ ************************************************/
+int Sem_Constant_Prefix_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Constant_Prefix_Body");
+#endif
+    switch (compare_RW(unit)) {
+         case RW_BW_COMPLEMENT:     /* "~",   */
+         case RW_NOT:               /* "!",   */
+         case RW_PLUS:              /* "+",   */
+         case RW_MINUS:             /* "-",   */
+              GenUnit(unit);   /* на выходе д.б. ) */
+#ifdef GEN_ID
+              GenUnit_ID(unit);
+#endif
+              return(!ZERO);
+         default:
+              return(NONSTATEMENT);
+    }
+};
+
+/************************************************
+ * Обработка описаний функций
+ ************************************************/
+int Sem_Function (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n= Sem_Function");
+#endif
+    for (;;) {
+         select_unit();
+         if (compare(unit, rezword[RW_FUNCTION])) { /* описание функции ? */
+              Sem_Func_Declarator_Body();
+              select_unit();                          /* имя C-функции */
+              select_unit();                          /* открывающая скобка */
+              Sem_Func_Args_Declarator_Body();        /* аргументы */
+              select_unit();                          /* закрывающая скобка */
+              select_unit();                          /* ; */
+              continue;
+         } else {
+              rewunit();
+              return(!ZERO);
+         }
+    } /* end of for */
+};
+
+/********************************************
+ * обработка описания аргументов функции
+ *  ВХОД - по умолчанию
+ *  unit        V
+ *   АРГУМЕНТЫ ------>    декларатор ------------------->
+ *              <----------------- , <------------
+ *  для семантики - просто промотка
+ *  RETURN: всегда  OK    (обработано без ошибки)
+ ************************************************/
+int Sem_Func_Args_Declarator_Body (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_Func_Args_Declarator_Body");
+#endif
+    for (;;) {
+         select_unit();
+         switch (compare_RW(unit)) {
+              case RW_SEMICOLON:         /* ";" */ /* присваивание значения константе */
+              case RW_CLOSE_PARENTESIS:  /* ")" */ /* присваивание значения константе */
+                   rewunit();
+                   return(!ZERO);
+              case RW_COMMA:     /* "," */ /* новая константа в перечислении */
+                   continue;
+              default:       /* что-то непонятное... декларатор ? */
+                   rewunit();
+                   Sem_Func_Declarator_Body();    /* разбор декларатора */
+                   continue;
+         } /* end of switch */
+    } /* end of for */
+};
+
+/********************************************
+ * обработка декларатора функции
+ *  ВХОД - по умолчанию
+ *  unit V
+ *        SHORT | LONG | INT | FLOAT | DOUBLE ...
+ *
+ * decl_case - случай декларатора
+ *   RW_TYPE - декларатор типа функции
+ *   RW_ARGUMENTS - декларатор аргумента функции
+ *
+ * указатель Current_Function указывает на текущую функцию
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработан декларатор)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ *          NONSTATEMENT - это не декларатор unit = (
+ *
+ ************************************************/
+int Sem_Func_Declarator_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Func_Declarator_Body");
+#endif
+    select_unit();  /* */
+    switch (compare_RW(unit)) {
+         case RW_SHORT:                /* SHORT */
+         case RW_LONG:                 /* LONG */
+         case RW_INT:                  /* INT */
+              return(Sem_Func_Sign_Body());
+         case RW_FLOAT:
+         case RW_DOUBLE:
+         case RW_VOID:
+              return(Sem_Func_Mul_Body());
+         case RW_SIGN:
+         case RW_UNSIGN:
+              return(Sem_Func_Int_Body());
+         default:             /*  это не декларатор */
+              printf("\n FATAL ERROR. SFDB.");
+	      exit(ZERO);
+	      return(!ZERO);
+    }
+}
+/********************************************
+ *  обработка сылки после целочисленного декларатора
+ *  ВХОД - по умолчанию
+ *                     unit   V
+ *  (     SHORT | LONG | INT    * ) | )
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработан декларатор)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+int Sem_Func_Mul_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n======= Sem_Func_Mul_Body");
+#endif
+    for (;;) {
+        select_unit();
+        switch (compare_RW(unit)) {
+             case RW_MUL:                  /* SIGNED ****** */
+                  continue;
+             default:
+                  rewunit();
+                  return(!ZERO);
+        }
+    }
+};
+
+/********************************************
+ * обработка префикса после целочисленного декларатора
+ *  ВХОД - по умолчанию
+ *                     unit   V
+ *  (     SHORT | LONG | INT    SIGN ) | UNSIGN ) | ) | SIGN *) | UNSIGN *)
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработан декларатор)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+int Sem_Func_Sign_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n====== Sem_Func_Sign_Body");
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_UNSIGN:                         /* UNSIGNED */
+         case RW_SIGN:                           /* SIGNED */
+         case RW_MUL:                            /* SIGNED */
+              return(Sem_Func_Mul_Body());
+         default:
+              rewunit();
+              return(!ZERO);
+    }
+};
+
+/********************************************
+ * обработка префикса после знакового декларатора
+ *  ВХОД - по умолчанию
+ *         unit       V
+ *  (  SIGN | UNSIGN   SHORT) | LONG) | INT)
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработан декларатор)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+int Sem_Func_Int_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n====== Sem_Func_Int_Body");
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_SHORT:                          /* SHORT */
+         case RW_INT:                            /* INT */
+         case RW_LONG:                           /* LONG */
+              return(Sem_Func_Mul_Body());
+         default:
+              rewunit();
+              return(!ZERO);
+    }
+};
+
+/************************************************
+ *            --- Sem_Port ---
+ * ВОЗВРАТ: 0 - Конец файла
+ *         !0 - Обработано
+ ************************************************/
+Sem_Port() /* Work Up And Generation Port-Imerge */
+{
+/*--------------- INPUT OR  OUTPUT OR RAM -----------------------*/
+ select_unit();                     /* init. while */
+ while((compare(unit,rezword[RW_INPUT]))||(compare(unit,rezword[RW_OUTPUT]))
+        ||(compare(unit, rezword[RW_RAM]))){      /* while port */
+    if(compare(unit,rezword[RW_INPUT])){            /* if INPUT */
+     select_unit();                     /* For Name */
+     select_unit();                     /* для адреса по СШ */
+     select_unit();                     /* For Address */
+     select_unit();                     /* For Size */
+     select_unit();                     /* For ; simbol */
+     goto reg1;
+    } /* end of INPUT */
+    if(compare(unit,rezword[RW_OUTPUT])){ /* OUTPUT */
+         select_unit();                     /* For Name */
+         select_unit();                     /* для адреса по СШ */
+         select_unit();                     /* For Address */
+         select_unit();                     /* For Size */
+         select_unit();                     /* For ; simbol */
+         goto reg1;
+    }else{             /* RAM */
+         select_unit();                     /* For Name */
+         select_unit();                     /* For Segment */
+         select_unit();                     /* For Offset */
+         select_unit();                     /* For VME Address */
+         select_unit();                     /* For Size */
+         select_unit();                     /* For ; simbol */
+    }/* end of if - else (OUTPUT/RAM) */
+reg1:
+    select_unit();                          /* select new word */
+} /* end of while */
+rewunit(); /* rewunit if not INPUT/OUTPUT/RAM */
+return(!ZERO);
+};
+
+
+/************************************************
+ * Семантическая обработка процесса
+ ************************************************/
+void Sem_Process (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n= Sem_Process = %s", buffer1);
+#endif
+
+    select_unit();
+    while (compare(unit, rezword[RW_PROC])) {   /* while PROC */
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_Process");
+#endif
+         select_unit();           /* имя процесса */
+         Flag_CASE = !ZERO;       /* для select_unit (можно писать в fptr_C(описание процессов)) */
+         GenProcess(unit);        /* генерация начала процесса */
+         select_unit();           /* { */
+         Sem_Variable_List();     /* work up variables list */
+         Sem_State();             /* work up states */
+         GenEndOfProcess();       /* генерация конца процесса */
+         select_unit();           /* for } */
+         select_unit();           /* next word */
+    } /* end of while */
+    rewunit(); /* rewunit if not PROC */
+    return;
+};
+
+
+
+/************************************************
+ *    Обработка описаний переменных процесса
+ ************************************************/
+void Sem_Variable_List (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_Variable_List");
+#endif
+    for (;;) {                              /* обработаем все переменные */
+         select_unit();
+         switch (compare_RW(unit)) {
+              case RW_LOG:
+              case RW_INT:
+              case RW_SHORT:
+              case RW_LONG:
+              case RW_DOUBLE:
+              case RW_FLOAT:
+                   Sem_Discr_Var();
+                   break;
+              case RW_FROM:
+                   Sem_From_Var();
+                   break;
+              default:
+                   rewunit(); /* if next word neither LOG, INT nor FROM */
+                   return;
+         } /* end of switch */ /* символ крнца строки отматывается внутри */
+    } /* end of for */
+};
+
+
+/************************************************
+ * Обработка строк - описаний переменных процесса
+ * LOG INT LONG SHORT FLOAT DOUBLE
+ * RETURN: NONE
+ * ВЫХОД - указатель на ;
+ ************************************************/
+void Sem_Discr_Var (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n=== Sem_Discr_Var");
+#endif
+    select_unit();                /* имя переменной */
+    select_unit();
+    if (compare(unit, "=")) {     /* если физич. образ - разбор физ. образа */
+         select_unit();           /* символ { */
+         for (;;) {               /* разбор привязки к физ. портам */
+              select_unit();      /* имя порта */
+              select_unit();      /* символ [ */
+              select_unit();      /* число */
+              select_unit();      /* символ ] */
+              select_unit();
+              if (!compare(unit, ",")) break;    /* конец привязки переменной к портам */
+         }                        /* по выходу - замыкающая фиг.скобка */
+         select_unit();           /* выбираем степень доступа (LOCAL or FOR) */
+    }   /* конец разбора физ-образа. далее просто разбор степени доступа */
+
+    switch (compare_RW(unit)) {
+         case RW_LOCAL:           /* if local variables LOCAL */
+              Sem_Local_Var();
+              break;
+         default:                 /* if FOR */
+              Sem_For_Var();
+    }
+    return;
+};
+
+/************************************************
+ * Семантическая обработка описания переменных,
+ * описанных в других процессах
+ * ПРОЦ -> имя процесса -> имя переменной ->
+ *                       <----- , -------/
+ * RETURN: NONE
+ * ВЫХОД - указатель на ;
+ ************************************************/
+void Sem_From_Var (void)
+{
+    char process_name[BUFFER_LENGTH]; /* копия имени процесса-хозяина переменной */
+#ifdef TEST_MODE_SEM
+        printf("\n==== Sem_From_Var");
+#endif
+/*printf("\n========================= FROMVAR");*/
+    select_unit();                /* for ПРОЦ */
+    select_unit();                /* имя процесса */
+    strcpy(process_name, unit);   /* копируем имя процесса */
+    for (;;) {
+         select_unit();           /* имя переменной */
+         switch (CheckVariableInProc(process_name, unit)) {
+              case NO_PROCESS:
+                   error_msg(75, line_count, unit, NONE); /* отсутствует процесс */
+                   break;
+              case NO_VARIABLE:
+                   error_msg(76, line_count, unit, NONE); /* нет переменной */
+                   break;
+              case NO_ACCESS:
+                   error_msg(49, line_count, unit, NONE); /* доступ запрещен */
+                   break;
+              default:
+                   break;
+
+         }
+         select_unit();
+         if (!compare(unit, ",")) return;
+    }
+};
+
+
+/************************************************
+ *         Обработка типа доступа локальной переменной
+ *          указатель на ; unit = ";"
+ ************************************************/
+void Sem_Local_Var (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n==== Sem_Local_Var");
+#endif
+    select_unit(); /* for ; symbol */
+    return;
+};
+
+/************************************************
+ *              --- ForVar ---
+ * ВОЗВРАТ: 0 - Конец файла
+ *         !0 - Обработано, Возможно Ошибка.
+ ************************************************/
+void Sem_For_Var (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n==== Sem_For_Var");
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_PROC:                      /* if FOR + PROC */
+              for (;;) {
+                   select_unit();           /* имя процесса */
+                   select_unit();
+                   if (!compare(unit, ",")) break;    /* конец перечислению ? */
+              }
+              /* select_unit(); ???????*/
+              break;
+         case RW_ALL:        /* if FOR+ALL */
+         default:
+              select_unit(); /* ; */
+              break;
+    }
+    return;
+};
+
+/************************************************
+ *       Обработка состояний
+ ************************************************/
+void Sem_State (void)
+{
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_State = %s", buffer1);
+#endif
+    select_unit();
+    while (compare(unit, rezword[RW_STATE])) {   /* слово СОСТ? */
+         select_unit();                /* имя состояния */
+         GenBeginOfState(unit);        /* генерируем начало состояния */
+         select_unit();                /* "{" */
+         select_unit();                /* первое слово */
+         if (compare(unit, rezword[RW_TIMEOUT])) {    /* ТАЙМАУТ ?*/
+              Sem_Time_Out();
+              select_unit();                /* } */
+         } else {                           /* если не ТАЙМАУТ */
+              rewunit();
+              Sem_State_Body();             /* State {} */
+              select_unit();                /* */
+              if (compare(unit, rezword[RW_TIMEOUT])) {
+                   Sem_Time_Out();
+                   select_unit();           /* } */
+              }
+         }
+
+         GenEndOfState();    /* конец НАСТОЯЩЕГО(действительного) состояния */
+         select_unit();      /* новый виток состояния */
+    }                        /* end of while STATE */
+    rewunit();
+    return;
+};
+
+/************************************************
+ *             --- State_Body ---
+ *  RETURN: EOF   ()
+ *          OK    (})
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_State_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n== Sem_State_Body");
+#endif
+    for (;;) {
+         switch (Sem_Statement_Body()) {       /* Statement  */
+              case NONSTATEMENT:       /* встретилось неутверждение -  конец */
+                   return;
+              default:                 /* NO ERROR */
+                   break;              /* check for next state */
+         } /* end of switch */
+    }
+};
+
+/************************************************
+ *  Разбор утверждения
+ *  RETURN: OK    (обработано без ошибки)
+ *          NONSTATEMENT  (это не утверждение)
+ ************************************************/
+int Sem_Statement_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n=== Sem_Statement_Body. string is \n%s", buffer1);
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_SEMICOLON:            /* ";" - next unit  */
+              GenUnit(unit);
+              break;
+         case RW_OPEN_BRACE:           /* "{" - State_Body - "}"  */
+              GenUnit(unit);
+              Sem_State_Body();
+              select_unit();           /* "}" */
+              GenUnit(unit);
+              break;
+         case RW_SWITCH:
+              Sem_Switch_Body();       /* SWITCH ( expression ) statement */
+              break;
+         case RW_IF:
+              Sem_Condition_Body();    /* IF ( expression ) ... */
+              select_unit();
+              if (compare(unit, rezword[RW_ELSE])) {  /* Пост-условие? */
+                   GenRezWord(RW_ELSE);          /* Генерация строчки о начале else */
+                   Sem_Post_Condition_Body();    /* ELSE statement */
+              } else {
+                   rewunit(); /* если не пост-условие - отматываем назад */
+              }
+              break;
+         case RW_STOP:
+              Sem_Stop_Body();    /* STOP ; | PROC имя процесса ; */
+              break;
+         case RW_LOOP:
+              Sem_Loop_Body();    /* STOP ; | PROC имя процесса ; */
+              break;
+         case RW_ERROR:
+              Sem_Error_Body();   /* ERROR ; | PROC имя процесса ; */
+              break;
+         case RW_START:
+              Sem_Start_Body();   /* START PROC имя процесса ; */
+              break;
+         case RW_IN:
+              Sem_In_Body();      /* IN STATE NEXT | имя состояния ; */
+              break;
+         case RW_TIMEOUT:              /*  если ТАЙМАУТ */
+         case RW_CLOSE_BRACE:          /* или "}" */
+         case RW_BREAK:                /* или КОНЕЦ (в РАЗБОРе) */
+         case RW_DEFAULT:              /* или УМОЛЧАНИЕ (в РАЗБОРе) */
+         case RW_CASE:                 /* или СЛУЧАЙ (в РАЗБОРе) */
+              rewunit();               /* отматываем -  и выход */
+              return(NONSTATEMENT);
+         default: /*  в непонятном случае - пытаемся разобрать выражение */
+              Sem_Expression_Body();   /* разбор выражения */
+              break;
+    } /* end of switch */
+    return(!ZERO);
+};
+
+
+/********************************************
+ *  обработка описания условия
+ *  ВХОД - после обнаружения рез.слова ЕСЛИ
+ *  unit V
+ *  ЕСЛИ ( выражение ) утверждение
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Condition_Body (void) {
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Condition_Body");
+#endif
+
+    GenRezWord(RW_IF);            /* Генерация строчки о начале if */
+    select_unit();                /* for ( symbol */
+    GenUnit(unit);                /* формируем удобочитаемый текст */
+    select_unit();                /* заряжаем unit */
+    Sem_Expression_Body();        /* IF ( выражение ) выбирает и закрывающую скобку */
+    Sem_Statement_Body();         /* Statement  */
+    return;
+}
+
+/********************************************
+ * обработка описания пост-условия
+ *  ВХОД - после обнаружения рез.слова ИНАЧЕ
+ *  unit  V
+ *  ИНАЧЕ утверждение
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Post_Condition_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Post_Condition_Body");
+#endif
+    Sem_Statement_Body();         /* Statement  */
+#ifdef TEST_MODE_SEM
+    printf("\n==== TEST: END OF Post_Condition_Body");
+#endif
+    return;
+};
+
+
+/********************************************
+ * обработка описания СТОП
+ *  ВХОД - после обнаружения рез.слова СТОП
+ *  unit V
+ *  СТОП  <ПРОЦ (имя процесса)> ; (если просто СТОП; - для текущего)
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Stop_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Stop_Body");
+#endif
+    GenSpaces();              /* формируем удобочитаемый текст */
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_PROC:            /* ПРОЦ */
+              select_unit();      /* имя процесса */
+              if(!GenStop(unit))
+                   error_msg(41, line_count, unit, NONE); /* НЕТУ ТАКОГО */
+              select_unit();      /* ; */
+              break;
+         case RW_SEMICOLON:       /* знак ";" => для текущего процесса */
+              GenStopForCurrentProc();
+              break;
+         default:                 /*  иначе - ошибка спецификации процесса */
+              error_msg(23, line_count, unit, NONE);
+              return;
+    } /* end of switch */
+    return;
+};
+
+/********************************************
+ * обработка описания ЗАЦИКЛИТЬ
+ *  ВХОД - после обнаружения рез.слова ЗАЦИКЛИТЬ
+ *  unit V
+ *  ЗАЦИКЛИТЬ ; 
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Loop_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Loop_Body");
+#endif
+    GenSpaces();              /* формируем удобочитаемый текст */
+    select_unit();            /*;*/
+    return;
+};
+
+/********************************************
+ * обработка описания ОШИБКА
+ *  ВХОД - после обнаружения рез.слова ОШИБКА
+ *  unit   V
+ *  ОШИБКА  <ПРОЦ (имя процесса)> ; (если просто ОШИБКА; - для текущего)
+ *  RETURN: NONE
+ ************************************************/
+void    Sem_Error_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Error_Body");
+#endif
+    GenSpaces();              /* формируем удобочитаемый текст */
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_PROC:            /* ПРОЦ */
+              select_unit();      /* имя процесса */
+              if(!GenError(unit))
+                   error_msg(41, line_count, unit, NONE); /* НЕТУ ТАКОГО */
+              select_unit();      /* ; */
+              break;
+         case RW_SEMICOLON:       /* знак ";" => для текущего процесса */
+              GenErrorForCurrentProc();
+              break;
+         default:                 /*  иначе - ошибка спецификации процесса */
+              error_msg(23, line_count, unit, NONE);
+              return;
+    } /* end of switch */
+    return;
+};
+
+/********************************************
+ * обработка описания СТАРТ
+ *  ВХОД - после обнаружения рез.слова СТАРТ
+ *  unit   V
+ *  СТАРТ   <ПРОЦ (имя процесса)> ; (если просто СТАРТ; - для текущего)
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_Start_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Start_Body");
+#endif
+    GenSpaces();              /* формируем удобочитаемый текст */
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_PROC:            /* ПРОЦ */
+              select_unit();      /* имя процесса */
+              if(!GenStart(unit))
+                   error_msg(41, line_count, unit, NONE); /* НЕТУ ТАКОГО */
+              select_unit();      /* ; */
+              break;
+         case RW_SEMICOLON:       /* знак ";" => для текущего процесса */
+              GenStartForCurrentProc();
+              break;
+         default:                 /*  иначе - ошибка спецификации процесса */
+              error_msg(23, line_count, unit, NONE);
+              return;
+    } /* end of switch */
+    return;
+};
+
+/********************************************
+ * обработка описания В СОСТ
+ *  ВХОД - после обнаружения рез.слова В
+ *  unit  V
+ *  В      <СОСТ   имя состояния>|<СЛЕДУЮЩЕЕ> ;
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_In_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_In_Body");
+#endif
+    GenSpaces();              /* формируем удобочитаемый текст */
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_STATE:                           /* СОСТ */
+              select_unit();
+              if(!GenJMP(unit))
+                   error_msg(42, line_count, unit, NONE);  /* НЕТУ ТАКОГО СОСТОЯНИЯ */
+              select_unit();   /* ; */
+              break;
+         case RW_NEXT:       /* СЛЕДУЮЩЕЕ => следующее состояние процесса */
+              if(!GenJMPInNextState())
+                   error_msg(42, line_count, unit, NONE);  /* НЕТУ ТАКОГО СОСТОЯНИЯ */
+              select_unit();   /* ; */
+              break;
+         default:                 /*  иначе - ошибка спецификации состояния */
+              error_msg(56, line_count, unit, NONE);
+              return;
+    } /* end of switch */
+    return;
+};
+
+
+/********************************************
+ * обработка описания РАЗБОР
+ *  ВХОД - после обнаружения рез.слова РАЗБОР
+ *  unit   V
+ *  РАЗБОР   ( выражение ) {
+ *      СЛУЧАЙ константа :
+ *             утверждение
+ *             КОНЕЦ;
+ *      УМОЛЧАНИЕ:
+ *             утверждение
+ *             КОНЕЦ;
+ *  }
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_Switch_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Switch_Body");
+#endif
+    GenRezWord(RW_SWITCH);
+    select_unit();                /* for ( symbol */
+    GenUnit(unit);                /* пишем лексему ( с форматированием */
+    select_unit();                /* заряжаем unit */
+    Sem_Expression_Body();        /* РАЗБОР ( выражение ) - выбирает ) */
+ /*   GenUnit(unit);                /* пишем лексему ) с форматированием */
+    select_unit();                /* for { symbol */
+    GenUnit(unit);                /* пишем лексему { с форматированием */
+    for (;;) {                    /* разбор внутренностей РАЗБОР () */
+         switch (Sem_Case_Body()) {    /* внутренности РАЗБОРа */
+              case NONSTATEMENT:       /* встретилось неутверждение - } */
+                   break;
+              default:                 /* NO ERROR - продолжаем обработку внутренностей */
+                   continue;
+         } /* end of switch */
+         break;
+    }
+
+    select_unit();                /* for } symbol */
+    GenUnit(unit);                /* пишем лексему } с форматированием */
+    return;
+};
+
+/********************************************
+ * обработка описания РАЗБОР
+ *  ВХОД - после обнаружения {
+ *                        unit   V
+ *  РАЗБОР   ( выражение ) {
+ *      СЛУЧАЙ константа :
+ *             утверждение
+ *             КОНЕЦ;
+ *      УМОЛЧАНИЕ:
+ *             утверждение
+ *             КОНЕЦ;
+ *
+ *  }
+ *  RETURN: NONESTATEMENT -  обработке не подлежит
+ *          OK               (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+int Sem_Case_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Case_Body");
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_CASE:                      /* СЛУЧАЙ */
+              GenRezWord(RW_CASE);          /* Генерация строчки о начале case */
+              select_unit();                /* константа */
+              GenDgt(unit);
+              select_unit();                /* двоеточие */
+              GenUnit(unit);                /* пишем лексему : с форматированием */
+              Sem_State_Body();             /* State {} */
+              select_unit();                /* проверим, что дальше */
+              if (compare(unit, rezword[RW_BREAK])) { /* КОНЕЦ (break) */
+                   GenRezWord(RW_BREAK);    /* Генерация строчки о начале case */
+                   select_unit();           /* ; */
+                   GenUnit(unit);           /* пишем лексему ; с форматированием */
+              } else {                      /* иначе вернем все на место */
+                   rewunit();
+              }
+              break;
+         case RW_DEFAULT:                   /* УМОЛЧАНИЕ */
+              GenRezWord(RW_DEFAULT);       /* Генерация строчки о начале default */
+              select_unit();                /* : */
+              GenUnit(unit);                /* пишем лексему : с форматированием */
+              Sem_State_Body();             /* State {} */
+              select_unit();                /* проверим, что дальше */
+              if (compare(unit, rezword[RW_BREAK])) { /* КОНЕЦ (break) */
+                   GenRezWord(RW_BREAK);    /* Генерация строчки о начале case */
+                   select_unit();           /* ; */
+                   GenUnit(unit);           /* пишем лексему ; с форматированием */
+              } else {                      /* иначе вернем все на место */
+                   rewunit();
+              }
+              break;
+         default:                           /*  иначе - ошибка спецификации состояния */
+              rewunit();
+              return(NONSTATEMENT);         /* встретилось что-то непонятное */
+    } /* end of switch */
+    return(!ZERO);
+ };
+
+/********************************************
+ * обработка описания выражение
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN: NONE
+ ************************************************/
+/* обработка описания выражения */
+void Sem_Expression_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n==== Sem_Expression_Body");
+#endif
+    for (;;) {          /* ВНИМАНИЕ! по входу в unit уже что-то загружено */
+         for (;;) {     /* обработка префикса */
+              switch (Sem_Prefix_Body()) {
+                   default:                 /* это был декларатор (префикс) */
+                        select_unit();      /* заряжаем unit */
+                        continue;           /* и снова обработка префикса */
+                   case NONSTATEMENT:       /* это не префикс (а терм) */
+                        break;
+              }
+              break;                        /* выход из цикла обработки префиксов */
+         }
+         Sem_Term_Body();                   /* Обработка терма - всегда один */
+         select_unit();                     /* заряжаем unit */
+         switch (Sem_Postfix_Body()) {
+              default:                      /* это был постфикс */
+                   select_unit();           /* заряжаем unit */
+                   break;
+              case NONSTATEMENT:            /* это не постфикс */
+                   break;
+         }
+
+         switch (Sem_Infix_Body()) {        /* Обработка инфикса */
+              default:                      /* все в порядке */
+                   select_unit();           /* заряжаем unit ) */
+                   break;
+              case NONSTATEMENT:            /* это не инфикс => конец */
+                   GenUnit(unit);           /* это всегда корректный символ, гарантировано синт. анализом */
+                   return;
+         }
+    }    /* end of for */
+};
+/********************************************
+ *  обработка инфикса
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN:
+ *          OK    (обработано без ошибки, это инфикс)
+ *          NONSTATEMENT  - это не инфикс (конец выражения)
+ ************************************************/
+int Sem_Infix_Body (void) {
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Infix_Body");
+#endif
+    switch (compare_RW(unit)) {
+         case RW_PLUS:              /* "+",   */
+         case RW_MINUS:             /* "-",   */
+         case RW_MUL:               /* "*",   */
+         case RW_DIV:               /* "/",   */
+         case RW_REMINDER:          /* "%",   */
+         case RW_SHFT_LFT:          /* "<<",  */
+         case RW_SHFT_RGHT:         /* ">>",  */
+         case RW_BW_AND:            /* "&",   */
+         case RW_BW_XOR:            /* "^",   */
+         case RW_BW_OR:             /* "|",   */
+         case RW_AND:               /* "&&",  */
+         case RW_OR:                /* "||",  */
+         case RW_EQU:               /* "=",   */
+         case RW_MUL_EQU:           /* "*=",  */
+         case RW_DIV_EQU:           /* "/=",  */
+         case RW_REM_EQU:           /* "%=",  */
+         case RW_PLUS_EQU:          /* "+=",  */
+         case RW_MINUS_EQU:         /* "-=",  */
+         case RW_SHFT_LFT_EQU:      /* "<<=", */
+         case RW_SHFT_RGHT_EQU:     /* ">>=", */
+         case RW_BW_AND_EQU:        /* "&=",  */
+         case RW_BW_XOR_EQU:        /* "^=",  */
+         case RW_BW_OR_EQU:         /* "|=",  */
+         case RW_LESS:              /* "<",   */
+         case RW_GREATER:           /* ">",   */
+         case RW_LESS_EQU:          /* "<=",  */
+         case RW_GREATER_EQU:       /* ">=",  */
+         case RW_EQU_EQU:           /* "==",  */
+         case RW_NOT_EQU:           /* "!=",  */
+              GenUnit(unit);        /* пишем лексему ; с форматированием */
+              return(!ZERO);
+         default:
+              return(NONSTATEMENT);
+    }
+};
+
+/********************************************
+ *  обработка постфикса
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN:
+ *          OK    (обработано без ошибки, это постфикс)
+ *          NONSTATEMENT  - это не постфикс
+ ************************************************/
+int Sem_Postfix_Body (void) {
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Postfix_Body");
+#endif
+    switch (compare_RW(unit)) {
+         case RW_INC:                  /* "++",   */
+         case RW_DEC:                  /* "--",   */
+              GenUnit(unit);           /* пишем лексему ; с форматированием */
+              return(!ZERO);
+         default:
+              return(NONSTATEMENT);
+    }
+};
+
+/********************************************
+ *  обработка терма
+ *  ВХОД - по умолчанию
+ *  unit                                     V
+ *  функция|константа|переменная|ситуация | ( выражение )
+ *
+ *
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Term_Body (void)
+{
+    char proc_name[BUFFER_LENGTH];
+
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Term_Body");
+#endif
+    if (compare(unit, rezword[RW_PROC])) {            /* ПРОЦ имя В СОСТ имя ? */
+         GenSpaces();              /* формируем удобочитаемый текст */
+         select_unit();            /* имя процесса ? */
+         strcpy(proc_name, unit);  /* копируем имя процесса */
+         select_unit();            /* слово В */
+         select_unit();            /* слово COCT */
+         select_unit();            /* имя состояния */
+         switch (compare_RW(unit)) {                            /* что за состояние ? */
+              case RW_STOP:                                     /* СТОП */
+                   if (!GenSituationProcInSTOP(proc_name))      /* ситуация ПРОЦ в СТОП */
+                        error_msg(41, line_count, proc_name, NONE);
+                   break;
+              case RW_ERROR:                                    /* ОШИБКА */
+                   if (!GenSituationProcInERROR(proc_name))     /* ситуация ПРОЦ в ОШИБКА */
+                        error_msg(41, line_count, proc_name, NONE);
+                   break;
+              case RW_ACTIVE:                                   /* АКТИВНОЕ */
+                   if (!GenSituationProcInACTIVE(proc_name))    /* ситуация ПРОЦ активен */
+                        error_msg(41, line_count, proc_name, NONE);
+                   break;
+              case RW_PASSIVE:                                   /* ПАССИВНОЕ */
+                   if (!GenSituationProcInPASSIVE(proc_name))    /* ситуация ПРОЦ пассивен */
+                        error_msg(41, line_count, proc_name, NONE);
+                   break;
+              case RW_NULL:                           /* конкретное имя состояния */
+                   if (!GenSituationProcInState(proc_name, unit)) /* ситуация ПРОЦ активен */
+                        error_msg(57, line_count, "\0", NONE);
+                   break;
+              default:
+                   error_msg(22, line_count, unit, NONE);  /* д.б. имя состояния */
+                   return;
+         }
+    } else {                                               /* это не ситуация */
+         if (compare(unit, rezword[RW_OPEN_PARENTESIS])) { /* ( выражение ) ? */
+              select_unit();                               /* заряжаем unit */
+              Sem_Expression_Body();    /* разбор выражения, с выбором ) */
+         } else {   /* иначе проверяем имя переменной, функции, константы */
+              if (!CheckNameFunc(unit)) {   /* это функция ? */
+                   GenUnit(unit);           /* имя функции + удобочитаемый текст */
+                   Sem_Check_Func_Args();   /* да? - разбор функции */
+              } else GenVariable(unit);       /* это переменная/константа */
+         }
+    }
+    return;
+};
+
+
+/********************************************
+ *  обработка префикса
+ *  ВХОД - по умолчанию
+ *  unit      V
+ *  что-то
+ *   префикс терм постфикс
+ *          инфикс
+ *  RETURN:
+ *          OK    (обработано без ошибки, это префикс)
+ *          NONSTATEMENT  - это не префикс
+ ************************************************/
+int Sem_Prefix_Body (void) {
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Prefix_Body");
+#endif
+    switch (compare_RW(unit)) {
+         case RW_BW_COMPLEMENT:     /* "~",   */
+         case RW_NOT:               /* "!",   */
+         case RW_INC:               /* "++",  */
+         case RW_DEC:               /* "--",  */
+         case RW_PLUS:              /* "+",   */
+         case RW_MINUS:             /* "-",   */
+         case RW_MUL:               /* "*",   */
+         case RW_BW_AND:            /* "&",   */
+              GenUnit(unit);        /* пишем лексему-префикс с форматированием */
+              return(!ZERO);
+         case RW_OPEN_PARENTESIS:   /* "(" - проверяем, преобразование типов ?*/
+              GenUnit(unit);        /* пишем лексему ( с форматированием */
+              switch (Sem_Declarator_Body()) {
+                   case NONSTATEMENT:            /* это не декларатор */
+                        return(NONSTATEMENT);
+                   default:                      /* это был декларатор (префикс) */
+                        select_unit();           /* ) */
+                        GenUnit(unit);           /* пишем лексему ) с форматированием */
+                        return(!ZERO);
+              } /* end of switch */
+         default:
+              return(NONSTATEMENT);
+    }
+};
+
+/********************************************
+ * обработка декларатора
+ *  ВХОД - по умолчанию
+ *  unit V
+ *  (     SHORT | LONG | INT | FLOAT | DOUBLE ...
+ *
+ *  RETURN:
+ *          OK    (обработан декларатор)
+ *          NONSTATEMENT - это не декларатор unit = (
+ *
+ ************************************************/
+int Sem_Declarator_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n===== Sem_Declarator_Body");
+#endif
+    select_unit();  /* */
+    switch (compare_RW(unit)) {
+         case RW_SHORT:                /* SHORT */
+              GenRezWord(RW_SHORT);
+              Sem_Sign_Body();
+              break;
+         case RW_LONG:                 /* LONG */
+              GenRezWord(RW_LONG);
+              Sem_Sign_Body();
+              break;
+         case RW_INT:                  /* INT */
+              GenRezWord(RW_INT);
+              Sem_Sign_Body();
+              break;
+         case RW_FLOAT:
+              GenRezWord(RW_FLOAT);
+              Sem_Mul_Body();
+              break;
+         case RW_DOUBLE:
+              GenRezWord(RW_DOUBLE);
+              Sem_Mul_Body();
+              break;
+         case RW_VOID:
+              GenRezWord(RW_FLOAT);
+              Sem_Mul_Body();
+              break;
+         case RW_SIGN:
+	      GenRezWord(RW_SIGN);
+	      Sem_Int_Body();
+	      break;
+	 case RW_UNSIGN:
+	      GenRezWord(RW_UNSIGN);
+	      Sem_Int_Body();
+	      break;
+	 default:             /*  это не декларатор */
+	      rewunit();
+	      return(NONSTATEMENT);
+    }
+    return(!ZERO);
+}
+
+/********************************************
+ *  обработка сылки после целочисленного декларатора
+ *  ВХОД - по умолчанию
+ *                     unit   V
+ *  (     SHORT | LONG | INT    * ) | )
+ *
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Mul_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n======= Sem_Mul_Body");
+#endif
+    for (;;) {
+         select_unit();
+         switch (compare_RW(unit)) {
+              case RW_MUL:             /* SIGNED ****** */
+                   GenUnit(unit);      /* пишем лексему * с форматированием */
+                   continue;
+              default:
+                   rewunit();
+                   return;
+         }
+    }
+};
+
+/********************************************
+ * обработка префикса после целочисленного декларатора
+ *  ВХОД - по умолчанию
+ *                     unit   V
+ *  (     SHORT | LONG | INT    SIGN ) | UNSIGN ) | ) | SIGN *) | UNSIGN *)
+ *
+ *  RETURN: NONE
+ ************************************************/
+void Sem_Sign_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n====== Sem_Sign_Body");
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_UNSIGN:                         /* UNSIGNED */
+	      GenRezWord(RW_UNSIGN);
+	      Sem_Mul_Body();
+	      break;
+	 case RW_SIGN:                           /* SIGNED */
+              GenRezWord(RW_SIGN);
+              Sem_Mul_Body();
+              break;
+         case RW_MUL:                            /* * */
+              GenUnit(unit);                     /* пишем лексему * с форматированием */
+              Sem_Mul_Body();
+              break;
+         default:
+              rewunit();
+              return;
+    }
+};
+
+/********************************************
+ * обработка префикса после знакового декларатора
+ *  ВХОД - по умолчанию
+ *         unit       V
+ *  (  SIGN | UNSIGN   SHORT) | LONG) | INT)
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработан декларатор)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_Int_Body (void)
+{
+#ifdef TEST_MODE_SEM
+    printf("\n====== Sem_Int_Body");
+#endif
+    select_unit();
+    switch (compare_RW(unit)) {
+         case RW_SHORT:                          /* SHORT */
+              GenRezWord(RW_SHORT);
+              Sem_Mul_Body();
+              break;
+         case RW_INT:                            /* INT */
+              GenRezWord(RW_INT);
+              Sem_Mul_Body();
+              break;
+         case RW_LONG:                           /* LONG */
+              GenRezWord(RW_LONG);
+              Sem_Mul_Body();
+              break;
+         default:
+              rewunit();
+              return;
+    }
+};
+
+
+/********************************************
+ * обработка описания аргументов функции при ее вхождении в качестве терма
+ *  ВХОД - по умолчанию
+ *  unit        V
+ *                 ( ----> выражение ----> )
+ *                    <----- , <-------
+ *
+ * CurrentFunc - указывает на текущую функцию
+ *
+ *  RETURN: EOF   (обнаружен конец файла)
+ *          OK    (обработано без ошибки)
+ *          ERROR (NONE) Нужно отматывать ч/з Find_Position
+ ************************************************/
+void Sem_Check_Func_Args (void)
+{
+int i, arg_num;
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_Check_Func_Args");
+#endif
+    select_unit();                /* открытие ( */
+    GenUnit(unit);                /* пишем лексему ( с форматированием */
+    arg_num = GetCurFuncArgNum(); /* берем количество аргументов */
+    if (arg_num == 0) {
+         select_unit();           /* заряжаем unit ) */
+         GenUnit(unit);                /* пишем лексему ), с форматированием */
+    } else {
+         for (i = 0; i < arg_num; i++) {         /* сверяем количество аргументов */
+              select_unit();                     /* заряжаем unit */
+              Sem_Expression_Body();             /* разбор выражения, вытаскивает на одну лексему больше  */
+              if (i < (arg_num - 1)) {           /* во всех случаях - ЗПТ, кроме последнего - ) */
+                   /* !!!!!!!!!!!!!!!!!! GenUnit(unit);                /* пишем лексему , с форматированием */
+              }
+         } /* end of for */
+    }
+/*    GenUnit(unit);                /* пишем лексему ) с форматированием */
+    return;
+};
+
+
+/************************************************
+ *  Разбор ТАЙМАУТа
+ *  TIMEOUT nn StateName;
+ ************************************************/
+void Sem_Time_Out (void)
+{
+/*    char  num[BUFFER_LENGTH];     /* количество тактов */
+#ifdef TEST_MODE_SEM
+        printf("\n== Sem_Time_Out");
+#endif
+    GenSpaces();                  /* формируем удобочитаемый текст */
+    select_unit();                /* берем время таймаута */
+/*    strcpy(num, unit); */
+/* КОРРЕКЦИЯ ТАЙМАУТА: */
+    if (GenTimeOut(unit) == NO_VALUE) {
+         error_msg(15, line_count, unit, NONE);  /* неверное указание времени таймаута */
+    }
+    Sem_Statement_Body();         /* Statement  */
+/* было select_unit();                /* берем имя состояния */
+/* было     switch (GenTimeOut(num, unit)) {
+/* было          case NO_VALUE:
+/* было               error_msg(15, line_count, num, NONE);  /* неверное указание таймаута */
+/* было               break;
+/* было          case NO_STATE:
+/* было               error_msg(42, line_count, unit, NONE); /* НЕТУ ТАКОГО СОСТОЯНИЯ */
+/* было               break;
+/* было     }
+/* было     select_unit();                /* ; */
+
+
+    return;
+};
+
+
+
+
+
+
+

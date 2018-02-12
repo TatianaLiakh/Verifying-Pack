@@ -1,0 +1,36 @@
+﻿  custom_dll_inrefacecpp.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\dll_interface.h(6): warning C4005: TEST_MODE_TRUE: изменение макроопределения
+  d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(14): note: см. предыдущее определение "TEST_MODE_TRUE"
+..\..\VMTestCode\VMTestCode\custom_dll_inrefacecpp.cpp(119): warning C4244: =: преобразование "INT32U" в "uInt16", возможна потеря данных
+..\..\VMTestCode\VMTestCode\custom_dll_inrefacecpp.cpp(134): warning C4018: <: несоответствие типов со знаком и без знака
+  lib.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+..\..\VMTestCode\VMTestCode\lib.cpp(34): warning C4018: <: несоответствие типов со знаком и без знака
+..\..\VMTestCode\VMTestCode\lib.cpp(91): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+  msg_queue.cpp
+..\..\VMTestCode\VMTestCode\msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  r_io.cpp
+  r_lib.cpp
+..\..\VMTestCode\VMTestCode\r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  usr1.cpp
+  VM0001.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\VMext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+..\..\VMTestCode\VMTestCode\VM0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VMinp.cpp
+  VMmain.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\VMext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+..\..\VMTestCode\VMTestCode\VMmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VMoutp.cpp
+     Создается библиотека D:\VB.lib и объект D:\VB.exp
+  Создание кода
+  All 44 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  VB.vcxproj -> D:\VB.dll
+  VB.vcxproj -> D:\VB.pdb (Full PDB)

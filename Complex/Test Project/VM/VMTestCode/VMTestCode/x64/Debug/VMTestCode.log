@@ -1,0 +1,19 @@
+﻿  VMoutp.cpp
+  VMmain.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vmext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vmmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VMinp.cpp
+  VM0001.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vmext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vm0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  usr1.cpp
+  r_lib.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  r_io.cpp
+  msg_queue.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  lib.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(11): fatal error C1083: Не удается открыть файл включение: extcode.h: No such file or directory
+  custom_dll_inrefacecpp.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(11): fatal error C1083: Не удается открыть файл включение: extcode.h: No such file or directory
+  Создание кода...

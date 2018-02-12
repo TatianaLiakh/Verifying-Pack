@@ -1,0 +1,86 @@
+﻿Построение начато 26.09.2014 13:52:37.
+     1>Проект "C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\SandBox\SandBox.vcxproj" в узле 2 (целевые объекты rebuild).
+     1>_PrepareForClean:
+         Файл "Release\bsvt.lastbuildstate" удаляется.
+       InitializeBuildStatus:
+         Создание "Release\bsvt.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt bsvt0001.c bsvtinp.c bsvtmain.c bsvtoutp.c bsvtusr1.c dll_interface.c msg_queue.c r_io.c r_lib.c
+         bsvt0001.c
+     1>bsvt0001.c(128): warning C4305: =: усечение из "double" к "float"
+     1>bsvt0001.c(129): warning C4305: =: усечение из "double" к "float"
+     1>bsvt0001.c(135): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+     1>bsvt0001.c(136): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+     1>bsvt0001.c(141): warning C4305: =: усечение из "double" к "float"
+     1>bsvt0001.c(142): warning C4305: =: усечение из "double" к "float"
+     1>bsvt0001.c(1525): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1530): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1535): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1540): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1545): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1550): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1556): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1561): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1566): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1571): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1576): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+     1>bsvt0001.c(1763): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+     1>bsvt0001.c(1798): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+     1>bsvt0001.c(1833): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+     1>bsvt0001.c(1868): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+     1>bsvt0001.c(1903): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+         bsvtinp.c
+         bsvtmain.c
+         bsvtoutp.c
+         bsvtusr1.c
+         dll_interface.c
+     1>dll_interface.c(11): warning C4103: c:\users\hp\documents\nsu\diploma work\aspirantura\asu bsvt\bsvt_reflex\bsvt_dll\sandbox\dll_interface.c: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+     1>dll_interface.c(43): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     1>dll_interface.c(64): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234): см. объявление "fopen"
+     1>dll_interface.c(80): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+     1>dll_interface.c(90): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+     1>dll_interface.c(100): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+     1>dll_interface.c(110): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+     1>dll_interface.c(120): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+     1>dll_interface.c(66): warning C4101: f: неиспользованная локальная переменная
+     1>dll_interface.c(63): warning C4101: par: неиспользованная локальная переменная
+     1>dll_interface.c(62): warning C4101: c: неиспользованная локальная переменная
+     1>dll_interface.c(143): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+     1>dll_interface.c(155): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234): см. объявление "fopen"
+     1>dll_interface.c(262): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371): см. объявление "sprintf"
+         msg_queue.c
+         r_io.c
+         r_lib.c
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\bsvt.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.lib" /MACHINE:X86 /DLL Release\bsvt0001.obj
+         Release\bsvtinp.obj
+         Release\bsvtmain.obj
+         Release\bsvtoutp.obj
+         Release\bsvtusr1.obj
+         Release\dll_interface.obj
+         Release\msg_queue.obj
+         Release\r_io.obj
+         Release\r_lib.obj
+            Создается библиотека C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.lib и объект C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.exp
+         Создание кода
+         Создание кода завершено
+         SandBox.vcxproj -> C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.dll
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\Release\bsvt.dll;#2" /manifest Release\bsvt.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         Файл "Release\bsvt.unsuccessfulbuild" удаляется.
+         Обращение к "Release\bsvt.lastbuildstate".
+     1>Построение проекта "C:\Users\HP\Documents\NSU\DIPLOMA WORK\Aspirantura\ASU BSVT\bsvt_REFLEX\bsvt_dll\SandBox\SandBox.vcxproj" завершено (целевые объекты rebuild).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:03.36
