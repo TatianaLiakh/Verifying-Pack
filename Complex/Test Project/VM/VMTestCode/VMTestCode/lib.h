@@ -3,9 +3,10 @@
 #include "r_io.h"
 #include "msg_queue.h"
 
-MgErr checkPortsArrays();
 
 MgErr _msg_array_resize(ArrayOfMessagesHdl _msgs);
+MgErr _states_array_resize(ArrayOfStatesHdl states_hdl);
+MgErr _ports_array_resize(PortsHdl new_handler, size_t size, INT8S * & array, int32_t & counter);
 
 void parse_input_msg_array(ArrayOfMessagesHdl input_LV_queue, MsgQueue & result_queue); 
 

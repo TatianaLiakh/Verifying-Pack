@@ -80,6 +80,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>labviewv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>import.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -88,6 +89,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>import.def</ModuleDefinitionFile>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -100,6 +104,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>import.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -113,6 +118,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ModuleDefinitionFile>import.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -125,7 +131,6 @@
     <ClInclude Include="..\src\CAusr2.h" />
     <ClInclude Include="..\src\CAxvar.h" />
     <ClInclude Include="..\src\CA_id.h" />
-    <ClInclude Include="..\src\custom.h" />
     <ClInclude Include="..\src\dll_interface.h" />
     <ClInclude Include="..\src\LabVIEWData.h" />
     <ClInclude Include="..\src\msg_queue.h" />
@@ -147,6 +152,9 @@
     <ClCompile Include="..\src\r_io.cpp" />
     <ClCompile Include="..\src\r_lib.cpp" />
     <ClCompile Include="..\src\usr1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="import.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

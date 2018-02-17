@@ -6,17 +6,25 @@
 #define TEST_MODE_TRUE true
 void sayToWholeWorld(char * speach); 
 
-__declspec(dllexport) void LLD();
-__declspec(dllexport) MgErr set_states_array(ArrayOfStatesHdl);
+__declspec(dllexport) void LLD(PortsHdl, //algInputPorts 
+	PortsHdl, //algOutputPorts
+	ArrayOfMessagesHdl, //scenarios2VerifierOutputMsgs
+	ArrayOfMessagesHdl, //algOutputMsgs
+	ArrayOfMessagesHdl, //verifier2GUIOutputMsgs
+	ArrayOfMessagesHdl, //verifier2scenariousControlOutMsgs
+	ArrayOfStatesHdl);
 
-__declspec(dllexport) MgErr set_input_ports_array(PortsHdl);
-__declspec(dllexport) MgErr set_output_ports_array(PortsHdl);
 
+/*RESIZE*/
 
-__declspec(dllexport) MgErr set_input_msg_from_CA(ArrayOfMessagesHdl);
-__declspec(dllexport) MgErr set_input_msg_from_SC(ArrayOfMessagesHdl);
-
-__declspec(dllexport) MgErr set_output_msg(ArrayOfMessagesHdl);
-__declspec(dllexport) MgErr set_output_msg_to_SC(ArrayOfMessagesHdl);
+//MgErr _states_array_resize(ArrayOfStatesHdl);
+//
+//MgErr set_input_ports_array(PortsHdl, PortsHdl);
+//
+//MgErr set_input_msg_from_CA(ArrayOfMessagesHdl);
+//MgErr set_input_msg_from_SC(ArrayOfMessagesHdl);
+//
+//MgErr set_output_msg(ArrayOfMessagesHdl);
+//MgErr set_output_msg_to_SC(ArrayOfMessagesHdl);
 
 

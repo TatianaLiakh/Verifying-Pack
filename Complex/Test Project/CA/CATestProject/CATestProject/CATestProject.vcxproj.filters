@@ -42,9 +42,6 @@
     <ClInclude Include="..\src\CAxvar.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\custom.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\dll_interface.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
@@ -104,5 +101,10 @@
     <ClCompile Include="..\src\usr1.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="import.def">
+      <Filter>Файлы исходного кода</Filter>
+    </None>
   </ItemGroup>
 </Project>

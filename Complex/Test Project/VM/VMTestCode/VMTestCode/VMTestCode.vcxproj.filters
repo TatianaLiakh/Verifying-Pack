@@ -30,9 +30,6 @@
     <ClInclude Include="proc.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="queue_const.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="R_CNST.H">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
@@ -70,6 +67,9 @@
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="lib.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="VM_queue_const.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

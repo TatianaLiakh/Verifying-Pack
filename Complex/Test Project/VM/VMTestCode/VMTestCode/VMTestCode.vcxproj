@@ -140,7 +140,7 @@
     <ClInclude Include="lib.h" />
     <ClInclude Include="msg_queue.h" />
     <ClInclude Include="proc.h" />
-    <ClInclude Include="queue_const.h" />
+    <ClInclude Include="VM_queue_const.h" />
     <ClInclude Include="R_CNST.H" />
     <ClInclude Include="r_io.h" />
     <ClInclude Include="R_LIB.H" />

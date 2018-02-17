@@ -1,26 +1,31 @@
 #include "lib.h"
 
 
-extern PortsHdl algInputPorts;
-extern PortsHdl algOutputPorts;
-
-
-MgErr checkPortsArrays()
+MgErr _states_array_resize(ArrayOfStatesHdl states_hdl)
 {
-	if (algInputPorts != nullptr && algOutputPorts != nullptr)
+	MgErr error;
+	if (mgNoErr == (error = DSSetHSzClr(states_hdl, Offset(ArrayOfStates, state) + sizeof(ProcessState) * (PROCESS_Nn + 1))))
 	{
-		if ((*algInputPorts)->dimSize + (*algOutputPorts)->dimSize != INPUT_PORTS_COUNTER)
-			return mgArgErr;
-		else
+		for (size_t i = 0; i <= PROCESS_Nn; i++)
 		{
-			aInput = new INT8S[INPUT_PORTS_COUNTER];
-			for (int i = 0; i < INPUT_PORTS_COUNTER; i++)
-			{
-				aInput[i] = 0;
-			}
+			(*states_hdl)->state[i].cur_state = (int8)STATE_OF_STOP;
+			(*states_hdl)->state[i].TimeInState = 0;
 		}
 	}
-	return mgNoErr;
+	return error;
+}
+
+MgErr _ports_array_resize(PortsHdl new_handler, size_t size, INT8S * & array, int32_t & counter)
+{
+	MgErr error = NumericArrayResize(uB, 1, (UHandle*)(&new_handler), size);
+	if (error == mgNoErr)
+	{
+		(*new_handler)->dimSize = size;
+		counter = (*new_handler)->dimSize;
+	}
+
+	//(*new_handler)->ports[size] = 255;
+	return error;
 }
 
 MgErr _msg_array_resize(ArrayOfMessagesHdl _msgs)
@@ -28,28 +33,13 @@ MgErr _msg_array_resize(ArrayOfMessagesHdl _msgs)
 	int32_t new_size = ARRLENRSMSG;
 	MgErr err;
 	if (mgNoErr == (err = DSSetHSzClr(_msgs, Offset(ArrayOfMessages, message) + new_size* sizeof(MessageCluster))))
-//	if (mgNoErr == (err = DSSetHSzClr(_msgs, sizeof(int32) + sizeof(MessageCluster))))
-
 	{
 		for (size_t i = 0; i < new_size; i++)
 		{
-			//UHandle msg = DSNewHandle(sizeof(MessageCluster)); 
-			//
-			//MessageCluster ** msgPtrtPtr = (MessageCluster **)msg; 
-
-			////MessageCluster * mP = ()
-			//(*msgPtrtPtr)->msg = 0; 
-			//(*msgPtrtPtr)->type = 0;
-
-			//(*msgPtrtPtr)->param = 0;
-
-				//;// = &((*_msgs)->message[i]);
 			MessageCluster * msg = &(*_msgs)->message[i];
-			msg->msg = 10;
-			msg->type = -9;
-			msg->param = 100; // For new string - (LStrHandle)DSNewHClr(sizeof(LStrHandle) + sizeof(uChar)*size_of_srting +1);
-		//	MoveBlock(msgPtrtPtr, &((*_msgs)->message[i]), sizeof(MessageCluster));
-			//	(*_msgs)->message[i] = *msgPtrtPtr; 
+			msg->msg = -1;
+			msg->type = 0;
+			msg->param = 0;
 		}
 		(*_msgs)->dimSize = new_size;
 	}
