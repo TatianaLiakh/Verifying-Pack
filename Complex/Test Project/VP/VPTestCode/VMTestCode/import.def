@@ -1,0 +1,5 @@
+LIBRARY VP
+
+
+EXPORTS
+LLD @1

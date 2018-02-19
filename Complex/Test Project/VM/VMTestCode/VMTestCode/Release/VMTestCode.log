@@ -14,13 +14,13 @@ d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIE
 d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\LabVIEWData.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
 lib.cpp(37): warning C4018: <: несоответствие типов со знаком и без знака
-lib.cpp(81): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+lib.cpp(83): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
   msg_queue.cpp
 msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
   r_io.cpp
   r_lib.cpp
 r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
-  usr1.cpp
+  VMusr1.cpp
   VM0001.cpp
 d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\VMext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
 VM0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
@@ -29,9 +29,9 @@ VM0001.cpp(2): warning C4103: выравнивание изменилось по
 d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\VMext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
 VMmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
   VMoutp.cpp
-     Создается библиотека D:\VB.lib и объект D:\VB.exp
+     Создается библиотека D:\VM.lib и объект D:\VM.exp
   Создание кода
   All 38 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Создание кода завершено
-  VMTestCode.vcxproj -> D:\VB.dll
-  VMTestCode.vcxproj -> D:\VB.pdb (Full PDB)
+  VMTestCode.vcxproj -> D:\VM.dll
+  VMTestCode.vcxproj -> D:\VM.pdb (Full PDB)

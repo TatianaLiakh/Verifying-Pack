@@ -31,7 +31,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -71,6 +71,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>C:\Program Files %28x86%29\National Instruments\LabVIEW 2010\cintools;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\National Instruments\LabVIEW 2010\cintools;$(LibraryPath)</LibraryPath>
+    <TargetName>CA</TargetName>
+    <OutDir>D:\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>CA</TargetName>
+    <OutDir>D:\</OutDir>
+    <IncludePath>C:\Program Files %28x86%29\National Instruments\LabVIEW 2010\cintools;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\National Instruments\LabVIEW 2010\cintools;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -105,6 +113,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>import.def</ModuleDefinitionFile>
+      <AdditionalDependencies>labviewv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,9 +143,10 @@
     <ClInclude Include="..\src\CA_id.h" />
     <ClInclude Include="..\src\dll_interface.h" />
     <ClInclude Include="..\src\LabVIEWData.h" />
+    <ClInclude Include="..\src\lib.h" />
     <ClInclude Include="..\src\msg_queue.h" />
     <ClInclude Include="..\src\proc.h" />
-    <ClInclude Include="..\src\queue_const.h" />
+    <ClInclude Include="..\src\CA_queue_const.h" />
     <ClInclude Include="..\src\R_CNST.H" />
     <ClInclude Include="..\src\r_io.h" />
     <ClInclude Include="..\src\R_LIB.H" />
@@ -146,12 +157,12 @@
     <ClCompile Include="..\src\CAinp.cpp" />
     <ClCompile Include="..\src\CAmain.cpp" />
     <ClCompile Include="..\src\CAoutp.cpp" />
-    <ClCompile Include="..\src\custom.cpp" />
-    <ClCompile Include="..\src\dll_interface.cpp" />
+    <ClCompile Include="..\src\custom_dll_interface.cpp" />
+    <ClCompile Include="..\src\lib.cpp" />
     <ClCompile Include="..\src\msg_queue.cpp" />
     <ClCompile Include="..\src\r_io.cpp" />
     <ClCompile Include="..\src\r_lib.cpp" />
-    <ClCompile Include="..\src\usr1.cpp" />
+    <ClCompile Include="..\src\CAusr1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="import.def" />

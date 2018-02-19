@@ -8,71 +8,94 @@
 extern std::ofstream logger;
 #endif //  TEST
 
-typedef void( * MainFunction) ();
+typedef void(*MainSCFunction) (	ArrayOfMessagesHdl, //verifier2scenariousControlOutMsgs  
+								ArrayOfMessagesHdl, //scenarios2AlgOutputMsgs
+								ArrayOfMessagesHdl, //scenarios2VirtPlantOutputMsgs
+								ArrayOfMessagesHdl, //scenarios2VerifierOutputMsgs
+								ArrayOfStatesHdl );
 
+typedef void(*MainVPFunction) ( PortsHdl, //algOutputPorts
+								PortsHdl, //algInputPorts
+								ArrayOfMessagesHdl, //scenarios2VirtPlantOutputMsgs
+								ArrayOfMessagesHdl, //virtualPlant2GUIOutputMsgs
+								ArrayOfStatesHdl);
+
+typedef void(*MainCAFunction) ( PortsHdl, //algInputPorts 
+								PortsHdl, //algOutputPorts
+								ArrayOfMessagesHdl, //scenarios2AlgOutputMsgs
+								ArrayOfMessagesHdl, //algOutputMsgs
+								ArrayOfStatesHdl);
+
+
+typedef void(*MainVBFunction) ( PortsHdl, //algInputPorts 
+								PortsHdl, //algOutputPorts
+								ArrayOfMessagesHdl, //scenarios2VerifierOutputMsgs
+								ArrayOfMessagesHdl, //algOutputMsgs
+								ArrayOfMessagesHdl, //verifier2GUIOutputMsgs
+								ArrayOfMessagesHdl, //verifier2scenariousControlOutMsgs
+								ArrayOfStatesHdl);
+#ifdef _WIN32
+
+extern LPCSTR MainFunctionName;
+
+
+template
+<typename FunctionType>
 struct ModuleDescriptor
 {
 	HINSTANCE module;
 	LPTSTR libName;
-	MainFunction function;
+	FunctionType mainFunction;
 };
 
-extern ModuleDescriptor ca_module;
-extern ModuleDescriptor vp_module;
-extern ModuleDescriptor vb_module;
-extern ModuleDescriptor sc_module;
+extern ModuleDescriptor <MainCAFunction> ca_module;
+extern ModuleDescriptor <MainVPFunction> vp_module;
+extern ModuleDescriptor <MainVBFunction> vb_module;
+extern ModuleDescriptor <MainSCFunction> sc_module;
+
+template <typename MainFunctionType>
+DllCallErroros reloadModule(ModuleDescriptor<MainFunctionType> & descriptor)
+{
+	HINSTANCE & currLib = descriptor.module;
+	const LPTSTR lib_name = descriptor.libName;
+	MainFunctionType & main_function = descriptor.mainFunction;
+
+#ifdef TEST_MODE_TRUE
+	if (logger.is_open()) logger << "\n\t::FreeLibrary()" << lib_name << std::endl;
+#endif // TEST_MODE_TRUE
+
+	::FreeLibrary(currLib);
+
+#ifdef TEST_MODE_TRUE
+	if (logger.is_open()) logger << "=n\t::LoadLibrary()\n" << std::endl;
+#endif // TEST_MODE_TRUE
 
 
-#ifdef _WIN32
-extern HINSTANCE hCAModule ;
-extern HINSTANCE hVPModule;
-extern HINSTANCE hVBModule;
-extern HINSTANCE hSCModule;
+	if (nullptr == (currLib = ::LoadLibrary(lib_name)))
+	{
+#ifdef TEST_MODE_TRUE
+		char result[MAX_PATH];
+		GetModuleFileName(NULL, result, MAX_PATH);
+		if (logger.is_open()) logger << "\tERROR: LoadLibrary(lib_name)" << lib_name << ": ERROR " << GetLastError() << result << " \n" << std::endl;
+#endif
+		return (lastError = DllCallErroros::LoadLibError);
+	}
 
-extern LPTSTR ControlAlgorithmName ;
-extern LPTSTR VirtualBlockName ;
-extern LPTSTR VirtualPlantName ;
-extern LPTSTR ScriptControlName ;
+	if (nullptr == (main_function = (MainFunctionType)::GetProcAddress((HMODULE)currLib, MainFunctionName)))
+	{
+#ifdef TEST_MODE_TRUE
+		if (logger.is_open()) logger << "\tERROR:  GetProcAdressError(): " << MainFunctionName << GetLastError() << std::endl;
+#endif
+		return (lastError = DllCallErroros::GetProcAdressError);
+	}
+	/*END  initialisation*/
+	return lastError;
+
+}
+
 #endif
 
 
-//typedef void(__stdcall * VP) ();
-//typedef void(__stdcall * VB) ();
-//typedef void(__stdcall * SC) ();
 
-extern MainFunction ca ;
-extern MainFunction vp ;
-extern MainFunction vb ;
-extern MainFunction sc ;
-//extern LPTSTR MainFunctionName;
 
-/*LV DATA STORE*/
-extern PortsHdl algIP;
-extern PortsHdl algOP;
-/*MsgQueues*/
-extern ArrayOfMessagesHdl sc2AlgOutMsgs ;
-extern ArrayOfMessagesHdl sc2VpOutMsgs;
-extern ArrayOfMessagesHdl sc2VerfOutMsgs ;
-extern ArrayOfMessagesHdl ver2scOutMsgs ;
-
-/*Msg2GUI*/
-extern ArrayOfMessagesHdl algOutMsgs ;
-extern ArrayOfMessagesHdl verf2GUIOutMsgs;
-extern ArrayOfMessagesHdl vp2GUIOutMsgs ;
-/*StatesArrays*/
-extern ArrayOfStatesHdl aS ;
-extern ArrayOfStatesHdl vpS ;
-extern ArrayOfStatesHdl verS ;
-extern ArrayOfStatesHdl scS ;
-/**/
-
-DllCallErroros setPortsArrays(HINSTANCE module, PortsHdl arrayInp, PortsHdl arrayOutp);
-DllCallErroros setIOMsgsArrays(HINSTANCE module, ArrayOfMessagesHdl inputMsgs, ArrayOfMessagesHdl outputMsgs);
-DllCallErroros setIOMsgsArrays(HINSTANCE module, ArrayOfMessagesHdl msgs, LPCSTR functionName);
-DllCallErroros setStatesArray(HINSTANCE module, ArrayOfStatesHdl states);
-
-DllCallErroros reloadCAModule();
-DllCallErroros reloadVPModule();
-DllCallErroros reloadVBModule();
-DllCallErroros reloadSCModule();
 

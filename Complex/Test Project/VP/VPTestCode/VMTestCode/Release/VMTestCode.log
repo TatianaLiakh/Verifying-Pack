@@ -1,0 +1,40 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (VMTestCode.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  custom_dll_interface.cpp
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\dll_interface.h(6): warning C4005: TEST_MODE_TRUE: изменение макроопределения
+  d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(14): note: см. предыдущее определение "TEST_MODE_TRUE"
+custom_dll_interface.cpp(17): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+custom_dll_interface.cpp(22): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+custom_dll_interface.cpp(29): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+custom_dll_interface.cpp(34): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+custom_dll_interface.cpp(75): warning C4244: =: преобразование "INT32U" в "uInt16", возможна потеря данных
+  lib.cpp
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+lib.cpp(35): warning C4018: <: несоответствие типов со знаком и без знака
+lib.cpp(51): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+  msg_queue.cpp
+msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  r_io.cpp
+  r_lib.cpp
+r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VP0001.cpp
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\VPext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+VP0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VPinp.cpp
+  VPmain.cpp
+d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\VPext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+VPmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VPoutp.cpp
+  VPusr1.cpp
+     Создается библиотека D:\VP.lib и объект D:\VP.exp
+  Создание кода
+  All 36 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  VMTestCode.vcxproj -> D:\VP.dll
+  VMTestCode.vcxproj -> D:\VP.pdb (Full PDB)

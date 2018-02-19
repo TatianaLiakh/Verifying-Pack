@@ -77,7 +77,7 @@
     <IncludePath>C:\Program Files %28x86%29\National Instruments\LabVIEW 2010\cintools;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files %28x86%29\National Instruments\LabVIEW 2010\cintools;$(LibraryPath)</LibraryPath>
     <OutDir>D:\</OutDir>
-    <TargetName>VB</TargetName>
+    <TargetName>VM</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -145,7 +145,7 @@
     <ClInclude Include="r_io.h" />
     <ClInclude Include="R_LIB.H" />
     <ClInclude Include="r_main.h" />
-    <ClInclude Include="usr1.h" />
+    <ClInclude Include="VMusr1.h" />
     <ClInclude Include="VMcnst.h" />
     <ClInclude Include="VMext.h" />
     <ClInclude Include="VMgvar.h" />
@@ -160,7 +160,7 @@
     <ClCompile Include="msg_queue.cpp" />
     <ClCompile Include="r_io.cpp" />
     <ClCompile Include="r_lib.cpp" />
-    <ClCompile Include="usr1.cpp" />
+    <ClCompile Include="VMusr1.cpp" />
     <ClCompile Include="VM0001.cpp" />
     <ClCompile Include="VMinp.cpp" />
     <ClCompile Include="VMmain.cpp" />

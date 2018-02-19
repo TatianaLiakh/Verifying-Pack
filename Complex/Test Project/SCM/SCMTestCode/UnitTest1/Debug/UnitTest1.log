@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  unittest1.cpp
+c:\program files (x86)\national instruments\labview 2010\cintools\fundtypes.h(24): error C2371: int8_t: переопределение; различные базовые типы
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\stdint.h(17): note:  см. объявление "int8_t"
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\dll_interface.h(6): warning C4005: TEST_MODE_TRUE: изменение макроопределения
+  d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(14): note: см. предыдущее определение "TEST_MODE_TRUE"

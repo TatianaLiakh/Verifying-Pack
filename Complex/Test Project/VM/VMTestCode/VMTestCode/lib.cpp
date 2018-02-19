@@ -76,17 +76,23 @@ void parse_input_msg_array(ArrayOfMessagesHdl input_LV_queue, MsgQueue & result_
 	}
 }
 
-void parse_output_msg_array(MsgQueue & output_queue, ArrayOfMessagesHdl output_LV_queue)
+void parse_output_msg_array(MsgQueue & output_queue, ArrayOfMessagesHdl outputMsgArray)
 {
-	for (int i = 0; true != isEmptyMsgQueue(&output_queue); i++)
+	for (int32_t i = 0; i < (*outputMsgArray)->dimSize; i++)
 	{
-		QueueMsg msg;
-		if ((*output_LV_queue)->dimSize < i) return;
-
-		GetHeadMsgQueue(&output_queue, &msg);
-		(*output_LV_queue)->message[i].msg = msg.code;
-		(*output_LV_queue)->message[i].param = msg.param.pr_long;
-		(*output_LV_queue)->message[i].type = msg.type;
-
+		if (true != isEmptyMsgQueue(&output_queue))
+		{
+			QueueMsg msg;
+			GetHeadMsgQueue(& output_queue, &msg);
+			(*outputMsgArray)->message[i].msg = msg.code;
+			(*outputMsgArray)->message[i].param = msg.param.pr_long;
+			(*outputMsgArray)->message[i].type = msg.type;
+		}
+		else
+		{
+			(*outputMsgArray)->message[i].msg = -1;
+			(*outputMsgArray)->message[i].param = 0;
+			(*outputMsgArray)->message[i].type = 0;
+		}
 	}
 }

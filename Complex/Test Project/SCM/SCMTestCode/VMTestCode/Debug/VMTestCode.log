@@ -1,0 +1,35 @@
+﻿  VMoutp.cpp
+  VMmain.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vmext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vmmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  VMinp.cpp
+  VM0001.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vmext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\vm0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  usr1.cpp
+  r_lib.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  r_io.cpp
+  msg_queue.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  lib.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\lib.cpp(32): warning C4018: <: несоответствие типов со знаком и без знака
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\lib.cpp(76): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+  custom_dll_inrefacecpp.cpp
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\dll_interface.h(6): warning C4005: TEST_MODE_TRUE: изменение макроопределения
+  d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\labviewdata.h(14): note: см. предыдущее определение "TEST_MODE_TRUE"
+d:\liakh tanya\dissertation\complex\test project\vm\vmtestcode\vmtestcode\custom_dll_inrefacecpp.cpp(117): warning C4244: =: преобразование "INT32U" в "uInt16", возможна потеря данных
+  Создание кода...
+     Создается библиотека D:\Liakh Tanya\Dissertation\Complex\Test Project\VM\VMTestCode\Debug\VMTestCode.lib и объект D:\Liakh Tanya\Dissertation\Complex\Test Project\VM\VMTestCode\Debug\VMTestCode.exp
+VMTestCode.exp : warning LNK4070: директива /OUT:VM.dll в .EXP отличается от имени выходного файла "D:\Liakh Tanya\Dissertation\Complex\Test Project\VM\VMTestCode\Debug\VMTestCode.exe"; директива игнорируется
+D:\Liakh Tanya\Dissertation\Complex\Test Project\VM\VMTestCode\Debug\VMTestCode.exe : warning LNK4086: точка входа "_mainCRTStartup" не является __stdcall с аргументами из 12 байт; образ нельзя запустить
+  VMTestCode.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\Test Project\VM\VMTestCode\Debug\VMTestCode.exe
+  VMTestCode.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\Test Project\VM\VMTestCode\Debug\VMTestCode.pdb (Partial PDB)

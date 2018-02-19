@@ -1,0 +1,39 @@
+﻿  CA0001.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\CAext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+..\src\CA0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  CAinp.cpp
+  CAmain.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\CAext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+..\src\CAmain.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  CAoutp.cpp
+  custom_dll_interface.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(23): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(35): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(42): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(49): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+..\src\custom_dll_interface.cpp(17): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+..\src\custom_dll_interface.cpp(22): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+..\src\custom_dll_interface.cpp(29): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+..\src\custom_dll_interface.cpp(34): warning C4244: return: преобразование "MgErr" в "int8_t", возможна потеря данных
+..\src\custom_dll_interface.cpp(75): warning C4244: =: преобразование "INT32U" в "uint16_t", возможна потеря данных
+  lib.cpp
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(23): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(35): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(42): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\LabVIEWData.h(49): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
+..\src\lib.cpp(35): warning C4018: <: несоответствие типов со знаком и без знака
+..\src\lib.cpp(51): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+  msg_queue.cpp
+..\src\msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
+  r_io.cpp
+  r_lib.cpp
+..\src\r_lib.cpp(24): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
+  CAusr1.cpp
+     Создается библиотека D:\CA.lib и объект D:\CA.exp
+  Создание кода
+  0 of 33 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  CATestProject.vcxproj -> D:\CA.dll
+  CATestProject.vcxproj -> D:\CA.pdb (Full PDB)

@@ -17,14 +17,5 @@ __declspec(dllexport) void LLD(PortsHdl, //algInputPorts
 
 /*RESIZE*/
 
-//MgErr _states_array_resize(ArrayOfStatesHdl);
-//
-//MgErr set_input_ports_array(PortsHdl, PortsHdl);
-//
-//MgErr set_input_msg_from_CA(ArrayOfMessagesHdl);
-//MgErr set_input_msg_from_SC(ArrayOfMessagesHdl);
-//
-//MgErr set_output_msg(ArrayOfMessagesHdl);
-//MgErr set_output_msg_to_SC(ArrayOfMessagesHdl);
 
 

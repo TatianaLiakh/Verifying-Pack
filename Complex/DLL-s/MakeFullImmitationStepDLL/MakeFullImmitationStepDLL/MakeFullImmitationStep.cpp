@@ -53,56 +53,6 @@ void main()
 	loadNewDlls();
 }
 
-__declspec (dllexport) int32_t init(
-	PortsHdl algInputPorts,
-	PortsHdl algOutputPorts,
-	///*MsgQueues*/
-	ArrayOfMessagesHdl scenarios2AlgOutputMsgs,
-	ArrayOfMessagesHdl scenarios2VirtPlantOutputMsgs,
-	ArrayOfMessagesHdl scenarios2VerifierOutputMsgs,
-	ArrayOfMessagesHdl verifier2scenariousControlOutMsgs,
-	/**/
-	ArrayOfMessagesHdl algOutputMsgs,
-	/**/
-	ArrayOfMessagesHdl verifier2GUIOutputMsgs,
-	ArrayOfMessagesHdl virtualPlant2GUIOutputMsgs,
-	/*StatesArrays*/
-	ArrayOfStatesHdl algStates,
-	ArrayOfStatesHdl vplantStates,
-	ArrayOfStatesHdl verStates,
-	ArrayOfStatesHdl scenarioStates
-)
-{
-#ifdef TEST_MODE_TRUE
-	//logger.open("LOG.txt", std::ofstream::out);
-	if (true == logger.is_open())
-	{
-		logger << "Initialisation\n" << std::endl;
-	}
-	
-	
-#endif // TEST_MODE_TRUE
-
-	algIP = algInputPorts;
-	algOP = algOutputPorts;
-
-	sc2AlgOutMsgs = scenarios2AlgOutputMsgs;
-	sc2VpOutMsgs = scenarios2VirtPlantOutputMsgs;
-	sc2VerfOutMsgs = scenarios2VerifierOutputMsgs;
-	ver2scOutMsgs = verifier2scenariousControlOutMsgs;
-
-	algOutMsgs = algOutputMsgs;
-	/*Msg2GUI*/
-	verf2GUIOutMsgs = verifier2GUIOutputMsgs;
-	vp2GUIOutMsgs = virtualPlant2GUIOutputMsgs;
-	/*StatesArrays*/
-	aS = algStates;
-	vpS = vplantStates;
-	verS = verStates;
-	scS = scenarioStates;
-
-	return lastError; 
-}
 
 __declspec (dllexport) void setMode(uint8_t mode)
 {
@@ -124,12 +74,6 @@ __declspec (dllexport) void setMode(uint8_t mode)
 __declspec(dllexport) int32_t loadNewDlls()
 {
 #ifdef _WIN32
-	//if (!::CreateProcess(compilerName, commandLine, NULL, NULL, NULL, NORMAL_PRIORITY_CLASS, NULL, NULL,
-	//	compiler, compiler_info))
-	//{
-	//	return (lastError = DllCallErroros::CreateProcessError);
-	//}
-	
 
 #ifdef TEST_MODE_TRUE
 	logger.open("D:/LOG.txt", std::ios::out );
@@ -137,10 +81,10 @@ __declspec(dllexport) int32_t loadNewDlls()
 		
 #endif // TEST_MODE_TRUE
 
-	//reloadCAModule();
-	//reloadVPModule();
-	reloadVBModule();
-	//reloadSCModule();
+	reloadModule(ca_module);
+	reloadModule(vp_module);
+	reloadModule(vb_module);
+	reloadModule(sc_module);
 
 
 #ifdef TEST_MODE_TRUE
@@ -159,18 +103,42 @@ __declspec(dllexport) int32_t loadNewDlls()
 }
 
 
-__declspec(dllexport) int32_t LLD()
+__declspec(dllexport) int32_t LLD(
+	PortsHdl algInputPorts,
+	PortsHdl algOutputPorts,
+	///*MsgQueues*/
+	ArrayOfMessagesHdl scenarios2AlgOutputMsgs,
+	ArrayOfMessagesHdl scenarios2VirtPlantOutputMsgs,
+	ArrayOfMessagesHdl scenarios2VerifierOutputMsgs,
+	ArrayOfMessagesHdl verifier2scenariousControlOutMsgs,
+	/**/
+	ArrayOfMessagesHdl algOutputMsgs,
+	/**/
+	ArrayOfMessagesHdl verifier2GUIOutputMsgs,
+	ArrayOfMessagesHdl virtualPlant2GUIOutputMsgs,
+	/*StatesArrays*/
+	ArrayOfStatesHdl algStates,
+	ArrayOfStatesHdl vplantStates,
+	ArrayOfStatesHdl verStates,
+	ArrayOfStatesHdl scenarioStates
+)
 {
+
 	if (DllCallErroros::NoError == lastError)
 	{
-		//if (Mode::Auto == currentMode)
-			//sc();
+		if (Mode::Auto == currentMode)
+			sc_module.mainFunction(verifier2scenariousControlOutMsgs,
+				scenarios2AlgOutputMsgs, scenarios2VirtPlantOutputMsgs, scenarios2VerifierOutputMsgs, scenarioStates);
 		
-		//vp();
-		//ca();
+		vp_module.mainFunction(algOutputPorts, algInputPorts, scenarios2VirtPlantOutputMsgs, virtualPlant2GUIOutputMsgs, vplantStates);
+
+		ca_module.mainFunction(algInputPorts, algOutputPorts, scenarios2AlgOutputMsgs, algOutputMsgs, algStates);
 		
-		//if (Mode::Auto == currentMode) 
-			vb();
+		if (Mode::Auto == currentMode) 
+			vb_module.mainFunction(algInputPorts, algOutputPorts, 
+				scenarios2VerifierOutputMsgs, algOutputMsgs, 
+				verifier2GUIOutputMsgs, verifier2scenariousControlOutMsgs,
+				verStates);
 	}
 	else return lastError;
 
