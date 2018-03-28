@@ -16,8 +16,8 @@ d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIE
 d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\test project\vp\vptestcode\vmtestcode\LabVIEWData.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
-lib.cpp(35): warning C4018: <: несоответствие типов со знаком и без знака
-lib.cpp(51): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+lib.cpp(36): warning C4018: <: несоответствие типов со знаком и без знака
+lib.cpp(52): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
   msg_queue.cpp
 msg_queue.cpp(73): warning C4552: -: оператор не имеет результата; требуется оператор с побочным действием
   r_io.cpp
@@ -34,7 +34,7 @@ VPmain.cpp(2): warning C4103: выравнивание изменилось по
   VPusr1.cpp
      Создается библиотека D:\VP.lib и объект D:\VP.exp
   Создание кода
-  All 36 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 33 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Создание кода завершено
   VMTestCode.vcxproj -> D:\VP.dll
   VMTestCode.vcxproj -> D:\VP.pdb (Full PDB)

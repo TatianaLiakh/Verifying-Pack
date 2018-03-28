@@ -1,16 +1,15 @@
-﻿  LV_lib.cpp
+﻿  MakeFullImmitationStep.cpp
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
-  Создание кода...
-  Компиляция...
-  MakeFullImmitationStep.cpp
+  LV_lib.cpp
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(21): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(33): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(40): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\labviewdata.h(47): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
   Создание кода...
 d:\liakh tanya\dissertation\complex\dll-s\makefullimmitationstepdll\makefullimmitationstepdll\makefullimmitationstep.cpp(145): warning C4715: LLD: значение возвращается не при всех путях выполнения
+     Создается библиотека D:\Liakh Tanya\Dissertation\Complex\DLL-s\MakeFullImmitationStepDLL\Debug\MakeFullImmitationStepDLL.lib и объект D:\Liakh Tanya\Dissertation\Complex\DLL-s\MakeFullImmitationStepDLL\Debug\MakeFullImmitationStepDLL.exp
   MakeFullImmitationStepDLL.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\MakeFullImmitationStepDLL\Debug\MakeFullImmitationStepDLL.exe
   MakeFullImmitationStepDLL.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\MakeFullImmitationStepDLL\Debug\MakeFullImmitationStepDLL.pdb (Partial PDB)

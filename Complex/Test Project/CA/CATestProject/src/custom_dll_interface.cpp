@@ -4,6 +4,11 @@
 #include "CA_queue_const.h"
 #include "r_main.h" 
 
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
+
+#pragma message ("ProcessorType-> " STR(ProcessorType))
+
 
 INT8S * aInput = nullptr;
 INT8S * aOutput = nullptr;
@@ -76,3 +81,5 @@ int8_t set_output_msg(ArrayOfMessagesHdl output_msg)
 	 }
 
  }
+
+

@@ -11,6 +11,7 @@ MgErr _states_array_resize(ArrayOfStatesHdl states_hdl)
 			(*states_hdl)->state[i].cur_state = (int8)STATE_OF_STOP;
 			(*states_hdl)->state[i].TimeInState = 0;
 		}
+		(*states_hdl)->dimSize = PROCESS_Nn + 1;
 	}
 	return error;
 }

@@ -9,8 +9,8 @@ d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdat
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(35): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(42): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(49): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
-d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\lib.cpp(35): warning C4018: <: несоответствие типов со знаком и без знака
-d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\lib.cpp(51): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\lib.cpp(36): warning C4018: <: несоответствие типов со знаком и без знака
+d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\lib.cpp(52): warning C4805: !=: небезопасное смешение типа "bool" и типа "int" в операции
   custom_dll_interface.cpp
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(23): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\labviewdata.h(35): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
@@ -30,6 +30,8 @@ d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\camain.cpp
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\caext.h(6): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
 d:\liakh tanya\dissertation\complex\test project\ca\catestproject\src\ca0001.cpp(2): warning C4103: выравнивание изменилось после включения заголовка, возможно из-за отсутствия директивы #pragma pack(pop)
   Создание кода...
-     Создается библиотека D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CA.lib и объект D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CA.exp
-  CATestProject.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CA.dll
-  CATestProject.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\Test Project\CA\CATestProject\Debug\CA.pdb (Partial PDB)
+     Создается библиотека D:\CA.lib и объект D:\CA.exp
+CA.exp : warning LNK4070: директива /OUT:CA.dll в .EXP отличается от имени выходного файла "D:\CA.exe"; директива игнорируется
+D:\CA.exe : warning LNK4086: точка входа "_mainCRTStartup" не является __stdcall с аргументами из 12 байт; образ нельзя запустить
+  CATestProject.vcxproj -> D:\CA.exe
+  CATestProject.vcxproj -> D:\CA.pdb (Partial PDB)

@@ -1,9 +1,27 @@
 cd D:\Reflex2C
-ReflexToC.exe -M -L -P -N %1
-C:\MinGW\bin\g++.exe %1_id.c -o %1_cfg_gen
+echo %1
+echo %2
+for %%i in (*) do if not %%i==ReflexToC.exe  del %%i
+
+COPY %2\%1.rcs D:\Reflex2C\%1.rcs
+
+ReflexToC.exe -M -P -L -N -T %1
+C:\MinGW\bin\g++.exe %1_id.cpp -o %1_cfg_gen
 %1_cfg_gen.exe
-g++ -c -DBUILDING_EXAMPLE_DLL msg_queue.c r_io.c r_lib.c %10001.c %1inp.c %1main.c %1outp.c %1usr1.c dll_interface.c 
-g++ -shared -o %1.dll msg_queue.o r_io.o r_lib.o %10001.o %1inp.o %1main.o %1outp.o %1usr1.o dll_interface.o -Wl,--out-implib,lib%1.a -Wl,--subsystem,windows 
+
+for %%I in (lib\*.* *.cpp *.h) do if not %%I==%1usr1.h COPY %%I %2\src
+for %%I in (*.cfg *.dbg *.lis *.sym *.var) do COPY %%I %2\cfg
+
+cd %2\src
+
+set cintools="C:\Program Files (x86)\National Instruments\LabVIEW 2010\cintools"
+g++  -DBUILDING_EXAMPLE_DLL msg_queue.cpp r_io.cpp r_lib.cpp %10001.cpp %1inp.cpp %1main.cpp %1outp.cpp %1usr1.cpp custom_dll_interface.cpp lib.cpp -I %cintools% -L %cintools% -l labviewv
+
+g++ -shared -o %1.dll msg_queue.o r_io.o r_lib.o %10001.o %1inp.o %1main.o %1outp.o %1usr1.o custom_dll_interface.o lib.o -Wl,--out-implib,lib%1.a -Wl,--subsystem,windows 
+
 chcp 1251
-COPY %1.dll "C:\Nonius\LabVIEW\Reflex"
-for %%f in (*.cfg) do copy %%f "C:\Nonius\LabVIEW\config"
+COPY %1.dll %2
+
+:: for %%f in (*.cfg) do copy %%f "C:\Nonius\LabVIEW\config"
+
+:: 1 - file name; 2 - progect path 

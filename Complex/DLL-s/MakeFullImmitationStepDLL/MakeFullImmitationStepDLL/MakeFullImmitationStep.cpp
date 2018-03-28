@@ -70,20 +70,28 @@ __declspec (dllexport) void setMode(uint8_t mode)
 
 }
 
+__declspec (dllexport) void freeAllDlls()
+{
+	freeModule(ca_module);
+	freeModule(vp_module);
+	freeModule(vb_module);
+	freeModule(sc_module);
+}
+
 /*Recompile and load all dlls*/
 __declspec(dllexport) int32_t loadNewDlls()
 {
 #ifdef _WIN32
 
 #ifdef TEST_MODE_TRUE
-	logger.open("D:/LOG.txt", std::ios::out );
+	logger.open("D:/MAIN_LOG.txt", std::ios::out );
 	if (logger.is_open()) logger << "loadNewDlls\n" << std::endl;
 		
 #endif // TEST_MODE_TRUE
 
 	reloadModule(ca_module);
 	reloadModule(vp_module);
-	reloadModule(vb_module);
+	reloadModule(vb_module);	
 	reloadModule(sc_module);
 
 

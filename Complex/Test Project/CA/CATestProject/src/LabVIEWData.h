@@ -11,6 +11,10 @@
 //#endif
 #include "extcode.h"
 
+
+
+
+#pragma pack(1) 
 //#include "windows.h"
 
 #define TEST_MODE_TRUE

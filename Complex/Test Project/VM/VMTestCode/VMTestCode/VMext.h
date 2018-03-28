@@ -5,5 +5,5 @@
 #include "r_io.h"   /* IO-functions typedef */
 #include "r_lib.h"  /* Internal functions typedef */
 #include "VMcnst.h" /* Application-defined constant */
-//#include "usr2.h" /* User-defined bottom include file */
+#include "VMusr2.h" /* User-defined bottom include file */
 #endif

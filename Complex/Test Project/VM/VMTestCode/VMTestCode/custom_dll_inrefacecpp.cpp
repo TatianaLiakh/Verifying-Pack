@@ -75,11 +75,14 @@ __declspec(dllexport)void LLD(PortsHdl algInputPorts, //algInputPorts
 
 		set_output_msg(verifier2GUIOutputMsgs);
 		set_output_msg_to_SC(verifier2scenariousControlOutMsgs);
-
+		sayToWholeWorld("_states_array_resize");
 		_states_array_resize(states);
 	}
 
+	sayToWholeWorld("Input ports");
+
 	size_t input_size = (*algInputPorts)->dimSize;
+
 	for (size_t i = 0; i < input_size; i++)
 	{
 		aInput[i] = (INT8S)(*algInputPorts)->ports[i];
@@ -89,13 +92,18 @@ __declspec(dllexport)void LLD(PortsHdl algInputPorts, //algInputPorts
 		aInput[i + input_size] = (INT8S)(*algOutputPorts)->ports[i];
 	}
 	
+	sayToWholeWorld("parse_input_msg_array");
 	parse_input_msg_array(algOutputMsgs, CAInputQueue);
 	parse_input_msg_array(scenarios2VerifierOutputMsgs, SCMInputQueue);
 
+	sayToWholeWorld("Control_Loop");
 	Control_Loop();
 
+	sayToWholeWorld("parse_output_msg_array");
 	parse_output_msg_array(MainGUIOutputQueue, verifier2GUIOutputMsgs);
 	parse_output_msg_array(SCMOutputQueue, verifier2scenariousControlOutMsgs);
+
+	sayToWholeWorld("states");
 	
 	for (int k = 0; k < (*states)->dimSize && k <= PROCESS_Nn; k++)
 	{
@@ -107,23 +115,32 @@ __declspec(dllexport)void LLD(PortsHdl algInputPorts, //algInputPorts
 
 void main(ArrayOfMessagesHdl * states_hdl)
 {
+
+	aInput = new INT8S[INPUT_PORTS_COUNTER];
+
+	ConstructMsgQueue(&MainGUIOutputQueue);
+	ConstructMsgQueue(&SCMOutputQueue);
+	ConstructMsgQueue(&CAInputQueue);
+	ConstructMsgQueue(&SCMInputQueue);
+
+	Control_Loop();
 	
 //	(**states_hdl)->message[0].msg = 12;
 //	_msg_array_resize(*states_hdl);
 
-	int32_t new_size = ARRLENRSMSG;
-	MgErr err;
-	if (mgNoErr == (err = DSSetHSzClr(*states_hdl, Offset(ArrayOfMessages, message) + new_size * sizeof(MessageCluster))))
-	{
-		for (size_t i = 0; i < new_size; i++)
-		{
-			MessageCluster * msg = &(**states_hdl)->message[i];
-			msg->msg = 10;
-			msg->type = -9;
-			msg->param = 100;
-		}
-		(**states_hdl)->dimSize = new_size;
-	}
+	//int32_t new_size = ARRLENRSMSG;
+	//MgErr err;
+	//if (mgNoErr == (err = DSSetHSzClr(*states_hdl, Offset(ArrayOfMessages, message) + new_size * sizeof(MessageCluster))))
+	//{
+	//	for (size_t i = 0; i < new_size; i++)
+	//	{
+	//		MessageCluster * msg = &(**states_hdl)->message[i];
+	//		msg->msg = 10;
+	//		msg->type = -9;
+	//		msg->param = 100;
+	//	}
+	//	(**states_hdl)->dimSize = new_size;
+	//}
 }
 
 
@@ -133,7 +150,7 @@ void sayToWholeWorld(char * speach)
 	{
 		FILE * f;
 
-		fopen_s(&f, "D:/LOGGER_ERROR.txt", "w");
+		fopen_s(&f, "D:/VM_LOGGER_ERROR.txt", "a");
 		fprintf(f, speach);
 		fclose(f);
 	}

@@ -58,7 +58,7 @@ __declspec(dllexport)void LLD(	ArrayOfMessagesHdl verifier2scenariousControlOutM
 		ConstructMsgQueue(&SCM2VM_OutputQueue);
 
 
-		set_input_msg_from_VM(verifier2scenariousControlOutMsgs);
+		//set_input_msg_from_VM(verifier2scenariousControlOutMsgs);
 
 		set_output_msg_to_Alg(scenarios2AlgOutputMsgs);
 		set_output_msg_to_VP(scenarios2VirtPlantOutputMsgs);
@@ -83,29 +83,32 @@ __declspec(dllexport)void LLD(	ArrayOfMessagesHdl verifier2scenariousControlOutM
 
 }
 
+
+#include <cstdio>
+
 void main(ArrayOfMessagesHdl * states_hdl)
 {
 	
 //	(**states_hdl)->message[0].msg = 12;
 //	_msg_array_resize(*states_hdl);
 
-	int32_t new_size = ARRLENRSMSG;
-	MgErr err;
-	if (mgNoErr == (err = DSSetHSzClr(*states_hdl, Offset(ArrayOfMessages, message) + new_size * sizeof(MessageCluster))))
-	{
-		for (size_t i = 0; i < new_size; i++)
-		{
-			MessageCluster * msg = &(**states_hdl)->message[i];
-			msg->msg = 10;
-			msg->type = -9;
-			msg->param = 100;
-		}
-		(**states_hdl)->dimSize = new_size;
-	}
+	printf("%d", ProcessorType);
+
+	//int32_t new_size = ARRLENRSMSG;
+	//MgErr err;
+	//if (mgNoErr == (err = DSSetHSzClr(*states_hdl, Offset(ArrayOfMessages, message) + new_size * sizeof(MessageCluster))))
+	//{
+	//	for (size_t i = 0; i < new_size; i++)
+	//	{
+	//		MessageCluster * msg = &(**states_hdl)->message[i];
+	//		msg->msg = 10;
+	//		msg->type = -9;
+	//		msg->param = 100;
+	//	}
+	//	(**states_hdl)->dimSize = new_size;
+	//}
 }
 
-
-#include <cstdio>
 
 void sayToWholeWorld(char * speach)
 	{

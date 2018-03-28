@@ -10,7 +10,7 @@ uint8_t currentMode = Mode::Auto;
 
 __declspec (dllexport) void setMode(uint8_t mode);
 
-
+__declspec (dllexport) void freeAllDlls(); 
 
 /*Recompile and load all dlls*/
 __declspec(dllexport)int32_t loadNewDlls();

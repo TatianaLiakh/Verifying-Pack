@@ -54,6 +54,15 @@ extern ModuleDescriptor <MainVBFunction> vb_module;
 extern ModuleDescriptor <MainSCFunction> sc_module;
 
 template <typename MainFunctionType>
+DllCallErroros freeModule(ModuleDescriptor<MainFunctionType> & descriptor)
+{
+	::FreeLibrary(descriptor.module);
+	descriptor.mainFunction = nullptr;
+	descriptor.module = nullptr; 
+	return  DllCallErroros::NoError;
+}
+
+template <typename MainFunctionType>
 DllCallErroros reloadModule(ModuleDescriptor<MainFunctionType> & descriptor)
 {
 	HINSTANCE & currLib = descriptor.module;

@@ -38,8 +38,8 @@ int8_t set_output_msg(ArrayOfMessagesHdl output_msg)
 
  __declspec(dllexport)void LLD(PortsHdl algInputPorts, //algInputPorts 
 	 PortsHdl algOutputPorts, //algOutputPorts
-	 ArrayOfMessagesHdl scenarios2AlgOutputMsgs, //scenarios2AlgOutputMsgs
-	 ArrayOfMessagesHdl algOutputMsgs, //algOutputMsgs
+	 ArrayOfMessagesHdl scenarios2VirtPlantOutputMsgs, //scenarios2VirtPlantOutputMsgs
+	 ArrayOfMessagesHdl virtualPlant2GUIOutputMsgs, //algOutputMsgs
 	 ArrayOfStatesHdl states_hdl)
 
  {
@@ -52,11 +52,11 @@ int8_t set_output_msg(ArrayOfMessagesHdl output_msg)
 		 ConstructMsgQueue(&MainInputQueue);
 		 ConstructMsgQueue(&MainOutputQueue);
 
-		 set_input_ports_array(algInputPorts);
-		 set_output_ports_array(algOutputPorts);
+ /*		 set_input_ports_array(algInputPorts);
+		 set_output_ports_array(algOutputPorts); */ 
 
 		 //	set_input_msg(scenarios2AlgOutputMsgs);
-		 set_output_msg(algOutputMsgs);
+		 set_output_msg(virtualPlant2GUIOutputMsgs);
 
 		 _states_array_resize(states_hdl);
 	 }
@@ -65,9 +65,9 @@ int8_t set_output_msg(ArrayOfMessagesHdl output_msg)
 	 aOutput = reinterpret_cast<INT8S*> ((*algOutputPorts)->ports);
 
 
-	 parse_input_msg_array(scenarios2AlgOutputMsgs, MainInputQueue);
+	 parse_input_msg_array(scenarios2VirtPlantOutputMsgs, MainInputQueue);
 	 Control_Loop();
-	 parse_output_msg_array(MainOutputQueue, algOutputMsgs);
+	 parse_output_msg_array(MainOutputQueue, virtualPlant2GUIOutputMsgs);
 
 	 for (int k = 0; k < (*states_hdl)->dimSize && k <= PROCESS_Nn; k++)
 	 {
