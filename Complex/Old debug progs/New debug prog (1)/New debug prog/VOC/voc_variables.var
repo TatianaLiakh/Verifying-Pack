@@ -1,0 +1,17 @@
+INPUT LOG с_бнгд_онд_йюперйх /*name*/ 0 /*owner_input_port*/ 1 /*start_bit*/  
+INPUT LOG с_бнгд_онд_ьохмдекъ /*name*/ 0 /*owner_input_port*/ 2 /*start_bit*/  
+INPUT LOG с_бнгд_онд_ярнкю /*name*/ 0 /*owner_input_port*/ 3 /*start_bit*/  
+INPUT LOG с_гюфхл_дхяйю /*name*/ 0 /*owner_input_port*/ 4 /*start_bit*/  
+INPUT LOG с_бйк_мюяня /*name*/ 0 /*owner_input_port*/ 5 /*start_bit*/  
+INPUT LOG с_пюгфхл_дхяйю /*name*/ 0 /*owner_input_port*/ 6 /*start_bit*/  
+OUTPUT LOG й_бнгд_онд_п_ме_йпхрхвеяйне /*name*/ 0 /*owner_output_port*/ 1 /*start_bit*/  
+OUTPUT LOG й_бнгд_онд_п_пюанвее /*name*/ 0 /*owner_output_port*/ 2 /*start_bit*/  
+OUTPUT LOG й_дхяй_пюгфюр /*name*/ 0 /*owner_output_port*/ 3 /*start_bit*/  
+OUTPUT LOG й_1214_дхярюмжхнммне /*name*/ 0 /*owner_output_port*/ 4 /*start_bit*/  
+INPUT LOG с_охрюмхе_кюгепю /*name*/ 1 /*owner_input_port*/ 1 /*start_bit*/  
+INPUT LOG с_бйк_кюгепю /*name*/ 1 /*owner_input_port*/ 2 /*start_bit*/  
+INPUT LOG с_хмремяхбмнярэ_кюгепю /*name*/ 1 /*owner_input_port*/ 3 /*start_bit*/  
+INPUT LOG с_бйк_яберндхндю /*name*/ 1 /*owner_input_port*/ 4 /*start_bit*/  
+INPUT LOG с_бшйк_яберндхндю /*name*/ 1 /*owner_input_port*/ 5 /*start_bit*/  
+INPUT LOG й_1212_дхярюмжхнммне /*name*/ 1 /*owner_input_port*/ 6 /*start_bit*/  
+INPUT LOG й_хмремяхбмнярэ_кюгепю /*name*/ 1 /*owner_input_port*/ 7 /*start_bit*/  

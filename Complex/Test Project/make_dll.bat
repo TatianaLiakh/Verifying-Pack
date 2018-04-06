@@ -5,7 +5,7 @@ for %%i in (*) do if not %%i==ReflexToC.exe  del %%i
 
 COPY %2\%1.rcs D:\Reflex2C\%1.rcs
 
-ReflexToC.exe -M -P -L -N -T %1
+ReflexToC.exe -M -P -L -N -T -G %1
 C:\MinGW\bin\g++.exe %1_id.cpp -o %1_cfg_gen
 %1_cfg_gen.exe
 
