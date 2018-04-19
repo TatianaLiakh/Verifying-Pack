@@ -1,0 +1,182 @@
+; /usr/bin/dlltool -z somedll.def --export-all-symbol add.dll
+EXPORTS
+	vfprintf @ 1
+	DllEntryPoint@12 @ 2
+	DllMain@12 @ 3
+	DllMainCRTStartup@12 @ 4
+	EnterCriticalSection@4 @ 5 DATA
+	GetCurrentProcess@0 @ 6 DATA
+	GetCurrentProcessId@0 @ 7 DATA
+	GetCurrentThreadId@0 @ 8 DATA
+	GetLastError@0 @ 9 DATA
+	GetSystemTimeAsFileTime@4 @ 10 DATA
+	GetTickCount@0 @ 11 DATA
+	InitializeCriticalSection@4 @ 12 DATA
+	LeaveCriticalSection@4 @ 13 DATA
+	QueryPerformanceCounter@4 @ 14 DATA
+	SetUnhandledExceptionFilter@4 @ 15 DATA
+	Sleep@4 @ 16 DATA
+	TerminateProcess@8 @ 17 DATA
+	TlsGetValue@4 @ 18 DATA
+	UnhandledExceptionFilter@4 @ 19 DATA
+	VirtualProtect@16 @ 20 DATA
+	VirtualQuery@12 @ 21 DATA
+	_CRT_INIT@12 @ 22
+	_CRT_MT @ 23 DATA
+	_CTOR_LIST__ @ 24 DATA
+	_DTOR_LIST__ @ 25 DATA
+	_FindPESection @ 26
+	_FindPESectionByName @ 27
+	_FindPESectionExec @ 28
+	_GetPEImageBase @ 29
+	_IAT_end__ @ 30 DATA
+	_IAT_start__ @ 31 DATA
+	_IsNonwritableInCurrentImage @ 32
+	_RUNTIME_PSEUDO_RELOC_LIST_END__ @ 33 DATA
+	_RUNTIME_PSEUDO_RELOC_LIST__ @ 34 DATA
+	_ValidateImageBase @ 35
+	LLD(Port**)
+	_Z3LLDPP4Port @ 36
+	add(int, int)
+	_Z3addii @ 37
+	__CTOR_LIST__ @ 38 DATA
+	__DTOR_LIST__ @ 39 DATA
+	__ImageBase @ 40 DATA
+	__RUNTIME_PSEUDO_RELOC_LIST_END__ @ 41 DATA
+	__RUNTIME_PSEUDO_RELOC_LIST__ @ 42 DATA
+	___w64_mingwthr_add_key_dtor @ 43
+	___w64_mingwthr_remove_key_dtor @ 44
+	__acrt_iob_func @ 45
+	__chkstk_ms @ 46 DATA
+	__crt_xc_end__ @ 47 DATA
+	__crt_xc_start__ @ 48 DATA
+	__crt_xi_end__ @ 49 DATA
+	__crt_xi_start__ @ 50 DATA
+	__crt_xl_start__ @ 51 DATA
+	__crt_xp_end__ @ 52 DATA
+	__crt_xp_start__ @ 53 DATA
+	__crt_xt_end__ @ 54 DATA
+	__crt_xt_start__ @ 55 DATA
+	__do_global_ctors @ 56
+	__do_global_dtors @ 57
+	__dyn_tls_init@12 @ 58
+	__dyn_tls_init_callback @ 59 DATA
+	__gcc_deregister_frame @ 60
+	__gcc_register_frame @ 61
+	__main @ 62
+	__mingw_GetSectionCount @ 63
+	__mingw_GetSectionForAddress @ 64
+	__mingw_TLScallback @ 65
+	__mingw_enum_import_library_names @ 66
+	__native_dllmain_reason @ 67 DATA
+	__native_startup_lock @ 68 DATA
+	__native_startup_state @ 69 DATA
+	__native_vcclrit_reason @ 70 DATA
+	__report_gsfailure @ 71
+	__security_cookie @ 72 DATA
+	__security_cookie_complement @ 73 DATA
+	__security_init_cookie @ 74
+	__tlregdtor @ 75
+	__tls_end__ @ 76 DATA
+	__tls_start__ @ 77 DATA
+	__xc_a @ 78 DATA
+	__xc_z @ 79 DATA
+	__xi_a @ 80 DATA
+	__xi_z @ 81 DATA
+	__xl_a @ 82 DATA
+	__xl_c @ 83 DATA
+	__xl_d @ 84 DATA
+	__xl_z @ 85 DATA
+	_amsg_exit @ 86
+	_bss_end__ @ 87 DATA
+	_bss_start__ @ 88 DATA
+	_data_end__ @ 89 DATA
+	_data_start__ @ 90 DATA
+	_decode_pointer @ 91
+	_dll__ @ 92 DATA
+	_dll_characteristics__ @ 93 DATA
+	_encode_pointer @ 94
+	_execute_onexit_table @ 95
+	_file_alignment__ @ 96 DATA
+	_fpreset @ 97
+	_head_lib32_libkernel32_a @ 98 DATA
+	_head_lib32_libmsvcrt_os_a @ 99 DATA
+	_image_base__ @ 100 DATA
+	_imp__DeleteCriticalSection@4 @ 101 DATA
+	_imp__EnterCriticalSection@4 @ 102 DATA
+	_imp__GetCurrentProcess@0 @ 103 DATA
+	_imp__GetCurrentProcessId@0 @ 104 DATA
+	_imp__GetCurrentThreadId@0 @ 105 DATA
+	_imp__GetLastError@0 @ 106 DATA
+	_imp__GetSystemTimeAsFileTime@4 @ 107 DATA
+	_imp__GetTickCount@0 @ 108 DATA
+	_imp__InitializeCriticalSection@4 @ 109 DATA
+	_imp__LeaveCriticalSection@4 @ 110 DATA
+	_imp__QueryPerformanceCounter@4 @ 111 DATA
+	_imp__SetUnhandledExceptionFilter@4 @ 112 DATA
+	_imp__Sleep@4 @ 113 DATA
+	_imp__TerminateProcess@8 @ 114 DATA
+	_imp__TlsGetValue@4 @ 115 DATA
+	_imp__UnhandledExceptionFilter@4 @ 116 DATA
+	_imp__VirtualProtect@16 @ 117 DATA
+	_imp__VirtualQuery@12 @ 118 DATA
+	_imp____acrt_iob_func @ 119 DATA
+	_imp___amsg_exit @ 120 DATA
+	_imp___execute_onexit_table @ 121 DATA
+	_imp___initialize_onexit_table @ 122 DATA
+	_imp___initterm @ 123 DATA
+	_imp___iob @ 124 DATA
+	_imp___lock @ 125 DATA
+	_imp___register_onexit_function @ 126 DATA
+	_imp___unlock @ 127 DATA
+	_imp__abort @ 128 DATA
+	_imp__calloc @ 129 DATA
+	_imp__free @ 130 DATA
+	_imp__fwrite @ 131 DATA
+	_imp__realloc @ 132 DATA
+	_imp__strlen @ 133 DATA
+	_imp__strncmp @ 134 DATA
+	_imp__vfprintf @ 135 DATA
+	_initialize_onexit_table @ 136
+	_initterm @ 137
+	_lib32_libkernel32_a_iname @ 138 DATA
+	_lib32_libmsvcrt_os_a_iname @ 139 DATA
+	_loader_flags__ @ 140 DATA
+	_lock @ 141
+	_major_image_version__ @ 142 DATA
+	_major_os_version__ @ 143 DATA
+	_major_subsystem_version__ @ 144 DATA
+	_minor_image_version__ @ 145 DATA
+	_minor_os_version__ @ 146 DATA
+	_minor_subsystem_version__ @ 147 DATA
+	_pei386_runtime_relocator @ 148
+	_register_onexit_function @ 149
+	_rt_psrelocs_end @ 150 DATA
+	_rt_psrelocs_size @ 151 DATA
+	_rt_psrelocs_start @ 152 DATA
+	_section_alignment__ @ 153 DATA
+	_size_of_heap_commit__ @ 154 DATA
+	_size_of_heap_reserve__ @ 155 DATA
+	_size_of_stack_commit__ @ 156 DATA
+	_size_of_stack_reserve__ @ 157 DATA
+	_subsystem__ @ 158 DATA
+	_tls_end @ 159 DATA
+	_tls_index @ 160 DATA
+	_tls_start @ 161 DATA
+	_tls_used @ 162 DATA
+	_unlock @ 163
+	abort @ 164
+	atexit @ 165
+	calloc @ 166
+	fpreset @ 167
+	free @ 168
+	fwrite @ 169
+	mingw_app_type @ 170 DATA
+	mingw_initltsdrot_force @ 171 DATA
+	mingw_initltsdyn_force @ 172 DATA
+	mingw_initltssuo_force @ 173 DATA
+	pcinit @ 174 DATA
+	realloc @ 175
+	strlen @ 176
+	strncmp @ 177
+	DeleteCriticalSection@4 @ 178 DATA

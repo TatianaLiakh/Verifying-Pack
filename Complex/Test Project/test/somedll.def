@@ -1,0 +1,2 @@
+; /usr/bin/dlltool -z somedll.def --export-all-symbol CA.dll
+EXPORTS

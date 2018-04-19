@@ -148,7 +148,7 @@
     <ClInclude Include="SCMproc.h" />
     <ClInclude Include="SCMxvar.h" />
     <ClInclude Include="SCM_id.h" />
-    <ClInclude Include="VM_queue_const.h" />
+    <ClInclude Include="SCM_queue_const.h" />
     <ClInclude Include="R_CNST.H" />
     <ClInclude Include="r_io.h" />
     <ClInclude Include="R_LIB.H" />

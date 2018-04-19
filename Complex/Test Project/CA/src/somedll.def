@@ -1,0 +1,321 @@
+; /usr/bin/dlltool -z somedll.def --export-all-symbol CA.dll
+EXPORTS
+	vfprintf @ 1
+	DSSetHSzClr @ 2
+	DeleteCriticalSection@4 @ 3 DATA
+	DllEntryPoint@12 @ 4
+	DllMain@12 @ 5
+	DllMainCRTStartup@12 @ 6
+	DynPatchLVRTProc @ 7
+	EnterCriticalSection@4 @ 8 DATA
+	ExitProcess@4 @ 9 DATA
+	FPO0 @ 10 DATA
+	FPO1 @ 11 DATA
+	GetCurrentProcess@0 @ 12 DATA
+	GetCurrentProcessId@0 @ 13 DATA
+	GetCurrentThreadId@0 @ 14 DATA
+	GetLVRTHandle @ 15
+	GetLastError@0 @ 16 DATA
+	GetModuleHandleA@4 @ 17 DATA
+	GetProcAddress@8 @ 18 DATA
+	GetSystemTimeAsFileTime@4 @ 19 DATA
+	GetTickCount@0 @ 20 DATA
+	InitializeCriticalSection@4 @ 21 DATA
+	LeaveCriticalSection@4 @ 22 DATA
+	MainInputQueue @ 23 DATA
+	MainOutputQueue @ 24 DATA
+	MessageBoxA@16 @ 25 DATA
+	NumericArrayResize @ 26
+	Original_Pr_States @ 27 DATA
+	P0V0 @ 28 DATA
+	P0V1 @ 29 DATA
+	P0V2 @ 30 DATA
+	P0V3 @ 31 DATA
+	P1V2 @ 32 DATA
+	PI0 @ 33 DATA
+	PI1 @ 34 DATA
+	PO0 @ 35 DATA
+	PO1 @ 36 DATA
+	Pr_States @ 37 DATA
+	QueryPerformanceCounter@4 @ 38 DATA
+	SetLVRTModule @ 39
+	SetLVRTModuleHook @ 40
+	SetLVRTTLSIndex @ 41
+	SetLVRTTLSIndexHook @ 42
+	SetLVRTTLSModule @ 43
+	SetUnhandledExceptionFilter@4 @ 44 DATA
+	Sleep@4 @ 45 DATA
+	TerminateProcess@8 @ 46 DATA
+	TlsGetValue@4 @ 47 DATA
+	TlsSetValue@8 @ 48 DATA
+	UnhandledExceptionFilter@4 @ 49 DATA
+	VirtualProtect@16 @ 50 DATA
+	VirtualQuery@12 @ 51 DATA
+	_CRT_INIT@12 @ 52
+	_CRT_MT @ 53 DATA
+	_CTOR_LIST__ @ 54 DATA
+	_DTOR_LIST__ @ 55 DATA
+	_FindPESection @ 56
+	_FindPESectionByName @ 57
+	_FindPESectionExec @ 58
+	_GetPEImageBase @ 59
+	_IAT_end__ @ 60 DATA
+	_IAT_start__ @ 61 DATA
+	_IsNonwritableInCurrentImage @ 62
+	_RUNTIME_PSEUDO_RELOC_LIST_END__ @ 63 DATA
+	_RUNTIME_PSEUDO_RELOC_LIST__ @ 64 DATA
+	_ValidateImageBase @ 65
+;	Check_State(unsigned int)
+	_Z11Check_Statej @ 66
+;	Prepare_PSW(unsigned int, unsigned int)
+	_Z11Prepare_PSWjj @ 67
+;	Control_Loop()
+	_Z12Control_Loopv @ 68
+;	FlushMsgQueue(MsgQueue*)
+	_Z13FlushMsgQueueP8MsgQueue @ 69
+;	GetMsgGUICode()
+	_Z13GetMsgGUICodev @ 70
+;	GetNextMsgGUI()
+	_Z13GetNextMsgGUIv @ 71
+;	set_input_msg(ArrayOfMessages**)
+	_Z13set_input_msgPP15ArrayOfMessages @ 72
+;	GetIntParamGUI()
+	_Z14GetIntParamGUIv @ 73
+;	GetLenMsgQueue(MsgQueue*)
+	_Z14GetLenMsgQueueP8MsgQueue @ 74
+;	SendMsgGUICode(int)
+	_Z14SendMsgGUICodei @ 75
+;	set_output_msg(ArrayOfMessages**)
+	_Z14set_output_msgPP15ArrayOfMessages @ 76
+;	GetHeadMsgQueue(MsgQueue*, QueueMsg*)
+	_Z15GetHeadMsgQueueP8MsgQueueP8QueueMsg @ 77
+;	GetLongParamGUI()
+	_Z15GetLongParamGUIv @ 78
+;	PutTailMsgQueue(MsgQueue*, int)
+	_Z15PutTailMsgQueueP8MsgQueuei @ 79
+;	isEmptyMsgQueue(MsgQueue*)
+	_Z15isEmptyMsgQueueP8MsgQueue @ 80
+;	GetFloatParamGUI()
+	_Z16GetFloatParamGUIv @ 81
+;	GetShortParamGUI()
+	_Z16GetShortParamGUIv @ 82
+;	PutTailMsgQueueB(MsgQueue*, int, unsigned char)
+	_Z16PutTailMsgQueueBP8MsgQueueih @ 83
+;	PutTailMsgQueueF(MsgQueue*, int, float)
+	_Z16PutTailMsgQueueFP8MsgQueueif @ 84
+;	PutTailMsgQueueI(MsgQueue*, int, int)
+	_Z16PutTailMsgQueueIP8MsgQueueii @ 85
+;	PutTailMsgQueueL(MsgQueue*, int, long)
+	_Z16PutTailMsgQueueLP8MsgQueueil @ 86
+;	PutTailMsgQueueS(MsgQueue*, int, short)
+	_Z16PutTailMsgQueueSP8MsgQueueis @ 87
+;	ConstructMsgQueue(MsgQueue*)
+	_Z17ConstructMsgQueueP8MsgQueue @ 88
+;	_msg_array_resize(ArrayOfMessages**)
+	_Z17_msg_array_resizePP15ArrayOfMessages @ 89
+;	PutTailMsgQueueStr(MsgQueue*, unsigned char*, int)
+	_Z18PutTailMsgQueueStrP8MsgQueuePhi @ 90
+;	SendMsgIntParamGUI(int, int)
+	_Z18SendMsgIntParamGUIii @ 91
+;	GetInpMsgNumber_GUI()
+	_Z19GetInpMsgNumber_GUIv @ 92
+;	GetOutMsgNumber_GUI()
+	_Z19GetOutMsgNumber_GUIv @ 93
+;	SendMsgLongParamGUI(int, long)
+	_Z19SendMsgLongParamGUIil @ 94
+;	_ports_array_resize(Port**, unsigned int, signed char*&, int&)
+	_Z19_ports_array_resizePP4PortjRPaRi @ 95
+;	SendMsgFloatParamGUI(int, float)
+	_Z20SendMsgFloatParamGUIif @ 96
+;	SendMsgShortParamGUI(int, short)
+	_Z20SendMsgShortParamGUIis @ 97
+;	_states_array_resize(ArrayOfStates**)
+	_Z20_states_array_resizePP13ArrayOfStates @ 98
+;	parse_input_msg_array(ArrayOfMessages**, MsgQueue&)
+	_Z21parse_input_msg_arrayPP15ArrayOfMessagesR8MsgQueue @ 99
+;	set_input_ports_array(Port**)
+	_Z21set_input_ports_arrayPP4Port @ 100
+;	parse_output_msg_array(MsgQueue&, ArrayOfMessages**)
+	_Z22parse_output_msg_arrayR8MsgQueuePP15ArrayOfMessages @ 101
+;	set_output_ports_array(Port**)
+	_Z22set_output_ports_arrayPP4Port @ 102
+;	P0()
+	_Z2P0v @ 103
+;	P1()
+	_Z2P1v @ 104
+;	LLD(Port**, Port**, ArrayOfMessages**, ArrayOfMessages**, ArrayOfStates**)
+	_Z3LLDPP4PortS1_PP15ArrayOfMessagesS4_PP13ArrayOfStates @ 105
+;	Input()
+	_Z5Inputv @ 106
+;	INBYTE(unsigned int, unsigned int)
+	_Z6INBYTEjj @ 107
+;	Output()
+	_Z6Outputv @ 108
+;	OUTBYTE(unsigned int, unsigned int, unsigned char)
+	_Z7OUTBYTEjjh @ 109
+;	Timeout(unsigned int, unsigned long)
+	_Z7Timeoutjm @ 110
+;	Init_PSW(unsigned int, unsigned int)
+	_Z8Init_PSWjj @ 111
+;	Set_Stop(unsigned int)
+	_Z8Set_Stopj @ 112
+;	Set_Error(unsigned int)
+	_Z9Set_Errorj @ 113
+;	Set_Start(unsigned int)
+	_Z9Set_Startj @ 114
+;	Set_State(unsigned int, unsigned char)
+	_Z9Set_Statejh @ 115
+	__CTOR_LIST__ @ 116 DATA
+	__DTOR_LIST__ @ 117 DATA
+	__ImageBase @ 118 DATA
+	__RUNTIME_PSEUDO_RELOC_LIST_END__ @ 119 DATA
+	__RUNTIME_PSEUDO_RELOC_LIST__ @ 120 DATA
+	___w64_mingwthr_add_key_dtor @ 121
+	___w64_mingwthr_remove_key_dtor @ 122
+	__acrt_iob_func @ 123
+	__chkstk_ms @ 124 DATA
+	__crt_xc_end__ @ 125 DATA
+	__crt_xc_start__ @ 126 DATA
+	__crt_xi_end__ @ 127 DATA
+	__crt_xi_start__ @ 128 DATA
+	__crt_xl_start__ @ 129 DATA
+	__crt_xp_end__ @ 130 DATA
+	__crt_xp_start__ @ 131 DATA
+	__crt_xt_end__ @ 132 DATA
+	__crt_xt_start__ @ 133 DATA
+	__do_global_ctors @ 134
+	__do_global_dtors @ 135
+	__dyn_tls_init@12 @ 136
+	__dyn_tls_init_callback @ 137 DATA
+	__gcc_deregister_frame @ 138
+	__gcc_register_frame @ 139
+	__main @ 140
+	__mingw_GetSectionCount @ 141
+	__mingw_GetSectionForAddress @ 142
+	__mingw_TLScallback @ 143
+	__mingw_enum_import_library_names @ 144
+	__native_dllmain_reason @ 145 DATA
+	__native_startup_lock @ 146 DATA
+	__native_startup_state @ 147 DATA
+	__native_vcclrit_reason @ 148 DATA
+	__report_gsfailure @ 149
+	__security_cookie @ 150 DATA
+	__security_cookie_complement @ 151 DATA
+	__security_init_cookie @ 152
+	__tlregdtor @ 153
+	__tls_end__ @ 154 DATA
+	__tls_start__ @ 155 DATA
+	__xc_a @ 156 DATA
+	__xc_z @ 157 DATA
+	__xi_a @ 158 DATA
+	__xi_z @ 159 DATA
+	__xl_a @ 160 DATA
+	__xl_c @ 161 DATA
+	__xl_d @ 162 DATA
+	__xl_z @ 163 DATA
+	_amsg_exit @ 164
+	_bss_end__ @ 165 DATA
+	_bss_start__ @ 166 DATA
+	_data_end__ @ 167 DATA
+	_data_start__ @ 168 DATA
+	_decode_pointer @ 169
+	_dll__ @ 170 DATA
+	_dll_characteristics__ @ 171 DATA
+	_encode_pointer @ 172
+	_execute_onexit_table @ 173
+	_file_alignment__ @ 174 DATA
+	_fpreset @ 175
+	_head_lib32_libkernel32_a @ 176 DATA
+	_head_lib32_libmsvcrt_os_a @ 177 DATA
+	_head_lib32_libuser32_a @ 178 DATA
+	_image_base__ @ 179 DATA
+	_imp__DeleteCriticalSection@4 @ 180 DATA
+	_imp__EnterCriticalSection@4 @ 181 DATA
+	_imp__ExitProcess@4 @ 182 DATA
+	_imp__GetCurrentProcess@0 @ 183 DATA
+	_imp__GetCurrentProcessId@0 @ 184 DATA
+	_imp__GetCurrentThreadId@0 @ 185 DATA
+	_imp__GetLastError@0 @ 186 DATA
+	_imp__GetModuleHandleA@4 @ 187 DATA
+	_imp__GetProcAddress@8 @ 188 DATA
+	_imp__GetSystemTimeAsFileTime@4 @ 189 DATA
+	_imp__GetTickCount@0 @ 190 DATA
+	_imp__InitializeCriticalSection@4 @ 191 DATA
+	_imp__LeaveCriticalSection@4 @ 192 DATA
+	_imp__MessageBoxA@16 @ 193 DATA
+	_imp__QueryPerformanceCounter@4 @ 194 DATA
+	_imp__SetUnhandledExceptionFilter@4 @ 195 DATA
+	_imp__Sleep@4 @ 196 DATA
+	_imp__TerminateProcess@8 @ 197 DATA
+	_imp__TlsGetValue@4 @ 198 DATA
+	_imp__TlsSetValue@8 @ 199 DATA
+	_imp__UnhandledExceptionFilter@4 @ 200 DATA
+	_imp__VirtualProtect@16 @ 201 DATA
+	_imp__VirtualQuery@12 @ 202 DATA
+	_imp____acrt_iob_func @ 203 DATA
+	_imp___amsg_exit @ 204 DATA
+	_imp___execute_onexit_table @ 205 DATA
+	_imp___initialize_onexit_table @ 206 DATA
+	_imp___initterm @ 207 DATA
+	_imp___iob @ 208 DATA
+	_imp___lock @ 209 DATA
+	_imp___register_onexit_function @ 210 DATA
+	_imp___unlock @ 211 DATA
+	_imp__abort @ 212 DATA
+	_imp__calloc @ 213 DATA
+	_imp__free @ 214 DATA
+	_imp__fwrite @ 215 DATA
+	_imp__realloc @ 216 DATA
+	_imp__strlen @ 217 DATA
+	_imp__strncmp @ 218 DATA
+	_imp__vfprintf @ 219 DATA
+	_initialize_onexit_table @ 220
+	_initterm @ 221
+	_lib32_libkernel32_a_iname @ 222 DATA
+	_lib32_libmsvcrt_os_a_iname @ 223 DATA
+	_lib32_libuser32_a_iname @ 224 DATA
+	_loader_flags__ @ 225 DATA
+	_lock @ 226
+	_major_image_version__ @ 227 DATA
+	_major_os_version__ @ 228 DATA
+	_major_subsystem_version__ @ 229 DATA
+	_minor_image_version__ @ 230 DATA
+	_minor_os_version__ @ 231 DATA
+	_minor_subsystem_version__ @ 232 DATA
+	_pei386_runtime_relocator @ 233
+	_register_onexit_function @ 234
+	_rt_psrelocs_end @ 235 DATA
+	_rt_psrelocs_size @ 236 DATA
+	_rt_psrelocs_start @ 237 DATA
+	_section_alignment__ @ 238 DATA
+	_size_of_heap_commit__ @ 239 DATA
+	_size_of_heap_reserve__ @ 240 DATA
+	_size_of_stack_commit__ @ 241 DATA
+	_size_of_stack_reserve__ @ 242 DATA
+	_subsystem__ @ 243 DATA
+	_tls_end @ 244 DATA
+	_tls_index @ 245 DATA
+	_tls_start @ 246 DATA
+	_tls_used @ 247 DATA
+	_unlock @ 248
+	aInput @ 249 DATA
+	aOutput @ 250 DATA
+	abort @ 251
+	atexit @ 252
+	calloc @ 253
+	fpreset @ 254
+	free @ 255
+	fwrite @ 256
+	gLVRTModule @ 257 DATA
+	input_counter @ 258 DATA
+	last_msg @ 259 DATA
+	mingw_app_type @ 260 DATA
+	mingw_initltsdrot_force @ 261 DATA
+	mingw_initltsdyn_force @ 262 DATA
+	mingw_initltssuo_force @ 263 DATA
+	output_counter @ 264 DATA
+	pcinit @ 265 DATA
+	realloc @ 266
+	strlen @ 267
+	strncmp @ 268
+	CallLVRT @ 269

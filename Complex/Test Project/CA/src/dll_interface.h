@@ -8,7 +8,7 @@
 
 //extern struct St_Word;
 
-__declspec(dllexport)void LLD(  PortsHdl, //algInputPorts 
+extern "C" __declspec(dllexport)void LLD(  PortsHdl, //algInputPorts 
 								PortsHdl, //algOutputPorts
 								ArrayOfMessagesHdl, //scenarios2VirtPlantOutputMsgs
 								ArrayOfMessagesHdl, //virtualPlant2GUIOutputMsgs

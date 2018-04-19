@@ -1,3 +1,7 @@
 ﻿  1.cpp
+d:\liakh tanya\dissertation\complex\dll-s\loader\loader\1.cpp(61): warning C4091: typedef : пропускается слева от "Port", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\dll-s\loader\loader\1.cpp(73): warning C4091: typedef : пропускается слева от "MessageCluster", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\dll-s\loader\loader\1.cpp(80): warning C4091: typedef : пропускается слева от "ArrayOfMessages", когда ни одна переменная не объявлена
+d:\liakh tanya\dissertation\complex\dll-s\loader\loader\1.cpp(87): warning C4091: typedef : пропускается слева от "ProcessState", когда ни одна переменная не объявлена
   Loader.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\Loader\Debug\Loader.exe
   Loader.vcxproj -> D:\Liakh Tanya\Dissertation\Complex\DLL-s\Loader\Debug\Loader.pdb (Partial PDB)

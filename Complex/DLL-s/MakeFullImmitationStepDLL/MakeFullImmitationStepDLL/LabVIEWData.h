@@ -4,13 +4,13 @@
 #include <cstdint> 
 
 #include "windows.h"
-
+#pragma pack(0)
 #define TEST_MODE_TRUE true
 
 /* LabView string handler*/
 typedef struct LabViewString{
-	int16_t	cnt;		/* number of bytes that follow */
-	int8_t str[1];		/* cnt bytes */
+	int32_t	cnt;		/* number of bytes that follow */
+	uint8_t str[1];		/* cnt bytes */
 } LStr, *LStrPtr, **LStrHandle;
 
 /* LabVIEW created typedefs - входныевыходные массивы*/

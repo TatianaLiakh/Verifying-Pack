@@ -36,7 +36,7 @@ int8_t set_output_msg(ArrayOfMessagesHdl output_msg)
 
 
 
- __declspec(dllexport)void LLD(PortsHdl algInputPorts, //algInputPorts 
+extern "C" __declspec(dllexport)void LLD(PortsHdl algInputPorts, //algInputPorts 
 	 PortsHdl algOutputPorts, //algOutputPorts
 	 ArrayOfMessagesHdl scenarios2AlgOutputMsgs, //scenarios2AlgOutputMsgs
 	 ArrayOfMessagesHdl algOutputMsgs, //algOutputMsgs

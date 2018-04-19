@@ -1,4 +1,5 @@
 #include "1.h"
+#include <stdlib.h> 
 
 
 #define TEST_MODE_TRUE true
@@ -52,18 +53,71 @@ void sayToWholeWorld(char * speach)
 }
 
 
+/* LabVIEW created typedefs - входныевыходные массивы*/
+typedef struct Port
+{
+	int32_t dimSize;
+	int8_t ports[1];
+};
+typedef Port **PortsHdl;
+
+/* —ообщение типа:
+*	- код сообщени€
+*	- новое значение типа string
+* - тип параметра */
+typedef struct MessageCluster
+{
+	int16_t msg;// Msg 
+	int32_t param; // Value
+	int16_t type;
+};
+
+/*ћассив сообщений*/
+typedef struct ArrayOfMessages
+{
+	int32_t dimSize;
+	MessageCluster message[1];
+};
+typedef ArrayOfMessages **ArrayOfMessagesHdl;
+
+typedef struct ProcessState
+{
+	uint16_t TimeInState;  /* врем€ нахождени€ в текущем состо€нии обнул€етс€ —тарт и Set_State*/
+	int8_t cur_state;     /* текущее состо€ние */
+};
+
+typedef struct ArrayOfStates
+{
+	int32_t dimSize;
+	ProcessState state[1];
+} ArrayOfStates;
+
+typedef ArrayOfStates ** ArrayOfStatesHdl;
+
+
+typedef void(*MainCAFunction) (PortsHdl, //algInputPorts 
+	PortsHdl, //algOutputPorts
+	ArrayOfMessagesHdl, //scenarios2AlgOutputMsgs
+	ArrayOfMessagesHdl, //algOutputMsgs
+	ArrayOfStatesHdl);
+
+
 __declspec(dllexport)int load(int num)
 {
 	HINSTANCE module = nullptr;
 
-	if (nullptr == (module = ::LoadLibrary("VB.dll")))
+	if (nullptr == (module = ::LoadLibrary("SCM.dll")))
+	{
+		int g = GetLastError();
 		return -1;
+	}
 
 	typedef void ( * CA) ();
 	CA ca = nullptr;
+	void * add;
 
-	ca = (CA)::GetProcAddress((HMODULE)module, "LLD");
-	if (nullptr == ca)
+	add = (CA)::GetProcAddress((HMODULE)module, "LLD");
+	if (nullptr == add)
 	{
 		::FreeLibrary(module);
 		int g = GetLastError();

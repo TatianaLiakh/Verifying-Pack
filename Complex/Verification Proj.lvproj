@@ -95,6 +95,39 @@
 			<Item Name="test.dll" Type="Document" URL="../DLL-s/test/Debug/test.dll"/>
 			<Item Name="VB.dll" Type="Document" URL="../../../../VB.dll"/>
 		</Item>
-		<Item Name="Build Specifications" Type="Build"/>
+		<Item Name="Build Specifications" Type="Build">
+			<Item Name="TestDLLCall" Type="EXE">
+				<Property Name="App_copyErrors" Type="Bool">true</Property>
+				<Property Name="App_INI_aliasGUID" Type="Str">{49D39111-DD1D-431B-99AD-95926898A7BB}</Property>
+				<Property Name="App_INI_GUID" Type="Str">{E64FAA90-6344-43EC-B2A0-AB7EF19D9715}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">TestDLLCall</Property>
+				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
+				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../Complex/DLL-s/test</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
+				<Property Name="Destination[0].destName" Type="Str">TestDLLCall.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../Complex/DLL-s/test/TestDLLCall.exe</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[0].type" Type="Str">App</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../Complex/DLL-s/test/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E74B458D-E64F-4969-A2CD-ED2B7EF9876A}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Sandbox/testDLLCall.vi</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[1].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="TgtF_fileDescription" Type="Str">TestDLLCall</Property>
+				<Property Name="TgtF_fileVersion.major" Type="Int">1</Property>
+				<Property Name="TgtF_internalName" Type="Str">TestDLLCall</Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2018 </Property>
+				<Property Name="TgtF_productName" Type="Str">TestDLLCall</Property>
+				<Property Name="TgtF_targetfileGUID" Type="Str">{AABA48BE-BE85-4C66-8008-BEC7EA08ACB4}</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">TestDLLCall.exe</Property>
+			</Item>
+		</Item>
 	</Item>
 </Project>

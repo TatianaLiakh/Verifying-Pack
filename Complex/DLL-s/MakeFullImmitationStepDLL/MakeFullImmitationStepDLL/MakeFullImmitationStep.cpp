@@ -50,7 +50,7 @@ __declspec (dllexport) int32_t init_logger()
 
 void main()
 {
-	loadNewDlls();
+//	loadNewDlls();
 }
 
 
@@ -74,12 +74,34 @@ __declspec (dllexport) void freeAllDlls()
 {
 	freeModule(ca_module);
 	freeModule(vp_module);
-	freeModule(vb_module);
+	freeModule(vm_module);
 	freeModule(sc_module);
+
+	ca_module.module = nullptr;  
+	sc_module.module = nullptr;
+	vp_module.module = nullptr;
+	vm_module.module = nullptr;
+
+	ca_module.mainFunction = nullptr;
+	sc_module.mainFunction = nullptr;
+	vp_module.mainFunction = nullptr;
+	vm_module.mainFunction = nullptr;
+
+	delete[](ca_module.libName);
+	delete[](sc_module.libName);
+	delete[](vp_module.libName);
+	delete[](vm_module.libName);
+
+	ca_module.libName = nullptr;
+	sc_module.libName = nullptr;
+	vp_module.libName = nullptr;
+	vm_module.libName = nullptr;
+
+
 }
 
 /*Recompile and load all dlls*/
-__declspec(dllexport) int32_t loadNewDlls()
+__declspec(dllexport) int32_t loadNewDlls(LStrHandle path)
 {
 #ifdef _WIN32
 
@@ -89,9 +111,18 @@ __declspec(dllexport) int32_t loadNewDlls()
 		
 #endif // TEST_MODE_TRUE
 
+	freeAllDlls(); 
+
+	ca_module.libName = newPathName(path, "/CA/CA.dll");
+	vp_module.libName = newPathName(path, "/VP/VP.dll");
+	vm_module.libName = newPathName(path, "/VM/VM.dll");
+	sc_module.libName = newPathName(path, "/SCM/SCM.dll");
+
+
 	reloadModule(ca_module);
 	reloadModule(vp_module);
-	reloadModule(vb_module);	
+
+	reloadModule(vm_module);	
 	reloadModule(sc_module);
 
 
@@ -132,6 +163,18 @@ __declspec(dllexport) int32_t LLD(
 )
 {
 
+	if (nullptr == ca_module.module ||
+		nullptr == sc_module.module ||
+		nullptr == vp_module.module ||
+		nullptr == vm_module.module ||
+		nullptr == ca_module.mainFunction ||
+		nullptr == sc_module.mainFunction ||
+		nullptr == vp_module.mainFunction ||
+		nullptr == vm_module.mainFunction)
+	{
+		return DllCallErroros::LoadLibError;
+	}
+
 	if (DllCallErroros::NoError == lastError)
 	{
 		if (Mode::Auto == currentMode)
@@ -143,7 +186,7 @@ __declspec(dllexport) int32_t LLD(
 		ca_module.mainFunction(algInputPorts, algOutputPorts, scenarios2AlgOutputMsgs, algOutputMsgs, algStates);
 		
 		if (Mode::Auto == currentMode) 
-			vb_module.mainFunction(algInputPorts, algOutputPorts, 
+			vm_module.mainFunction(algInputPorts, algOutputPorts, 
 				scenarios2VerifierOutputMsgs, algOutputMsgs, 
 				verifier2GUIOutputMsgs, verifier2scenariousControlOutMsgs,
 				verStates);

@@ -50,8 +50,10 @@ struct ModuleDescriptor
 
 extern ModuleDescriptor <MainCAFunction> ca_module;
 extern ModuleDescriptor <MainVPFunction> vp_module;
-extern ModuleDescriptor <MainVBFunction> vb_module;
+extern ModuleDescriptor <MainVBFunction> vm_module;
 extern ModuleDescriptor <MainSCFunction> sc_module;
+
+LPSTR newPathName(LStrHandle path, char * name);
 
 template <typename MainFunctionType>
 DllCallErroros freeModule(ModuleDescriptor<MainFunctionType> & descriptor)
@@ -62,6 +64,7 @@ DllCallErroros freeModule(ModuleDescriptor<MainFunctionType> & descriptor)
 	return  DllCallErroros::NoError;
 }
 
+
 template <typename MainFunctionType>
 DllCallErroros reloadModule(ModuleDescriptor<MainFunctionType> & descriptor)
 {
@@ -69,11 +72,11 @@ DllCallErroros reloadModule(ModuleDescriptor<MainFunctionType> & descriptor)
 	const LPTSTR lib_name = descriptor.libName;
 	MainFunctionType & main_function = descriptor.mainFunction;
 
-#ifdef TEST_MODE_TRUE
-	if (logger.is_open()) logger << "\n\t::FreeLibrary()" << lib_name << std::endl;
-#endif // TEST_MODE_TRUE
-
-	::FreeLibrary(currLib);
+//#ifdef TEST_MODE_TRUE
+//	if (logger.is_open()) logger << "\n\t::FreeLibrary()" << lib_name << std::endl;
+//#endif // TEST_MODE_TRUE
+//
+//	::FreeLibrary(currLib);
 
 #ifdef TEST_MODE_TRUE
 	if (logger.is_open()) logger << "=n\t::LoadLibrary()\n" << std::endl;

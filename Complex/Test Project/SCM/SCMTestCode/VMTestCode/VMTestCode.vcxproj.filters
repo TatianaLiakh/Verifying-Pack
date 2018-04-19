@@ -45,9 +45,6 @@
     <ClInclude Include="lib.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="VM_queue_const.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="SCM_id.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
@@ -70,6 +67,9 @@
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="SCMusr1.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="SCM_queue_const.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

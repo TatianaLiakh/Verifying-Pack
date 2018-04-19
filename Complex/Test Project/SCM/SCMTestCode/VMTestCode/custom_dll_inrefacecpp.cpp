@@ -1,7 +1,7 @@
 #include "lib.h"
 #include "dll_interface.h"
 #include "R_LIB.H"
-#include "VM_queue_const.h"
+#include "SCM_queue_const.h"
 #include "r_main.h" 
 
  INT8S * aInput = nullptr;

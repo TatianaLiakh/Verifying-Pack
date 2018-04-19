@@ -1,0 +1,11 @@
+
+
+
+x86_64-w64-mingw32-gcc -c -DBUILDING_EXAMPLE_DLL msg_queue.cpp r_io.cpp r_lib.cpp CA0001.cpp CAinp.cpp CAmain.cpp CAoutp.cpp CAusr1.cpp custom_dll_interface.cpp lib.cpp 
+
+
+-I"C:\Program Files (x86)\National Instruments\LabVIEW 2010\cintools" -m32 -L"C:\Program Files (x86)\National Instruments\LabVIEW 2010\cintools" -llabviewv -fpermissive  
+
+
+x86_64-w64-mingw32-gcc -shared -o CA.dll msg_queue.o r_io.o r_lib.o CA0001.o CAinp.o CAmain.o CAoutp.o CAusr1.o custom_dll_interface.o lib.o 
+-m32 -Wl,--out-implib,libCA.a -Wl,--subsystem,windows -L"C:\Program Files (x86)\National Instruments\LabVIEW 2010\cintools" -llabviewv 

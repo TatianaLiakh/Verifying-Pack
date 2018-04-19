@@ -1,0 +1,5 @@
+LIBRARY add
+EXPORTS
+_Z3LLDv @ 1
+LLD @ 2
+

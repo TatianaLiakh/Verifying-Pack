@@ -15,6 +15,7 @@ void P0 (void) /* ПРОЦЕСС: Инициализация */
 
    if (P0V1 == C_0  && P0V2 == C_1) 
    { 
+		SendMsgGUICode(C_8);
      P0V3[1] = C_0;
      Set_State(0, 2);
 	 }
