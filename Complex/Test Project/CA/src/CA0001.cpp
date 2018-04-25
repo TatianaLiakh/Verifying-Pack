@@ -38,6 +38,7 @@ void P1 (void) /* ПРОЦЕСС: ЧтениеКольцевогоБуфера */
 
 		case 0:    /*  P1S0() - СОСТОЯНИЕ: Начало */
 
+	SendMsgGUICode(C_6);
     
     if (GetNextMsgGUI()) 
 	{

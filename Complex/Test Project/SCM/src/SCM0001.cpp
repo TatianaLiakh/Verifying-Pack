@@ -14,6 +14,7 @@ void P0 (void) /* ПРОЦЕСС: Инициализация */
 			break;
 		case 1:    /*  P0S1() - СОСТОЯНИЕ: Ожидание1 */
 
+   SendMsgToVirtualPlantCode(C_4);
 	if (Timeout(0, C_2))  Set_State(0, 2);
 			break;
 		case 2:    /*  P0S2() - СОСТОЯНИЕ: ПроверкаОтключения */
@@ -25,6 +26,7 @@ void P0 (void) /* ПРОЦЕСС: Инициализация */
 			break;
 		case 3:    /*  P0S3() - СОСТОЯНИЕ: Ожидание2 */
 
+	SendMsgToVirtualPlantCode(C_4);
 	if (Timeout(0, C_2))  Set_State(0, 4);
 			break;
 		case 4:    /*  P0S4() - СОСТОЯНИЕ: ВРучнойРежим */
