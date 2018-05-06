@@ -120,6 +120,21 @@ main () {
 	sprintf(string, "%d\n", i );
 	fputs( string, file);
 
+ 	i = BV2GOO_TyestUspyeshyen; /* БВ2ГОО_ТестУспешен */
+	fputs( "БВ2ГОО_ТестУспешен = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BV2GOO_OshibkaTyesta; /* БВ2ГОО_ОшибкаТеста */
+	fputs( "БВ2ГОО_ОшибкаТеста = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BV2GOO_VyerifikatsiyaZavyershyeniye; /* БВ2ГОО_ВерификацияЗавершение */
+	fputs( "БВ2ГОО_ВерификацияЗавершение = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
  	i = BV2GOO_; /* БВ2ГОО_ */
 	fputs( "БВ2ГОО_ = " , file);
 	sprintf(string, "%d\n", i );

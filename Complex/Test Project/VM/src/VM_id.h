@@ -41,6 +41,9 @@ enum EN4 {
 	BV2GOO_VyklyuchyeniyeRuchnogoUpravlyeniyaUspyeshno /* БВ2ГОО_ВыключениеРучногоУправленияУспешно */,
 	BV2GOO_VklyuchyeniyeAvtomatichyeskoyeUspyeshno /* БВ2ГОО_ВключениеАвтоматическоеУспешно */,
 	BV2GOO_VyklyuchyeniyeAvtomatichyeskoyeUspyeshno /* БВ2ГОО_ВыключениеАвтоматическоеУспешно */,
+	BV2GOO_TyestUspyeshyen /* БВ2ГОО_ТестУспешен */,
+	BV2GOO_OshibkaTyesta /* БВ2ГОО_ОшибкаТеста */,
+	BV2GOO_VyerifikatsiyaZavyershyeniye /* БВ2ГОО_ВерификацияЗавершение */,
 	BV2GOO_ /* БВ2ГОО_ */
 
 };
