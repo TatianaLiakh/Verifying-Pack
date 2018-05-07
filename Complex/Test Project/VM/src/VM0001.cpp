@@ -30,6 +30,7 @@ void P1 (void) /* ПРОЦЕСС: ЧтениеСообщенийОтБУС */
     
 	SendMsgGUICode(C_23);
 	SendMsgGUICode(C_24);
+
 	
     if (GetNextMsgFromSCM()) 
 	{
