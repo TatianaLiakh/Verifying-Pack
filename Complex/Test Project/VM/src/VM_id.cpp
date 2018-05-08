@@ -90,6 +90,26 @@ main () {
 	sprintf(string, "%d\n", i );
 	fputs( string, file);
 
+ 	i = BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VKLYUCHYENIYE; /* ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бйкчвемхе */
+	fputs( "ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бйкчвемхе = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VYKLYUCHYENIYE; /* ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бшйкчвемхе */
+	fputs( "ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бшйкчвемхе = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BUS2BV_NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_POMYESCHYENY; /* ася2аб_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_псйх_онлеыемш */
+	fputs( "ася2аб_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_псйх_онлеыемш = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BUS2BV_NYEISPRAVNOST__NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RU; /* ася2аб_мехяопюбмнярэ_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_пс */
+	fputs( "ася2аб_мехяопюбмнярэ_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_пс = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
  	i = BV2BUS_SLYEDUYUSCHIJ_STSYENARIJ; /* аб2ася_якедсчыхи_яжемюпхи */
 	fputs( "аб2ася_якедсчыхи_яжемюпхи = " , file);
 	sprintf(string, "%d\n", i );

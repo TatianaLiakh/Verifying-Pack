@@ -44,7 +44,7 @@ void P0 (void) /* ПРОЦЕСС: Инициализация */
 
 	SendMsgToVirtualPlantCode(C_5);
 	SendMsgToControlAlgorythmCode(C_10);
-	SendMsgToVerificationModuleCode(C_17);
+	SendMsgToVerificationModuleCode(C_18);
 	Set_State(0, 7);
 			break;
 		case 7:    /*  P0S7() - СОСТОЯНИЕ: Ожидание4 */

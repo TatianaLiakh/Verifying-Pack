@@ -28,8 +28,9 @@ enum EN1 {
 	BUS2BV_RUCHNOYE_UPRAVLYENIYE_VYKLYUCHYENIYE /* ася2аб_псвмне_сопюбкемхе_бшйкчвемхе */,
 	BUS2BV_AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_POMYESCHYENY /* ася2аб_юбрнлюрхвеяйне_сопюбкемхе_псйх_онлеыемш */,
 	BUS2BV_AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_UBRANY /* ася2аб_юбрнлюрхвеяйне_сопюбкемхе_псйх_сапюмш */,
-	BUS2BV_KONYETS_SHTANOGO_RYEZHIMA /* ася2аб_йнмеж_ьрюмнцн_пефхлю */	
-	
+	BUS2BV_KONYETS_SHTANOGO_RYEZHIMA /* ася2аб_йнмеж_ьрюмнцн_пефхлю */,
+	BUS2BV_Dlya_provyerki /* ася2аб_дКЪ_ОПНБЕПЙХ */
+
 };
 
 enum EN3 {
@@ -37,5 +38,10 @@ enum EN3 {
 	BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VYKLYUCHYENIYE /* ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бшйкчвемхе */,
 	BUS2BV_NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_POMYESCHYENY /* ася2аб_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_псйх_онлеыемш */,
 	BUS2BV_NYEISPRAVNOST__NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RU /* ася2аб_мехяопюбмнярэ_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_пс */
+
+};
+enum EN4 {
+	BV2BUS_SLYEDUYUSCHIJ_STSYENARIJ /* аб2ася_якедсчыхи_яжемюпхи */,
+	BV2BUS_OSHIBKA_OSTANOV /* аб2ася_ньхайю_нярюмнб */
 
 };

@@ -85,6 +85,11 @@ main () {
 	sprintf(string, "%d\n", i );
 	fputs( string, file);
 
+ 	i = BUS2BV_Dlya_provyerki; /* ася2аб_дКЪ_ОПНБЕПЙХ */
+	fputs( "ася2аб_дКЪ_ОПНБЕПЙХ = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
  	i = BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VKLYUCHYENIYE; /* ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бйкчвемхе */
 	fputs( "ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бйкчвемхе = " , file);
 	sprintf(string, "%d\n", i );
@@ -102,6 +107,16 @@ main () {
 
  	i = BUS2BV_NYEISPRAVNOST__NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RU; /* ася2аб_мехяопюбмнярэ_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_пс */
 	fputs( "ася2аб_мехяопюбмнярэ_мехяопюбмнярэ_юбрнлюрхвеяйне_сопюбкемхе_пс = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BV2BUS_SLYEDUYUSCHIJ_STSYENARIJ; /* аб2ася_якедсчыхи_яжемюпхи */
+	fputs( "аб2ася_якедсчыхи_яжемюпхи = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
+ 	i = BV2BUS_OSHIBKA_OSTANOV; /* аб2ася_ньхайю_нярюмнб */
+	fputs( "аб2ася_ньхайю_нярюмнб = " , file);
 	sprintf(string, "%d\n", i );
 	fputs( string, file);
 

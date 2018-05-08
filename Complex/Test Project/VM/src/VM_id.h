@@ -21,7 +21,7 @@ enum EN1 {
 };
 
  
- enum EN2 {
+  enum EN2 {
 	BUS2BV_RUCHNOYE_UPRAVLYENIYE_VKLYUCHYENIYE /* БУС2БВ_РУЧНОЕ_УПРАВЛЕНИЕ_ВКЛЮЧЕНИЕ */,
 	BUS2BV_RUCHNOYE_UPRAVLYENIYE_VYKLYUCHYENIYE /* БУС2БВ_РУЧНОЕ_УПРАВЛЕНИЕ_ВЫКЛЮЧЕНИЕ */,
 	BUS2BV_AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_POMYESCHYENY /* БУС2БВ_АВТОМАТИЧЕСКОЕ_УПРАВЛЕНИЕ_РУКИ_ПОМЕЩЕНЫ */,
@@ -31,12 +31,20 @@ enum EN1 {
 };
 
 enum EN3 {
+	BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VKLYUCHYENIYE /* БУС2БВ_НЕИСПРАВНОСТЬ_РУЧНОЕ_УПРАВЛЕНИЕ_ВКЛЮЧЕНИЕ */ = BUS2BV_KONYETS_SHTANOGO_RYEZHIMA + 1,
+	BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VYKLYUCHYENIYE /* БУС2БВ_НЕИСПРАВНОСТЬ_РУЧНОЕ_УПРАВЛЕНИЕ_ВЫКЛЮЧЕНИЕ */,
+	BUS2BV_NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_POMYESCHYENY /* БУС2БВ_НЕИСПРАВНОСТЬ_АВТОМАТИЧЕСКОЕ_УПРАВЛЕНИЕ_РУКИ_ПОМЕЩЕНЫ */,
+	BUS2BV_NYEISPRAVNOST__NYEISPRAVNOST__AVTOMATICHYESKOYE_UPRAVLYENIYE_RU /* БУС2БВ_НЕИСПРАВНОСТЬ_НЕИСПРАВНОСТЬ_АВТОМАТИЧЕСКОЕ_УПРАВЛЕНИЕ_РУ */
+
+};
+
+enum EN4 {
 	BV2BUS_SLYEDUYUSCHIJ_STSYENARIJ /* БВ2БУС_СЛЕДУЮЩИЙ_СЦЕНАРИЙ */,
 	BV2BUS_OSHIBKA_OSTANOV /* БВ2БУС_ОШИБКА_ОСТАНОВ */
 
 };
 
-enum EN4 {
+enum EN5 {
 	BV2GOO_VklyuchyeniyeRuchnogoUpravlyeniyaUspyeshno /* БВ2ГОО_ВключениеРучногоУправленияУспешно */,
 	BV2GOO_VyklyuchyeniyeRuchnogoUpravlyeniyaUspyeshno /* БВ2ГОО_ВыключениеРучногоУправленияУспешно */,
 	BV2GOO_VklyuchyeniyeAvtomatichyeskoyeUspyeshno /* БВ2ГОО_ВключениеАвтоматическоеУспешно */,
@@ -48,7 +56,7 @@ enum EN4 {
 
 };
 
-enum EN5 {
+enum EN6 {
 	BV2GOO_VklyuchyeniyeRuchnogoUpravlyeniyaNYEUspyeshno /* БВ2ГОО_ВключениеРучногоУправленияНЕУспешно */ = BV2GOO_ + 1,
 	BV2GOO_VyklyuchyeniyeRuchnogoUpravlyeniyaNYEUspyeshno /* БВ2ГОО_ВыключениеРучногоУправленияНЕУспешно */,
 	BV2GOO_Samoproizvol_noyeOtklyuchyeniyeRyezhimaRuchnogoUpravlyeniya /* БВ2ГОО_СамопроизвольноеОтключениеРежимаРучногоУправления */,
