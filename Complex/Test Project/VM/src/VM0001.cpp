@@ -28,8 +28,8 @@ void P1 (void) /* ПРОЦЕСС: ЧтениеСообщенийОтБУС */
 		case 0:    /*  P1S0() - СОСТОЯНИЕ: Начало */
 
     
-	SendMsgGUICode(C_27);
 	SendMsgGUICode(C_28);
+	SendMsgGUICode(C_29);
 
 	
     if (GetNextMsgFromSCM()) 
@@ -77,7 +77,7 @@ void P2 (void) /* ПРОЦЕСС: КонтрольАвтоматическойРаботыСушилки */
 		if (P0V1 == C_0)
 		{
 			Set_State(2, 3);
-			SendMsgGUICode(C_25);
+			SendMsgGUICode(C_26);
 		}
 			
 		if (Timeout(2, C_2))  Set_State(2, 5);
@@ -87,7 +87,7 @@ void P2 (void) /* ПРОЦЕСС: КонтрольАвтоматическойРаботыСушилки */
 		if (P0V1 == C_1) 
 		{
 			Set_State(2, 7);
-			SendMsgGUICode(C_26);
+			SendMsgGUICode(C_27);
 		}
 		if (Timeout(2, C_2))  Set_State(2, 6);
 			break;
@@ -95,7 +95,7 @@ void P2 (void) /* ПРОЦЕСС: КонтрольАвтоматическойРаботыСушилки */
 
 		if (P0V1 == C_1  && P0V0 == C_0)
 		{
-			SendMsgGUICode(C_35);
+			SendMsgGUICode(C_36);
 			Set_Stop(2);
 		}
 		else if (P0V0 == C_1) Set_State(2, 4);
@@ -107,7 +107,7 @@ void P2 (void) /* ПРОЦЕСС: КонтрольАвтоматическойРаботыСушилки */
 			break;
 		case 5:    /*  P2S5() - СОСТОЯНИЕ: ОшибкаВключения */
 
-			SendMsgGUICode(C_31);
+			SendMsgGUICode(C_32);
 			Set_Stop(2);
 			break;
 		case 6:    /*  P2S6() - СОСТОЯНИЕ: ОшибкаВыключения */
@@ -118,7 +118,7 @@ void P2 (void) /* ПРОЦЕСС: КонтрольАвтоматическойРаботыСушилки */
 
 		if (P0V1 == C_0  && P0V0 == C_1)
 		{
-			SendMsgGUICode(C_35);
+			SendMsgGUICode(C_36);
 			Set_Stop(2);
 		}
 		else if (P0V0 == C_1) Set_State(2, 0);
@@ -136,21 +136,21 @@ void P3 (void) /* ПРОЦЕСС: КонтрольОтключенияРучногоУправления */
 
 		if (P0V3 == C_1)
 		{
-			SendMsgGUICode(C_24);
+			SendMsgGUICode(C_25);
 			Set_State(3, 2);
 		}
 		if (Timeout(3, C_2))  Set_State(3, 1);
 			break;
 		case 1:    /*  P3S1() - СОСТОЯНИЕ: Беда */
 
-		SendMsgGUICode(C_32);
+		SendMsgGUICode(C_33);
 		Set_Stop(3);
 			break;
 		case 2:    /*  P3S2() - СОСТОЯНИЕ: Контроль */
 
 		if (P0V3 != C_1)
 		{
-			SendMsgGUICode(C_34);
+			SendMsgGUICode(C_35);
 			Set_Stop(3);
 		}
 			break;
@@ -167,21 +167,21 @@ void P4 (void) /* ПРОЦЕСС: КонтрольВключенияРучногоУправления */
 
 		if (P0V3 == C_0)
 		{
-			SendMsgGUICode(C_23);
+			SendMsgGUICode(C_24);
 			Set_State(4, 2);
 		}
 		if (Timeout(4, C_2))  Set_State(4, 1);
 			break;
 		case 1:    /*  P4S1() - СОСТОЯНИЕ: Беда */
 
-		SendMsgGUICode(C_31);
+		SendMsgGUICode(C_32);
 		Set_Stop(4);
 			break;
 		case 2:    /*  P4S2() - СОСТОЯНИЕ: Контроль */
 
 		if (P0V3 != C_0)
 		{
-			SendMsgGUICode(C_33);
+			SendMsgGUICode(C_34);
 			Set_Stop(4);
 		}
 			break;

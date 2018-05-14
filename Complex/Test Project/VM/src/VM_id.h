@@ -26,8 +26,9 @@ enum EN1 {
 	BUS2BV_RUCHNOYE_UPRAVLYENIYE_VYKLYUCHYENIYE /* ася2аб_псвмне_сопюбкемхе_бшйкчвемхе */,
 	BUS2BV_AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_POMYESCHYENY /* ася2аб_юбрнлюрхвеяйне_сопюбкемхе_псйх_онлеыемш */,
 	BUS2BV_AVTOMATICHYESKOYE_UPRAVLYENIYE_RUKI_UBRANY /* ася2аб_юбрнлюрхвеяйне_сопюбкемхе_псйх_сапюмш */,
-	BUS2BV_KONYETS_SHTANOGO_RYEZHIMA /* ася2аб_йнмеж_ьрюмнцн_пефхлю */	
-	
+	BUS2BV_KONYETS_SHTANOGO_RYEZHIMA /* ася2аб_йнмеж_ьрюмнцн_пефхлю */,
+	BUS2BV_Dlya_provyerki /* ася2аб_дКЪ_ОПНБЕПЙХ */
+
 };
 
 enum EN3 {

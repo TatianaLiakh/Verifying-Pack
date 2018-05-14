@@ -13,9 +13,9 @@
 #include <inttypes.h>
 typedef int64_t __int64;
 
- #if defined(_WIN32) &&  defined(__GNUC__)
-     #pragma message("WIN 32")// Windows
-	 #define _MSC_VER 1
+#if defined(_WIN32) &&  defined(__GNUC__)
+   //  #pragma message("WIN 32")// Windows
+	  #define _MSC_VER 1
  #endif	
  
 #include "extcode.h"

@@ -29,23 +29,41 @@
 		<Item Name="Lib" Type="Folder">
 			<Item Name="Ports.lvclass" Type="LVClass" URL="../src/lib/Ports.lvclass"/>
 		</Item>
+		<Item Name="Resource" Type="Folder">
+			<Item Name="ComplexData" Type="Folder" URL="/C/ProgramData/ComplexData">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="lib" Type="Folder" URL="../../../../Reflex2C/lib">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="ReflexToC.exe" Type="Document" URL="../../../../Reflex2C/ReflexToC.exe"/>
+		</Item>
 		<Item Name="Sandbox" Type="Folder">
 			<Item Name="DllDriver.vi" Type="VI" URL="../src/lib/DllDriver.vi"/>
+			<Item Name="InitDLLs.vi" Type="VI" URL="../src/Dll interaction lib/InitDLLs.vi"/>
 			<Item Name="queue-1.vi" Type="VI" URL="../src/Sandbox/queue-1.vi"/>
 			<Item Name="queue-2.vi" Type="VI" URL="../src/Sandbox/queue-2.vi"/>
 			<Item Name="queue-3.vi" Type="VI" URL="../src/Sandbox/queue-3.vi"/>
 			<Item Name="testDLLCall.vi" Type="VI" URL="../src/Dll interaction lib/testDLLCall.vi"/>
 		</Item>
 		<Item Name="src" Type="Folder">
-			<Item Name="CFGParser" Type="Folder">
-				<Item Name="Load ALL Ports.vi" Type="VI" URL="../src/lib/Load ALL Ports.vi"/>
-				<Item Name="ParceCFG.vi" Type="VI" URL="../src/ParceCFG.vi"/>
+			<Item Name="CFGParsers" Type="Folder">
+				<Item Name="ParcePortsCFG.vi" Type="VI" URL="../src/lib/ParcePortsCFG.vi"/>
+				<Item Name="ParseAllBlocksMessages.vi" Type="VI" URL="../src/Parsers/ParseAllBlocksMessages.vi"/>
+				<Item Name="ParseAllVarsFile.vi" Type="VI" URL="../src/Parsers/ParseAllVarsFile.vi"/>
 				<Item Name="ParseStates.vi" Type="VI" URL="../src/Parsers/ParseStates.vi"/>
-			</Item>
-			<Item Name="DLL call lib" Type="Folder">
-				<Item Name="Call DLLs.vi" Type="VI" URL="../src/Dll interaction lib/Call DLLs.vi"/>
+				<Item Name="Vars.vi" Type="VI" URL="../src/Parsers/Vars.vi"/>
+				<Item Name="VP CA LOAD.vi" Type="VI" URL="../src/lib/VP CA LOAD.vi"/>
 			</Item>
 			<Item Name="Event Driven Agorithmic Blocks" Type="Folder">
+				<Item Name="ViewHandlers" Type="Folder">
+					<Item Name="ChangeTblBgColor.vi" Type="VI" URL="../src/lib/ChangeTblBgColor.vi"/>
+					<Item Name="CheckCurrentStatesControl.vi" Type="VI" URL="../src/CheckCurrentStatesControl.vi"/>
+					<Item Name="CheckPortsArray.vi" Type="VI" URL="../src/CheckPortsArray.vi"/>
+					<Item Name="LastStepMsgParser.vi" Type="VI" URL="../src/Parsers/LastStepMsgParser.vi"/>
+					<Item Name="LastStepMsgTABLEParser.vi" Type="VI" URL="../src/Parsers/LastStepMsgTABLEParser.vi"/>
+					<Item Name="UdatePortsCluster.vi" Type="VI" URL="../src/Parsers/UdatePortsCluster.vi"/>
+				</Item>
 				<Item Name="CA.vi" Type="VI" URL="../src/CA.vi"/>
 				<Item Name="SCB.vi" Type="VI" URL="../src/SCB.vi"/>
 				<Item Name="Template.vi" Type="VI" URL="../src/Template.vi"/>
@@ -55,22 +73,15 @@
 			<Item Name="Picture" Type="Folder">
 				<Item Name="LP01n.vi" Type="VI" URL="../Test Project/Pic/LP01n.vi"/>
 			</Item>
+			<Item Name="ProjectStructureConstructors" Type="Folder">
+				<Item Name="Create Progect.vi" Type="VI" URL="../EDB/CA/Create Progect.vi"/>
+				<Item Name="CreateNewProgect.vi" Type="VI" URL="../src/lib/CreateNewProgect.vi"/>
+				<Item Name="CreateServiceFolder.vi" Type="VI" URL="../src/lib/CreateServiceFolder.vi"/>
+				<Item Name="Load PIC and XML.vi" Type="VI" URL="../src/Load PIC and XML.vi"/>
+			</Item>
 			<Item Name="Main.vi" Type="VI" URL="../src/Main.vi"/>
 		</Item>
-		<Item Name="ChangeTblBgColor.vi" Type="VI" URL="../src/lib/ChangeTblBgColor.vi"/>
-		<Item Name="CheckCurrentStatesControl.vi" Type="VI" URL="../src/CheckCurrentStatesControl.vi"/>
-		<Item Name="CheckPortsArray.vi" Type="VI" URL="../src/CheckPortsArray.vi"/>
-		<Item Name="Create FOLDER.vi" Type="VI" URL="../src/lib/Create FOLDER.vi"/>
-		<Item Name="Create Progect.vi" Type="VI" URL="../EDB/CA/Create Progect.vi"/>
-		<Item Name="InitDLLs.vi" Type="VI" URL="../src/Dll interaction lib/InitDLLs.vi"/>
-		<Item Name="LastStepMsgParser.vi" Type="VI" URL="../src/Parsers/LastStepMsgParser.vi"/>
-		<Item Name="LastStepMsgTABLEParser.vi" Type="VI" URL="../src/Parsers/LastStepMsgTABLEParser.vi"/>
-		<Item Name="ParseAllBlocksMessages.vi" Type="VI" URL="../src/Parsers/ParseAllBlocksMessages.vi"/>
-		<Item Name="ParseAllVarsFile.vi" Type="VI" URL="../src/Parsers/ParseAllVarsFile.vi"/>
 		<Item Name="RunTimeMenu.rtm" Type="Document" URL="../src/RunTimeMenu.rtm"/>
-		<Item Name="UdatePortsCluster.vi" Type="VI" URL="../src/Parsers/UdatePortsCluster.vi"/>
-		<Item Name="Vars.vi" Type="VI" URL="../src/Parsers/Vars.vi"/>
-		<Item Name="VP CA LOAD.vi" Type="VI" URL="../src/lib/VP CA LOAD.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
@@ -90,6 +101,7 @@
 				<Item Name="FixBadRect.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/FixBadRect.vi"/>
 				<Item Name="Flatten Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pixmap.llb/Flatten Pixmap.vi"/>
 				<Item Name="Flip and Pad for Picture Control.vi" Type="VI" URL="/&lt;vilib&gt;/picture/bmp.llb/Flip and Pad for Picture Control.vi"/>
+				<Item Name="Get System Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/Get System Directory.vi"/>
 				<Item Name="imagedata.ctl" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/imagedata.ctl"/>
 				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
@@ -101,6 +113,7 @@
 				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 				<Item Name="subComparison.vi" Type="VI" URL="/&lt;vilib&gt;/express/express arith-compare/ComparisonBlock.llb/subComparison.vi"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="System Directory Type.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/sysdir.llb/System Directory Type.ctl"/>
 				<Item Name="System Exec.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/system.llb/System Exec.vi"/>
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="Unflatten Pixmap.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pixmap.llb/Unflatten Pixmap.vi"/>
@@ -119,6 +132,7 @@
 			<Item Name="new_bsvt_test.dll" Type="Document" URL="../DLL-s/new_bsvt_test/Debug/new_bsvt_test.dll"/>
 			<Item Name="OverlayAnimatedPics.vi" Type="VI" URL="../Test Project/Pic/library/LVSpics.llb/OverlayAnimatedPics.vi"/>
 			<Item Name="OverlayPics.vi" Type="VI" URL="../Test Project/Pic/library/LVSpics.llb/OverlayPics.vi"/>
+			<Item Name="ParceCFG.vi" Type="VI" URL="../src/ParceCFG.vi"/>
 			<Item Name="ParseVarFile.vi" Type="VI" URL="../src/Parsers/ParseVarFile.vi"/>
 			<Item Name="ProcAndStates.vi" Type="VI" URL="../src/Parsers/ProcAndStates.vi"/>
 			<Item Name="PSConverter.vi" Type="VI" URL="../Old debug progs/2009NewDebugProg Folder/lib/PSConverter.vi"/>

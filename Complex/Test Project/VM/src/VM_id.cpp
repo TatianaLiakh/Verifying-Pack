@@ -90,6 +90,11 @@ main () {
 	sprintf(string, "%d\n", i );
 	fputs( string, file);
 
+ 	i = BUS2BV_Dlya_provyerki; /* ася2аб_дКЪ_ОПНБЕПЙХ */
+	fputs( "ася2аб_дКЪ_ОПНБЕПЙХ = " , file);
+	sprintf(string, "%d\n", i );
+	fputs( string, file);
+
  	i = BUS2BV_NYEISPRAVNOST__RUCHNOYE_UPRAVLYENIYE_VKLYUCHYENIYE; /* ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бйкчвемхе */
 	fputs( "ася2аб_мехяопюбмнярэ_псвмне_сопюбкемхе_бйкчвемхе = " , file);
 	sprintf(string, "%d\n", i );
